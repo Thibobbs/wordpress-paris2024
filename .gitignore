@@ -2,6 +2,8 @@
 *
 !.gitignore
 !wp-content
+!package-lock.json
+!gulpfile.js
 
 
 # Ignore le contenu de "wp-content" sauf "plugins", "themes" et "mu-plugins"
