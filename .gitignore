@@ -3,6 +3,7 @@
 !.gitignore
 !wp-content
 !package-lock.json
+!package.json
 !gulpfile.js
 
 
