@@ -15,5 +15,5 @@
     </head>
     <body <?php body_class(); ?>>
         <header id="header">
-        <!-- Tout le contenu de l entête de mon site -->
+            Mon header
         </header>
