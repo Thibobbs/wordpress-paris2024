@@ -1,0 +1,32 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+      src: url('../../fonts/#{$file-path}.eot');
+      src:
+        url('../../fonts/#{$file-path}.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/#{$file-path}.woff') format('woff'),
+        url('../../fonts/#{$file-path}.ttf') format('truetype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@include font-face(Circular, circular-bold, bold, normal);
+@include font-face(Circular, circular-book, normal, normal);
+@include font-face(Circular, circular-bookItalic, normal, italic);
+@include font-face(Circular, circular-medium, medium, normal);
+@include font-face(Circular, circular-mediumItalic, medium, italic);
+
+
+body {
+  font-family: Circular;
+  color: $dark;
+  font-size: 1.6rem;
+}
+
+h1 {
+	font-size: 4.8rem;
+	font-weight: bold;
+	line-height: 0.5rem;
+	color: #fefefe;
+}
