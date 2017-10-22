@@ -11,6 +11,7 @@ function ajout_scripts() {
     // main.css
     wp_register_style( 'main_style', CSS_URL.'/style.min.css' );
     wp_enqueue_style( 'main_style' );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'ajout_scripts' );

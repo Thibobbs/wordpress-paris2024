@@ -1,25 +1,21 @@
-<?php get_header(); //appel du template header.php  ?>
+<?php get_header(); ?>
 
 <div id="content">
-    <h1>Contenu Principal</h1>
-    <?php
-    // boucle WordPress
-    if (have_posts()){
-        while (have_posts()){
-            the_post();
-    ?>
-            <h1><?php the_title(); ?></h1>
-            <h2>Posté le <?php the_time('F jS, Y') ?></h2>
-            <p><?php the_content(); ?></p>
-    <?php
-    }
-    }
-    else {
-    ?>
-    Nous n'avons pas trouvé d'article répondant à votre recherche
-    <?php
-    }
-    ?>
-</div> <!-- /content -->
+  <h1>home.php</h1>
+  <div class="container__grid home__grid">
+  <?php if ( have_posts() ) : while ( have_posts() ): the_post(); ?>
+    <div class="post">
+      <a href="<?php the_permalink(); ?>">
+        <div class="post__thumbnail"><?php if(has_post_thumbnail()) the_post_thumbnail(); ?></div>
+        <h2><?php the_title(); ?></h2>
+        <div class="entry"><?php the_content(); ?></div>
+        <small>Ajouté le <?php the_time('j F Y'); ?> </small>
+      </a>
+    </div>
+    <?php endwhile; else: ?>
+    <p>Sorry, no posts matched your criteria.</p>
+  <?php endif; ?>
+  </div>
+</div>
 
-<?php get_footer(); //appel du template footer.php ?>
+<?php get_footer(); ?>

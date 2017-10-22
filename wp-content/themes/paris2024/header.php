@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <html <?php language_attributes(); ?>>
+  <head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
-        <!-- Appel du fichier style.css de notre thème -->
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-
-        <!--
-            Tout le contenu de la partie head de mon site
-         -->
-
-        <!-- Execution de la fonction wp_head() obligatoire ! -->
-        <?php wp_head(); ?>
-    </head>
-    <body <?php body_class(); ?>>
-        <header id="header">
-            Mon header
-        </header>
+    <?php wp_head(); ?>
+  </head>
+  <body <?php body_class(); ?>>
+    <header id="header">
+    <a href="<?php bloginfo('url')?>">Accueil</a>
+    <?php 
+      $args = array(
+        'theme_location' => 'header',
+        'container' => "nav",
+        'menu' => 'header_fr',
+        'menu_class' => 'menu_header',
+        'menu_id' => 'menu_id'
+      );
+      wp_nav_menu($args);
+		?>
+    </header>
