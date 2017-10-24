@@ -15,6 +15,8 @@
     <?php endwhile; else: ?>
     <p>Sorry, no posts matched your criteria.</p>
   <?php endif; ?>
+
+      <button class="btn--blue btn__text--white">Voir l'article</button>
   </div>
 </div>
 

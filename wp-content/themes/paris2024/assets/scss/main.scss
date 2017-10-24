@@ -1,4 +1,12 @@
 @import "components/_reset.scss";
 @import "components/_colors.scss";
 @import "components/_fonts.scss";
+@import "components/_buttons.scss";
 @import "partials/_header.scss";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+}
