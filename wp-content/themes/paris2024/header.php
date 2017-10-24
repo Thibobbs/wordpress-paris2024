@@ -7,16 +7,17 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <header id="header">
-    <a href="<?php bloginfo('url')?>">Accueil</a>
-    <?php 
-      $args = array(
-        'theme_location' => 'header',
-        'container' => "nav",
-        'menu' => 'header_fr',
-        'menu_class' => 'menu_header',
-        'menu_id' => 'menu_id'
-      );
-      wp_nav_menu($args);
-		?>
+    <header class="container-header">
+      <div class="container-header__header header">
+       <a class="header__logo" href="<?php bloginfo('url')?>"><img src="<?= IMAGES_URL.'/logo_paris2024_header.png' ?>" alt="logo"></a>
+        <?php 
+          $args = array(
+            'theme_location' => 'header',
+            'container' => "nav",
+            'menu' => 'header_fr',
+            'menu_class' => 'header__menu'
+          );
+          wp_nav_menu($args);
+        ?>
+      </div>
     </header>

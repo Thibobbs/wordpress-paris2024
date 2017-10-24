@@ -1,3 +1,34 @@
-header {
-  background-color: $deep-blue;
+.container-header {
+  background-color: $light;
+  box-shadow: 0 0 7.1px 0.9px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  max-width: 960px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  
+  img {
+    width: 30px;
+  }
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header__menu ul {
+  display: flex;
+  
+  li {
+    margin-left: 40px;
+  }
 }
