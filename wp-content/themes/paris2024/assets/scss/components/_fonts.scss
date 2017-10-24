@@ -13,12 +13,14 @@
 
 body {
   font-family: Circular;
-  color: $dark;
+  color: $warm-grey;
   line-height: 1.4;
   font-weight: 400;
 }
+
 h1, h2, .link {
   font-weight: 500;
+  color: $dark;
 }
 h1 {
   font-size: 4.8rem;
@@ -26,13 +28,29 @@ h1 {
 
 h2 {
   font-size: 3rem;
+  margin: 1.4rem 0;
+  position: relative;
+  padding: 0 3rem;
+
+  &::before {
+    content: "";
+    height: 4.2rem;
+    width: 0.5rem;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: $azure-blue;
+  }
 }
 
 h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 1.8rem;
+  letter-spacing: 1.8;
+  line-height: normal;
+  text-transform: uppercase;
 }
+
 
 .link {
   font-size: 1.4rem;
