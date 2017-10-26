@@ -1,13 +1,11 @@
-// concept page
+/** concept page */ 
 
 .video-intro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: space-around;
     width: 100%;
     height: 800px;
-    background-color: black;
 }
 
 .video-intro__page-name {
@@ -43,3 +41,48 @@
 .video-intro__button {
     margin-top: 80px;
 }
+
+.video-intro__player {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+/** description-project */
+
+.description-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+
+.description-project__txt {
+    align-self: center;
+    width: 60%;
+}
+
+.description-project__paragraph {
+    margin-top: 60px;    
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 2;
+    color: $light;
+}
+
+.description-project__title {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 4.29;
+    letter-spacing: 1.4px;
+    text-align: left;
+    color: $jordy-blue;
+}
+
+
+
