@@ -124,5 +124,24 @@
     color: $jordy-blue;
 }
 
+/** List sports */
+
+.list-sports {
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    -o-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    width: 100%;
+    height: 145rem;
+    background-color: $palegrey;
+}
+
+.list-sports__item {
+}
 
 
