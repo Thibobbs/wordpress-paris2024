@@ -33,6 +33,40 @@
 </div>
 
 <div class="list-sports">
+
+    <?php
+    $args= array(
+    'post_type' => 'sport',
+    'posts_per_page' => 20
+    );
+
+    $the_query = new WP_Query( $args );
+
+    // Start Loop
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+    ?>
+
+    <div class="list-sports__item">
+        <?php the_title() ?>
+        <div class="thumbnail">
+            <?php
+              if(has_post_thumbnail())
+              {
+                the_post_thumbnail("hub_sport_thumbnail");
+              }
+            ?>
+        </div>
+    </div>
+
+     <!-- End loop -->
+    <?php
+    }
+       /* Restore original Post Data */
+       wp_reset_postdata();
+    }
+    ?>
     
 </div>
 

@@ -6,7 +6,6 @@
 !package.json
 !gulpfile.js
 
-
 # Ignore le contenu de "wp-content" sauf "plugins", "themes" et "mu-plugins"
 !wp-content/plugins
 !wp-content/plugins/**
