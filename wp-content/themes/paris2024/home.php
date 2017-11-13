@@ -1,14 +1,30 @@
 <?php get_header(); ?>
 
 <div id="content">
-    <h3>Teddy Rinner</h3>
-    <h2>Des Jeux de sens, partagés avec le monde</h2>
-    <div class="clear"></div>
-    <p>
-        En 2024, nous mettrons en scène des Jeux Olympique magnifiques et dignes d’intérêt qui établiront de nouvelles références pour l’histoire du sport, dans la ville même où Pierre de Coubertin avait initialement imaginé tout le potentiel d’un monde uni par le sport.
-    </p>
-    <a href="#" class="btn--blue btn__text--white">Voir l'article</a>
-  </div>
+
+    <div class="slider">
+        <div class="slider__slide">
+            <div class="slider__slide__filter">
+                <div class="slider__slide__container">
+                    <h2 class="slider__slide__article-type">Développement territorial</h2>
+                    <h1 class="slider__slide__title">Des Jeux de partage, plus inclusifs et solidaires</h2>
+                    <a href="#" class="btn--blue btn__text--white slider__slide__button">Voir l'article</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="discover">
+        <div class="discover__image">
+
+        </div>
+        <div class="discover__container">
+            <h1 class="discover__title">Venez partager notre vision des Jeux</h1>
+            <p class="discover__text">Depuis des centaines d'années, Paris accueuille tous les peuples de la Terre, y compris les pères fondateurs du Mouvement olympique, dans un esprit de collaboration et d'inspiration mutuelle, pour générer des idées et façonner l'avenir</p>
+            <a href="#" class="discover__link">Découvrir</a>
+        </div>
+    </div>
+
 </div>
 
 <?php get_footer(); ?>
