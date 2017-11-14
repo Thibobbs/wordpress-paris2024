@@ -12,3 +12,19 @@
   letter-spacing: 0.12rem;
   font-weight: 600;
 }
+
+.btn--white {
+  padding: 1.6rem 2rem;
+  border-radius: 0.6rem;
+  background-color: $light;
+  box-shadow: 0 0 38.2px 6.8px rgba(0,0,0,0.2);
+}
+
+.btn__text--blue {
+  color: $deep-blue;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.12rem;
+  font-weight: 600;
+}
