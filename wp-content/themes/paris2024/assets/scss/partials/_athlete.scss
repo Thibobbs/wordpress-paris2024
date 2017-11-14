@@ -1,0 +1,36 @@
+/** athlete */
+
+.athlete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+
+.athlete__txt {
+  align-self: center;
+  width: 960px;
+  padding: 100px 25px 200px 25px;
+}
+
+.athlete__caption {
+  margin-top: 40px;
+  font-size: 3.4rem;
+  line-height: 2;
+  color: $light;
+}
+
+.athlete__name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: $jordy-blue;
+}
+
+.athlete__button{
+  width: 150px;
+  margin-top: 60px;
+  display: block;
+}
