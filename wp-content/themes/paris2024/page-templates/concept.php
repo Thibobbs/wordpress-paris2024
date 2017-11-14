@@ -27,7 +27,7 @@
 
 <div class="description-project">
     <div class="description-project__txt">
-        <h3 class="description-project__title">Un projet en héritage</h2>
+        <h3 class="description-project__title">Un projet en héritage</h3>
         <p class="description-project__paragraph">Le village olympique est conçu comme un projet exceptionnel de rénovation urbaine, il deviendra une référence majeure en termes de durabilité et de rénovation urbaine.</p>
     </div>
 </div>
