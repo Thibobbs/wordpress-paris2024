@@ -1,0 +1,112 @@
+// News hero
+
+.image-intro {
+    position: relative;
+    height: 48rem;
+    width: 100vw; 
+}
+
+.image-intro__title {
+    position: absolute;
+    top: 18rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    text-align: center;
+    color: $light2;
+    z-index: 10;
+}
+
+.image-intro__overlay,
+.image-intro__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.image-intro__background {
+    background-image: url(../img/actualites-bkg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.image-intro__overlay {
+    background: $dark;
+    opacity: 0.65;
+    z-index: 2;
+}
+
+// Search bar
+
+
+// News
+.news {
+    padding: 8rem 0;
+    background: $palegrey;
+}
+
+.news__wrapper {
+    width: 80vw;
+    margin: auto;
+}
+
+// news categories
+
+.news__categories {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 6.5rem auto;
+    width: 65vw;
+}
+
+// Articles
+.news__articles {
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+// Article
+.articles__article {
+    display: inline-block;
+    width: 34.6rem;
+    height: 43.2rem;
+    background: $light2;
+    border-radius: 6px;
+}
+
+.article__content {
+    width: 80%;
+}
+
+.article__title {
+    margin: 4rem 0 2rem 0;
+    font-size: 1.8rem;
+    line-height: 24px;
+    font-size: 600;
+    color: $dark;
+}
+
+// See more button
+.news__button {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 3rem auto 0 auto;
+}
+
+.news__see-more {
+    padding: 1.5rem 3rem;
+    color: $warm-grey;
+    border: 2px solid $pinkish-grey;
+    letter-spacing: 1.4px;
+}
