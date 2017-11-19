@@ -1,6 +1,22 @@
 .slider{
-    width: 100%;
-    height: 800px;
+  width: 300%;
+  height: 800px;
+  display: flex;
+  will-change: transform;
+  transform: translate(0);
+  transition: transform .3s ease-in-out;
+  
+  &--slide0 {
+    transform: translate(0);
+  }
+  
+  &--slide1 {
+    transform: translate(calc(-100% / 3));
+  }
+  
+  &--slide2 {
+    transform: translate(calc(-200% / 3));
+  }
 
     .slider__slide{
         width: 100%;
@@ -61,7 +77,7 @@
 }
 
 .discover{
-    margin: 130px 0px 0px;
+    margin: 130px 0;
 
     .discover__container{
         width: 960px;
@@ -107,4 +123,9 @@
             display: block;
         }
     }
+}
+
+.partners {
+  height: 200px;
+  background: $palegrey;
 }
