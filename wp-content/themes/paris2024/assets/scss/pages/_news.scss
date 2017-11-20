@@ -132,12 +132,16 @@
     border-radius: 6px 6px 0 0;
 
     img {
-       min-height: 100%;
-       min-width: 100%; 
+        border-radius: 6px 6px 0 0;
+        height: 100%;
+        width: 100%; 
+        object-fit: cover;
     }
 }
 
 .thumbnail__line {
+    // position: relative;
+    // bottom: 4px;
     height: 4px;
     width: 100%;
     background: $deep-blue;

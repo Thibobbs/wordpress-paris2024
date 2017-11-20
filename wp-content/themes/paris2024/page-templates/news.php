@@ -27,46 +27,32 @@
             <a href="#" title=""><?php the_field('news_categories_5'); ?></a>
         </div>
         <div class="news__articles">
-        <?php
-            $args= array(
-            'post_type' => 'article',
-            'posts_per_page' => 20
-            );
+            <?php
+                $args= array(
+                'post_type' => 'post',
+                'posts_per_page' => 9
+                );
 
-            $the_query = new WP_Query( $args );
+                $the_query = new WP_Query( $args );
 
-            // Start Loop
-            if ( $the_query->have_posts() ) {
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
-        ?>
+                // Start Loop
+                if ( $the_query->have_posts() ) {
+                    while ( $the_query->have_posts() ) {
+                        $the_query->the_post();
+            ?>
 
-        <div class="articles__article">
-            <?php the_title() ?>
-            <div class="thumbnail">
-                <?php
-                  if(has_post_thumbnail())
-                  {
-                    the_post_thumbnail("hub_sport_thumbnail");
-                  }
-                ?>
-            </div>
-        </div>
-
-        <!-- End loop -->
-        <?php
-                }
-            /* Restore original Post Data */
-            wp_reset_postdata();
-            }
-        ?>
             <div class="articles__article">
                 <div class="article__thumbnail">
-                    <img src="" alt="Article thumbnail">
+                    <?php
+                      if(has_post_thumbnail())
+                      {
+                        the_post_thumbnail("hub_post_thumbnail");
+                      }
+                    ?>
                     <div class="thumbnail__line"></div>
                 </div>
                 <div class="article__content">
-                    <div class="article__title">Les athlètes au cœur des Jeux Olympiques</div>
+                    <div class="article__title"><?php the_title() ?></div>
                     <div class="article__text">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur expérience est inestimable pour une...</div>
                 </div>
                 <div class="article__data-wrapper">
@@ -77,6 +63,14 @@
                     </div>
                 </div>
             </div>
+
+            <!-- End loop -->
+            <?php
+                    }
+                /* Restore original Post Data */
+                wp_reset_postdata();
+                }
+            ?>
            
         </div>
         <div class="news__button">
@@ -84,4 +78,4 @@
         </div>
     </div>
 </div>
-<?php get_footer(); ?> 
+<?php get_footer(); ?>
