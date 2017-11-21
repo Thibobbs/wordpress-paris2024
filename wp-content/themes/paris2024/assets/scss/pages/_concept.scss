@@ -1,147 +1,147 @@
 /** concept page */ 
 
 .video-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
 }
 
 .video-intro__page-name {
-    margin-top: 115px;
-    padding: 1.6rem 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-    color: $light;
-    background-color: $deep-blue;
+  margin-top: 115px;
+  padding: 1.6rem 2rem;
+  background-color: $deep-blue;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: $light;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .video-intro__title {
-    margin-top: 40px;
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 1.25;
-    color: $light;
+  margin-top: 40px;
+  line-height: 1.25;
+  color: $light;
+  font-size: 48px;
+  font-weight: 500;
 }
 
 .video-intro__paragraph {
-    margin-top: 80px;
-    width: 700px;
-    height: 68px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.63;
-    color: $light;
+  width: 700px;
+  height: 68px;
+  margin-top: 80px;
+  text-align: center;
+  line-height: 1.63;
+  color: $light;
+  font-size: 16px;
 }
 
 .video-intro__button {
-    position: relative;
-    margin-top: 80px;
-    width: 72px;
-    height: 72px;
-    border-radius: 100%;
-    background-color: $deep-blue;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-top: 80px;
+  border-radius: 100%;
+  background-color: $deep-blue;
 }
 
 .video-intro__button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .video-intro__button svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  transform: translate(-50%,-50%);
 }
 
 .video-intro__player {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    background: url('../img/concept-bkg.jpg') no-repeat;
-    background-size: cover;
+  position: absolute;
+  z-index: -100;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  background: url('../img/concept-bkg.jpg') no-repeat;
+  background-size: cover;
 }
 
 .video-intro__player video {
-    display: none;
+  display: none;
 }
 
 .video-intro__fade-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $dark;
-    opacity: 0.6;
-    z-index: -99;
-    -webkit-transition: opacity 0.15s ease-in-out;
-    -o-transition: opacity 0.15s ease-in-out;
-    transition: opacity 0.15s ease-in-out;
+  position: absolute;
+  opacity: 0.6;
+  z-index: -99;
+  width: 100%;
+  height: 100%;
+          transition: opacity 0.15s ease-in-out;
+  background-color: $dark;
+
+  -webkit-transition: opacity 0.15s ease-in-out;
+       -o-transition: opacity 0.15s ease-in-out;
 } 
 
-.video-intro__fade-effect.active 
-{
-    opacity: 0.2;
+.video-intro__fade-effect.active {
+  opacity: 0.2;
 } 
 
 /** description-project */
 
 .description-project {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 500px;
-    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 
 .description-project__txt {
-    align-self: center;
-    width: 60%;
+  align-self: center;
+  width: 60%;
 }
 
 .description-project__paragraph {
-    margin-top: 60px;    
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 2;
-    color: $light;
+  margin-top: 60px;
+  line-height: 2;
+  color: $light;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .description-project__title {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 4.29;
-    letter-spacing: 1.4px;
-    text-align: left;
-    color: $jordy-blue;
+  text-align: left;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  color: $jordy-blue;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /** List sports */
 
 .list-sports {
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    -moz-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    -o-flex-flow: row wrap;
-    flex-flow: row wrap;
-    justify-content: center;
-    -ms-align-items: center;
-    align-items: center;
-    width: 100%;
-    height: 145rem;
-    background-color: $palegrey;
+  display: flex;
+      align-items: center;
+          flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  height: 145rem;
+  background-color: $palegrey;
+
+  -webkit-flex-flow: row wrap;
+     -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+       -o-flex-flow: row wrap;
+  -ms-align-items: center;
 }
 
-.list-sports__item {
-}
+
 
 

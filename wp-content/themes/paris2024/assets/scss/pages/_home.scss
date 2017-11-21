@@ -1,4 +1,5 @@
-.slider{
+.slider {
+  display: flex;
   width: 300%;
   height: 80vh;
   display: flex;
@@ -36,9 +37,18 @@
       transform: translate(0, -50%);
     }
   }
-
-    .slider__slide{
-        width: 100%;
+  .slider__slide {
+    width: 100%;
+    height: 100%;
+    .slider__slide__filter {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      .slider__slide__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 960px;
         height: 100%;
 
         .slider__slide__filter{
@@ -93,56 +103,67 @@
                 }
             }
         }
+        .slider__slide__title {
+          width: 680px;
+          margin: 37px 0 0;
+          padding: 0;
+          color: $light;
+          font-family: 'Circular';
+          font-size: 42px;
+          font-weight: 600;
+        }
+        .slider__slide__button {
+          display: block;
+          width: 180px;
+          margin: 57px 0 0;
+        }
+      }
     }
+  }
 }
 
-.discover{
-    margin: 130px 0;
-
-    .discover__container{
-        width: 960px;
-        margin: 0px auto;
-        padding-top: 70px;
-
-        .discover__title{
-            width: 420px;
-            padding: 0;
-            font-family: "Circular";
-            font-weight: 600;
-            color: $dark;
-            font-size: 42px;
-            line-height: 42px;
-            height: auto;
-            position: relative;
-
-            &:before{
-                content: '';
-                position: absolute;
-                width: 6px;
-                height: 30px;
-                top: 7px;
-                left: -36px;
-                background-color: $deep-blue;
-            }
-        }
-
-        .discover__text{
-            width: 466px;
-            font-size: 16px;
-            line-height: 1.5;
-            text-align: justify;
-            color: $warm-grey;
-            margin-top: 80px;
-        }
-
-        .discover__link{
-            margin-top: 56px;
-            font-size: 16px;
-            font-weight: 600;
-            color: $warm-grey;
-            display: block;
-        }
+.discover {
+  margin: 130px 0;
+  .discover__container {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 70px;
+    .discover__title {
+      position: relative;
+      width: 420px;
+      height: auto;
+      padding: 0;
+      line-height: 42px;
+      color: $dark;
+      font-family: 'Circular';
+      font-size: 42px;
+      font-weight: 600;
+      &:before {
+        position: absolute;
+        top: 7px;
+        left: -36px;
+        width: 6px;
+        height: 30px;
+        background-color: $deep-blue;
+        content: '';
+      }
     }
+    .discover__text {
+      width: 466px;
+      margin-top: 80px;
+      text-align: justify;
+      line-height: 1.5;
+      color: $warm-grey;
+      font-size: 16px;
+    }
+    .discover__link {
+      display: block;
+      margin-top: 56px;
+      color: $warm-grey;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
 }
 
 .partners {

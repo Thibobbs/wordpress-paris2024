@@ -15,7 +15,7 @@
                 <div class="slider__slide__container">
                     <h2 class="slider__slide__article-type"><?php the_category(', '); ?></h2>
                     <h1 class="slider__slide__title"><?php the_title(); ?></h1>
-                    <a href="<?php the_permalink(); ?>" class="btn--blue btn__text--white slider__slide__button">Voir l'article</a>
+                    <a href="<?php the_permalink(); ?>" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="slider__slide__container">
                     <h2 class="slider__slide__article-type">Développement territorial2</h2>
                     <h1 class="slider__slide__title">Des Jeux de partage, plus inclusifs et solidaires</h1>
-                    <a href="#" class="btn--blue btn__text--white slider__slide__button">Voir l'article</a>
+                    <a href="#" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="slider__slide__container">
                     <h2 class="slider__slide__article-type">Développement territorial2</h2>
                     <h1 class="slider__slide__title">Des Jeux de partage, plus inclusifs et solidaires</h1>
-                    <a href="#" class="btn--blue btn__text--white slider__slide__button">Voir l'article</a>
+                    <a href="#" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
                 </div>
             </div>
         </div>
@@ -68,8 +68,8 @@
     <div class="athlete">
       <div class="athlete__txt">
         <h3 class="athlete__name">Teddy Rinner</h3>
-        <p class="athlete__caption">La jeunesse va se préparer à accueillir les jeux.</p>
-        <a href="" class="athlete__button btn--white btn__text--blue">Le judo</a>
+        <p class="athlete__caption">La jeunessa va se préparer à accueillir les jeux.</p>
+        <a href="" class="athlete__button btn__main btn__main--white btn__text btn__text--blue">Le judo</a>
       </div>
     </div>
     
