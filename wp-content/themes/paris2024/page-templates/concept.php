@@ -49,6 +49,7 @@
     ?>
 
     <div class="list-sports__item">
+        <a href="<?php the_permalink() ?>">
         <?php the_title() ?>
         <div class="thumbnail">
             <?php
@@ -58,6 +59,7 @@
               }
             ?>
         </div>
+        </a>
     </div>
 
      <!-- End loop -->

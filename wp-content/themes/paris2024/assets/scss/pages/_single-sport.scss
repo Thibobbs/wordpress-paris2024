@@ -72,6 +72,7 @@
 }
 .sport__viewKey--img {
   width: 100%;
+  height: 48rem;
   background-color: $deep-blue;
 }
 .sport__viewKey--content {
@@ -112,7 +113,7 @@
   .sport__site--note {
     font-size: 1.4rem;
     font-weight: bold;
-    letter-spacing: 1.4;
+    letter-spacing: 1.4px;
     color: $warm-grey;
     text-transform: uppercase;
   }
