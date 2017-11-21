@@ -42,26 +42,28 @@
             ?>
 
             <div class="articles__article">
-                <div class="article__thumbnail">
-                    <?php
-                      if(has_post_thumbnail())
-                      {
-                        the_post_thumbnail("hub_post_thumbnail");
-                      }
-                    ?>
-                    <div class="thumbnail__line"></div>
-                </div>
-                <div class="article__content">
-                    <div class="article__title"><?php the_title() ?></div>
-                    <div class="article__text">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur expérience est inestimable pour une...</div>
-                </div>
-                <div class="article__data-wrapper">
-                    <div class="article__line"></div>
-                    <div class="article__data">
-                        <div class="article__data-date">10 Juil. 2017</div>
-                        <div class="article__data-hastag">#Paris2024</div>
+                <a href="<?php the_permalink() ?>">
+                    <div class="article__thumbnail">
+                        <?php
+                        if(has_post_thumbnail())
+                        {
+                            the_post_thumbnail("hub_post_thumbnail");
+                        }
+                        ?>
+                        <div class="thumbnail__line"></div>
                     </div>
-                </div>
+                    <div class="article__content">
+                        <div class="article__title"><?php the_title() ?></div>
+                        <div class="article__text">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur expérience est inestimable pour une...</div>
+                    </div>
+                    <div class="article__data-wrapper">
+                        <div class="article__line"></div>
+                        <div class="article__data">
+                            <div class="article__data-date">10 Juil. 2017</div>
+                            <div class="article__data-hastag">#Paris2024</div>
+                        </div>
+                    </div>
+                </a>
             </div>
 
             <!-- End loop -->

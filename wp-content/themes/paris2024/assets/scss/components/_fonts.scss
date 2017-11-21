@@ -26,6 +26,7 @@ h2,
   font-weight: 500;
 }
 h1 {
+  line-height: 1.25;
   font-size: 4.8rem;
 }
 
@@ -34,16 +35,6 @@ h2 {
   margin: 1.4rem 0;
   padding: 0 3rem;
   font-size: 3rem;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.5rem;
-    height: 4.2rem;
-    background-color: $azure-blue;
-    content: '';
-  }
 }
 
 h3 {
