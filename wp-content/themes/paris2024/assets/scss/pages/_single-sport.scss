@@ -1,0 +1,125 @@
+.sport__hero {
+  margin-bottom: 22rem;
+}
+
+.sport__container {
+  width: 80%;
+  margin: auto;
+}
+
+.sport__heroTitle {
+  width: 100vw;
+  background-color: black;
+  height: 48rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  h2 {
+    color: $light2;
+    
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.sport__heroInfos {
+  background: $blue-gradient;
+  padding: 5rem;
+  position: absolute;
+  top: 75%;
+  margin: auto;
+}
+.sport__heroInfos--content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+
+  h3 {
+    color: #fefefe66;
+    margin-bottom: 4.8rem;
+  }
+
+  p {
+    color: $light2;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.sport__viewGeneral, .sport__viewKey {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  grid-column-gap: 10%;
+}
+.sport__viewGeneral {
+  .general__title {
+    font-size: 3.2rem;
+    text-align: right;
+    color: $dark;
+    font-weight: 500;
+  }
+  .general__content {
+    font-size: 1.375em;
+    color: $warm-grey;
+  }
+}
+
+.sport__viewKey {
+  margin: 14.6rem 0;
+}
+.sport__viewKey--img {
+  width: 100%;
+  background-color: $deep-blue;
+}
+.sport__viewKey--content {
+  .key__content {
+    color: $dark;
+  }
+}
+
+.sport__siteList {
+  border: solid 2px $palegrey;
+
+  h4 {
+    color: $dark;
+    text-align: center;
+    padding: 6rem 0;
+  }
+}
+.sport__site {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-gap: 10%;
+  border-top: solid 2px $palegrey;
+}
+
+.sport__site--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 8rem;
+
+  .sport__site--title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 2;
+    color: #000000;
+  }
+
+  .sport__site--note {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1.4;
+    color: $warm-grey;
+    text-transform: uppercase;
+  }
+}
+
+.sport__site--img {
+  width: 100%;
+  height: 18rem;
+  background-color: red;
+}
