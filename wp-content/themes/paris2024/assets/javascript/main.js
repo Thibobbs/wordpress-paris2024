@@ -17,10 +17,21 @@ if (document.querySelector('body').classList.contains('page-id-5') || document.
 }
 
 if (document.querySelector('body').classList.contains('home')) {
+  let i = 0
   const slider = document.querySelector('.slider')
   const slides = Array.prototype.slice.call(document.querySelectorAll('.slider__slide__filter'))
-  slider.addEventListener('click', (event) => {
-    console.log(slides.indexOf(event.target))
-    slider.className = 'slider slider--slide' + (slides.indexOf(event.target) + 1)
+  const prev = document.querySelector('.controllers__prev')
+  const next = document.querySelector('.controllers__next')
+  
+  prev.addEventListener('click', (event) => {
+    event.preventDefault()
+    i = (i-1)%slides.length
+    slider.style.transform = 'translate(calc(' + (-100 * i) + '%/' + slides.length + '))'
+  })  
+  next.addEventListener('click', (event) => {
+    event.preventDefault()
+    i = (i+1)%slides.length
+    console.log(i)
+    slider.style.transform = 'translate(calc(' + (-100 * i) + '%/' + slides.length + '))'
   })
 }
