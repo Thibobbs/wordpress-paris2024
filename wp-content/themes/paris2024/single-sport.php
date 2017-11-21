@@ -7,7 +7,7 @@
     <div class="sport__hero">
         <div class="sport__heroTitle">
             <h2>Badmington</h2>
-            <div class="sport__heroInfos sport__container">
+            <div class="container sport__heroInfos">
                 <div class="sport__heroInfos--content">
                     <div>
                         <h3>Nombre d'épreuves</h3>
@@ -18,7 +18,7 @@
                         <p>1992</p>
                     </div>
                     <div>
-                        <h3>Terrain</h3>
+                        <h3>Type de terrain</h3>
                         <p>Intérieur</p>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="sport__view sport__container">
+    <div class="sport__view container">
         <div class="sport__viewGeneral">
             <p class="general__title">Vue d'ensemble</p>
             <div class="general__content">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="sport__siteList sport__container">
+    <div class="sport__siteList container">
         <h4>Les sites</h4>
         <div class="sport__site">
             <div class="sport__site--content">
