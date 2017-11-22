@@ -13,6 +13,15 @@
   background-color: $light;
 }
 
+.btn__tag {
+  @include responsive($xs) {
+    padding: 0.6rem 1rem;
+  }
+  padding: 1.6rem 2rem;
+  border-radius: 4px;
+  background-color: $palegrey;
+}
+
 // Button text
 .btn__text {
   text-align: center;
@@ -28,4 +37,10 @@
 
 .btn__text--blue {
   color: $deep-blue;
+}
+
+.btn__tag--text {
+  text-align: center;
+  color: $warm-grey;
+  font-size: 1.4rem;
 }

@@ -1,9 +1,9 @@
 // Import components 
 @import 'components/_reset.scss';
 @import 'components/_variables.scss';
+@import 'components/_mixins.scss';
 @import 'components/_fonts.scss';
 @import 'components/_buttons.scss';
-@import 'components/_mixins.scss';
 @import 'components/_base.scss';
 // Import partials 
 @import 'partials/_header.scss';
@@ -16,3 +16,4 @@
 @import 'pages/_vision.scss';
 @import 'pages/_news.scss';
 @import 'pages/_single-sport.scss';
+@import 'pages/_single-post.scss';
