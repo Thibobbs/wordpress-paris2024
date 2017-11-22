@@ -1,122 +1,77 @@
 .slider {
-  display: flex;
-  width: 300%;
+  width: 100%;
   height: 80vh;
-  display: flex;
+  overflow: hidden;
+  background: $palegrey;
   position: relative;
-  will-change: transform;
-  transform: translate(0);
-  transition: transform .3s ease-in-out;
-  
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $dark;
-    opacity: .65;
-  }
+}
 
-  .slider__controllers {
+.slider__controllers {
+  .controllers__prev {
     position: absolute;
     top: 50%;
     left: 0;
-    width: calc(100%/3);
-    z-index: 100;
-    
-    .controllers__prev {
-      position: absolute;
-      left: 0;
-      transform: translate(0, -50%);
-    }
-    .controllers__next {
-      position: absolute;
-      right: 0;
-      transform: translate(0, -50%);
-    }
+    transform: translate(0, -50%);
   }
+  .controllers__next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+  .controllers__tiles {
+    position: absolute;
+    left: 15%;
+    bottom: 20%;
+  }
+}
+
+.slider__slides {
+  height: 100%;
+  display: flex;
+  will-change: transform;
+  transition: transform .3s ease-in-out;
+  
+  &.slider__slides--return {
+    transition: transform 0s ease-in-out;
+  }
+  
   .slider__slide {
     width: 100%;
     height: 100%;
-    .slider__slide__filter {
+    display: flex;
+    align-items: center;
+    background-size: cover;
+
+    &::before {
+      content: '';
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      .slider__slide__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 960px;
-        height: 100%;
-
-        .slider__slide__filter{
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-
-            .slider__slide__container{
-                width: 960px;
-                height: 100%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                position: relative;
-
-                .slider__slide__article-type{
-                    margin: 0px 0px 0px 19px; 
-                    padding: 0;
-                    text-transform: uppercase;
-                    color: $light2;
-                    font-size: 14px;
-                    font-family: "Circular";
-                    font-weight: 600;
-                    letter-spacing: 1.4px;
-                    position: relative;
-
-                    &:before{
-                        top: 50%;
-                        left: -19px;
-                        transform: translateY(-50%);
-                        background-color: $deep-blue;
-                        width: 4px;
-                        height: 20px;
-                    }
-                }
-
-                .slider__slide__title{
-                    margin: 37px 0px 0px;
-                    padding: 0;
-                    font-family: "Circular";
-                    font-weight: 600;
-                    color: $light;
-                    width: 680px;
-                    font-size: 42px;
-                }
-
-                .slider__slide__button{
-                    margin: 57px 0px 0px;
-                    display: block;
-                    width: 180px;
-                }
-            }
-        }
-        .slider__slide__title {
-          width: 680px;
-          margin: 37px 0 0;
-          padding: 0;
-          color: $light;
-          font-family: 'Circular';
-          font-size: 42px;
-          font-weight: 600;
-        }
-        .slider__slide__button {
-          display: block;
-          width: 180px;
-          margin: 57px 0 0;
-        }
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $dark;
+      opacity: .1;
+    }
+    
+    .slide__info {
+      max-width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15% 15%;
+      z-index: 1;
+      
+      .slide__category {
+        color: $light;
+      }
+      .slide__title {
+        color: $light;
+        margin: 37px 0px 0px;
+      }
+      .slide__button {
+        color: $light;
+        margin: 57px 0px 0px;
+        width: 180px;
       }
     }
   }

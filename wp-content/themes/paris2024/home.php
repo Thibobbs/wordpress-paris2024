@@ -3,44 +3,29 @@
 <div id="content">
 
     <div class="slider">
-      <div class="slider__controllers">
-        <a href="" class="controllers__prev">prev</a>
-        <a href="" class="controllers__next">next</a>
-      </div>
+      <div class="slider__slides">
        
        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
        
-        <div class="slider__slide">
-            <div class="slider__slide__filter" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
-                <div class="slider__slide__container">
-                    <h2 class="slider__slide__article-type"><?php the_category(', '); ?></h2>
-                    <h1 class="slider__slide__title"><?php the_title(); ?></h1>
-                    <a href="<?php the_permalink(); ?>" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
-                </div>
-            </div>
-        </div>
-        <div class="slider__slide">
-            <div class="slider__slide__filter">
-                <div class="slider__slide__container">
-                    <h2 class="slider__slide__article-type">Développement territorial2</h2>
-                    <h1 class="slider__slide__title">Des Jeux de partage, plus inclusifs et solidaires</h1>
-                    <a href="#" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
-                </div>
-            </div>
-        </div>
-        <div class="slider__slide">
-            <div class="slider__slide__filter">
-                <div class="slider__slide__container">
-                    <h2 class="slider__slide__article-type">Développement territorial2</h2>
-                    <h1 class="slider__slide__title">Des Jeux de partage, plus inclusifs et solidaires</h1>
-                    <a href="#" class="btn__main btn__main--blue btn__text btn__text--white slider__slide__button">Voir l'article</a>
-                </div>
-            </div>
+        <div class="slider__slide" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
+          <div class="slide__info">
+            <h3 class="slide__category"><?php the_category(', '); ?></h3>
+            <h2 class="slide__title"><?php the_title(); ?></h2>
+            <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white">Voir l'article</a>
+          </div>
         </div>
 
       <?php endwhile; else: ?>
       <p>Désolé, le site semble rencontrer un problème ... Merci de revenir ultérieurement.</p>
       <?php endif; ?>
+      
+      </div>
+      
+      <div class="slider__controllers">
+        <a href="" class="controllers__prev">prev</a>
+        <a href="" class="controllers__next">next</a>
+        <div class="controllers__tiles">tiles</div>
+      </div>
 
     </div>
 
