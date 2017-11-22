@@ -1,10 +1,19 @@
 .story__hero {
+  @include responsive($xs) {
+    height: 24rem;
+  }
+  @include responsive($sm) {
+    height: 32rem;
+  }
   width: 100vw;
   height: 48rem;
   background-color: $azure-blue;
 }
 
 .story__info {
+  @include responsive($xs) {
+    font-size: 1.4rem;
+  }
   display: flex;
   padding: 5rem 0;
 }
@@ -26,6 +35,14 @@
     content: ' ';
   };
 }
+.story__main {
+  @include responsive($xs) {
+    font-size: 1.2rem;
+  }
+  @include responsive($sm) {
+    font-size: 1.4rem;
+  }
+}
 
 .story__date {
   flex: 1;
@@ -33,9 +50,12 @@
 }
 
 .story__main--heading {
+  @include responsive($xs) {
+    padding: 0;
+  }
   padding: 1.8rem 0 3.2rem 0;
   color: $warm-grey;
-  font-size: 2.2rem;
+  font-size: 1.375em;
 }
 
 .story__content {
@@ -43,18 +63,25 @@
     padding: 1rem 0;
     line-height: 1.5;
     color: $dark;
-    font-size: 1.5rem;
+    font-size: 0.9375em;
   }
 }
 
 .story__img {
   width: 100%;
   height: calc(100vh / 16 * 9);
+  max-height: 47rem;
   margin: 7rem 0 9rem 0;
   background-color: $cobalt-blue;
 }
 
 .story__caption {
+  @include responsive($xs) {
+    font-size: 1.2rem;
+  }
+  @include responsive($sm) {
+    font-size: 1.4rem;
+  }
   width: 100%;
   margin: 6rem 0;
   padding: 8rem 0;
@@ -64,20 +91,22 @@
     padding-bottom: 4rem;
     letter-spacing: 1.4px;
     color: #fefefe66;
-    font-size: 1.4rem;
+    font-size: 0.875em;
   }
 
   blockquote {
+    @include responsive($xs) {
+      line-height: 1.4;
+    }
     position: relative;
     line-height: 2.0;
     color: $light;
-    font-size: 3rem;
+    font-size: 1.875em;
 
     &::before {
       position: absolute;
-      top: 10%;
-      left: -2rem;
-      line-height: 0;
+      left: -3%;
+      line-height: 1;
       content: '“';
     }
   }
@@ -109,6 +138,13 @@
 // Linked news
 
 .stories__container {
+  @include responsive($xs) {
+    grid-template-columns: 1fr;
+  }
+  @include responsive($sm) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8rem;
@@ -136,14 +172,14 @@
     padding: 4rem 0 2rem 0;
     line-height: 1.33;
     color: $dark;
-    font-size: 1.8rem;
+    font-size: 1.125em;
     font-weight: bold;
   }
 
   .stories__link--excerpt {
     margin-bottom: 2.4rem;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 0.9375em;
   }
 }
 
@@ -151,5 +187,5 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem 4rem;
-  font-size: 14px;
+  font-size: 0.875em;
 }

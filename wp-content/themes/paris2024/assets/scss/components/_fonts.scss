@@ -27,21 +27,21 @@ h2,
 }
 h1 {
   line-height: 1.25;
-  font-size: 4.8rem;
+  font-size: 3em;
 }
 
 h2 {
   position: relative;
   margin: 1.4rem 0;
   padding: 0 3rem;
-  font-size: 3rem;
+  font-size: 1.875em;
 }
 
 h3 {
   text-transform: uppercase;
   line-height: normal;
   letter-spacing: 1.2px;
-  font-size: 1.4rem;
+  font-size: 0,875em;
   font-weight: 600;
 }
 
@@ -49,19 +49,19 @@ h4 {
   padding-bottom: 4rem;
   line-height: 1.2;
   color: $deep-blue;
-  font-size: 3rem;
+  font-size: 1,875em;
   font-weight: 500;
 }
 
 .link {
   color: $warm-grey;
-  font-size: 1.4rem;
+  font-size: 0.875em;
 }
 
 .mainTitle {
   padding-bottom: 2rem;
   line-height: 0.75;
   color: $dark;
-  font-size: 4.8rem;
+  font-size: 3em;
   font-weight: bold;
 }

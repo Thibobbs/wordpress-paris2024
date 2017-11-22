@@ -53,31 +53,7 @@
       <p class="stories__link--excerpt">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur...</p>
     </div>
     <hr>
-      <div class="stories__link--infoContainer">
-        <p>10 Juil. 2017</p>
-        <p>#Paris2024</p>
-      </div>
-  </div>
-  <div class="stories__link">
-    <div class="stories__link--thumbnail"></div>
-    <div class="stories__link--content">
-      <h4>Les athlètes au cœur des Jeux Olympiques</h4>
-      <p class="stories__link--excerpt">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur...</p>
-    </div>
-    <hr>
-      <div class="stories__link--infoContainer">
-        <p>10 Juil. 2017</p>
-        <p>#Paris2024</p>
-      </div>
-  </div>
-  <div class="stories__link">
-    <div class="stories__link--thumbnail"></div>
-    <div class="stories__link--content">
-      <h4>Les athlètes au cœur des Jeux Olympiques</h4>
-      <p class="stories__link--excerpt">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur...</p>
-    </div>
-    <hr>
-      <div class="stories__link--infoContainer">
+      <div class="stories__link--infos">
         <p>10 Juil. 2017</p>
         <p>#Paris2024</p>
       </div>
