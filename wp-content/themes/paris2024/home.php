@@ -5,9 +5,22 @@
     <div class="slider">
       <div class="slider__slides">
        
-       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+       <?php
+
+          $args = array(
+            'posts_per_page' => '3'
+          );
+          // The Query
+          $the_query = new WP_Query( $args );
+
+          // The Loop
+          if ( $the_query->have_posts() ) {
+            $i = 0;
+            while ( $the_query->have_posts() ) {
+              $the_query->the_post();
+        ?>
        
-        <div class="slider__slide" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
+        <div class="slider__slide" index="<?= $i ?>" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
           <div class="slide__info">
             <h3 class="slide__category"><?php the_category(', '); ?></h3>
             <h2 class="slide__title"><?php the_title(); ?></h2>
@@ -15,16 +28,25 @@
           </div>
         </div>
 
-      <?php endwhile; else: ?>
-      <p>Désolé, le site semble rencontrer un problème ... Merci de revenir ultérieurement.</p>
-      <?php endif; ?>
+      <?php
+              $i = ($i + 1);
+            }
+            wp_reset_postdata();
+          } else {
+            echo '<p>Désolé, le site semble rencontrer un problème ... Merci de revenir ultérieurement.</p>';
+          }
+      ?>
       
       </div>
       
       <div class="slider__controllers">
         <a href="" class="controllers__prev">prev</a>
         <a href="" class="controllers__next">next</a>
-        <div class="controllers__tiles">tiles</div>
+        <div class="controllers__tiles">
+          <div class="tile"></div>
+          <div class="tile tile--active"></div>
+          <div class="tile"></div>
+        </div>
       </div>
 
     </div>

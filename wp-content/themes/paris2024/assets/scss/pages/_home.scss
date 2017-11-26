@@ -23,6 +23,19 @@
     position: absolute;
     left: 15%;
     bottom: 20%;
+    display: flex;
+    align-items: flex-end;
+    .tile {
+      width: 30px;
+      height: 4px;
+      margin-right: 4px;
+      background: $light;
+      transition: all .3s ease-in-out;
+      &--active {
+        width: 50px;
+        height: 8px;
+      }
+    }
   }
 }
 
