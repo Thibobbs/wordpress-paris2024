@@ -6,6 +6,14 @@ function ajax_fetch() {
     <script type="text/javascript">
         function fetch(element){
 
+            document.querySelector('.news__loader').style.display="block";
+            document.querySelector('.news__articles').innerHTML = "";
+
+            for(i = 0; i < document.querySelectorAll('.news__category').length; i++){
+                document.querySelectorAll('.news__category')[i].classList.remove('active');
+            }
+            element.classList.add('active');
+
             if(element.tagName == 'DIV'){
                 if(element.classList.contains('all-categories')){
                     console.log("divall");
@@ -14,6 +22,7 @@ function ajax_fetch() {
                         type: 'post',
                         data: { action: 'data_fetch'},
                         success: function(data) {
+                            document.querySelector('.news__loader').style.display="none";
                             jQuery('.news__articles').html( data );
                         }
                     });
@@ -25,6 +34,7 @@ function ajax_fetch() {
                         type: 'post',
                         data: { action: 'data_fetch', taxonomy: element.getAttribute('category') },
                         success: function(data) {
+                            document.querySelector('.news__loader').style.display="none";
                             jQuery('.news__articles').html( data );
                         }
                     });   
@@ -37,6 +47,7 @@ function ajax_fetch() {
                     type: 'post',
                     data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
                     success: function(data) {
+                        document.querySelector('.news__loader').style.display="none";
                         jQuery('.news__articles').html( data );
                     }
                 });

@@ -22,7 +22,7 @@
 <div class="news">
     <div class="news__wrapper">
         <div class="news__categories">
-            <div class="news__category all-categories" onclick="fetch(this)"><?php the_field('news_categories_1'); ?></div>
+            <div class="news__category all-categories active" onclick="fetch(this)"><?php the_field('news_categories_1'); ?></div>
             <?php 
                 $terms = get_terms(array('taxonomy'=>'category'));
                 foreach($terms as $term){ ?>
@@ -32,6 +32,16 @@
                 }
             ?>
         </div>
+
+        <div class="news__loader">
+            <div class="news__loader__bar"></div>
+            <div class="news__loader__bar"></div>
+            <div class="news__loader__bar"></div>
+            <div class="news__loader__bar"></div>
+            <div class="news__loader__bar"></div>
+            <div class="news__loader__ball"></div>
+        </div>
+
         <div class="news__articles">
             <?php
                 $args= array(
