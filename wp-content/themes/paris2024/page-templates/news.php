@@ -12,25 +12,31 @@
 
     <div class="image-intro__search">
         <div class="search__input">
-            <div><?php the_field('news_search_sentence'); ?></div></div>
+            <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword" onkeydown="fetch(this)">     
+        </div>
         <div class="search__button">
-            <div><?php the_field('news_search'); ?></div></div>
+            <button><?php the_field('news_search'); ?></button>
+        </div> 
     </div>
 </div>
 <div class="news">
     <div class="news__wrapper">
         <div class="news__categories">
-            <a href="#" title=""><?php the_field('news_categories_1'); ?></a>
-            <a href="#" title=""><?php the_field('news_categories_2'); ?></a>
-            <a href="#" title=""><?php the_field('news_categories_3'); ?></a>
-            <a href="#" title=""><?php the_field('news_categories_4'); ?></a>
-            <a href="#" title=""><?php the_field('news_categories_5'); ?></a>
+            <div class="news__category all-categories" onclick="fetch(this)"><?php the_field('news_categories_1'); ?></div>
+            <?php 
+                $terms = get_terms(array('taxonomy'=>'category'));
+                foreach($terms as $term){ ?>
+                
+                    <div class="news__category" category="<?= $term->slug ?>" onclick="fetch(this)"><?= $term->name ?></div>
+            <?php    
+                }
+            ?>
         </div>
         <div class="news__articles">
             <?php
                 $args= array(
-                'post_type' => 'post',
-                'posts_per_page' => 9
+                    'post_type' => 'post',
+                    'posts_per_page' => 9
                 );
 
                 $the_query = new WP_Query( $args );
