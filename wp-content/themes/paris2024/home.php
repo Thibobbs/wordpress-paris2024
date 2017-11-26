@@ -40,8 +40,8 @@
       </div>
       
       <div class="slider__controllers">
-        <a href="" class="controllers__prev">prev</a>
-        <a href="" class="controllers__next">next</a>
+        <a href="" class="controllers controllers__prev"><img src="<?= IMAGES_URL ?>/arrows/left-arrow.svg" alt=""></a>
+        <a href="" class="controllers controllers__next"><img src="<?= IMAGES_URL ?>/arrows/right-arrow.svg" alt=""></a>
         <div class="controllers__tiles">
           <div class="tile"></div>
           <div class="tile tile--active"></div>

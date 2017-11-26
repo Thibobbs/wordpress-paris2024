@@ -42,16 +42,17 @@ if (document.querySelector('body').classList.contains('home')) {
 
   tiles_container.addEventListener('click', (e) => {
     e.preventDefault()
-    if (!tiles[tiles.indexOf(e.target)].classList.contains('tile--active')) {
+    if (tiles[tiles.indexOf(e.target)] !== undefined && !tiles[tiles.indexOf(e.target)].classList.contains('tile--active')) {
       tiles_container.querySelector('.tile--active').classList.remove('tile--active')
       e.target.className += ' tile--active'
-    }
-    const place = slides.indexOf(slides_container.querySelector('[index="' + tiles.indexOf(e.target) + '"]'))
-    if (place < 1) {
-      previous()
-    }
-    else if (place > 1) {
-      next()
+
+      const place = slides.indexOf(slides_container.querySelector('[index="' + tiles.indexOf(e.target) + '"]'))
+      if (place < 1) {
+        previous()
+      }
+      else if (place > 1) {
+        next()
+      }
     }
   })
   
@@ -82,4 +83,14 @@ if (document.querySelector('body').classList.contains('home')) {
     tiles_container.querySelector('.tile--active').classList.remove('tile--active')
     tiles[slides[2].getAttribute('index')].className += ' tile--active'
   }
+  
+  let autoSlide = setInterval(next, 5000)
+  
+  slider.addEventListener("mouseover", () => {
+    clearInterval(autoSlide)
+  })
+  
+  slider.addEventListener("mouseout", () => {
+    autoSlide = setInterval(next, 5000)
+  })
 }
