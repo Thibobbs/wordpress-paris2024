@@ -63,15 +63,15 @@
 }
 
 .video-intro__button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .video-intro__button svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  transform: translate(-50%,-50%);
 }
 
 .video-intro__player video {
@@ -110,12 +110,11 @@
     transition: opacity 0.15s ease-in-out;
 } 
 
-.video-intro__fade-effect.active 
-{
+.video-intro__fade-effect.active {
     cursor: pointer;
     opacity: 0.2;
     z-index: 10;
-} 
+}
 
 /** description-project */
 
@@ -130,8 +129,8 @@
 }
 
 .description-project__txt {
-    align-self: center;
-    width: 60%;
+  align-self: center;
+  width: 60%;
 }
 
 .description-project__paragraph {
@@ -143,12 +142,12 @@
 }
 
 .description-project__title {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 4.29;
-    letter-spacing: 1.4px;
-    text-align: left;
-    color: $jordy-blue;
+  text-align: left;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  color: $jordy-blue;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /** List sports */
@@ -217,7 +216,7 @@
 }
 
 .list-sports__item:hover .item__fade {
-    background-image: linear-gradient(to left, #04a3ec, #1875f0 50%, #1a4894);
+    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 .item__fade {
     position: absolute;

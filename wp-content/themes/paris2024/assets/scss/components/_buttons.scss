@@ -1,14 +1,46 @@
-.btn--blue {
+// Button core
+.btn__main {
   padding: 1.6rem 2rem;
   border-radius: 0.6rem;
-  background-color: $deep-blue;
   box-shadow: 0 0 38.2px 6.8px rgba(0,0,0,0.2);
 }
+
+.btn__main--blue {
+  background-color: $deep-blue;
+}
+
+.btn__main--white {
+  background-color: $light;
+}
+
+.btn__tag {
+  @include responsive($xs) {
+    padding: 0.6rem 1rem;
+  }
+  padding: 1.6rem 2rem;
+  border-radius: 4px;
+  background-color: $palegrey;
+}
+
+// Button text
+.btn__text {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .btn__text--white {
   color: $light;
-  font-size: 1rem;
-  text-transform: uppercase;
+}
+
+.btn__text--blue {
+  color: $deep-blue;
+}
+
+.btn__tag--text {
   text-align: center;
-  letter-spacing: 0.12rem;
-  font-weight: 600;
+  color: $warm-grey;
+  font-size: 1.4rem;
 }

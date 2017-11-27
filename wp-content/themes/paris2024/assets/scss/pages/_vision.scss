@@ -1,0 +1,59 @@
+/** vision page */
+
+/** description-vision */
+
+.description-vision {
+  background: $palegrey;
+}
+
+.description-vision__txt {
+  max-width: 960px;
+  margin: 0 auto;
+  
+  .txt__title {
+    font-size: 2.6rem;
+    padding: 5rem 0;
+    font-weight: bold;
+    text-align: center;
+    color: $dark;
+  }
+
+  .txt__paragraph {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: center;
+    color: $warm-grey;
+  }
+}
+
+.description-vision__cards {
+
+  padding-top: 10rem;
+  padding-bottom: 17rem;
+  display: flex;
+  justify-content: space-around;
+
+  .cards {
+    margin: 0 2.5rem;
+    padding: 5rem;
+    border-radius: 6px;
+    background-color: $light;
+    box-shadow: 0 0 38.3px 6.8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards__number {
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+    font-size: 3.6rem;
+    color: $deep-blue;
+  }
+
+  .cards__txt {
+    font-size: 1.4rem;
+    color: $warm-grey;
+  }
+}

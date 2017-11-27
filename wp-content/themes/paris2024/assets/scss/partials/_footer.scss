@@ -1,0 +1,17 @@
+.footer {
+  margin-top: 15.6rem;
+}
+.footer__container {
+  position: relative;
+  width: 100vw;
+  height: 21rem;
+  background-color: $palegrey;
+}
+
+.footer__content {
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}

@@ -5,7 +5,7 @@
 !package-lock.json
 !package.json
 !gulpfile.js
-!http/*
+!http:
 
 # Ignore le contenu de "wp-content" sauf "plugins", "themes" et "mu-plugins"
 !wp-content/plugins

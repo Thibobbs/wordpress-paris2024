@@ -1,34 +1,32 @@
-.container-header {
+.header {
+  z-index: 1;
+  width: 100vw;
+  box-shadow: $main-shadow;
   background-color: $light;
-  box-shadow: 0 0 7.1px 0.9px rgba(0, 0, 0, 0.15);
 }
 
-.header {
-  max-width: 960px;
+.header__container {
+  display: flex;
+  align-items: center;
   height: 100px;
   margin: 0 auto;
-  display: flex;
+  padding: 0 2.5rem;
 }
 
 .header__logo {
-  display: flex;
-  align-items: center;
-  
+  flex: 2;
+
   img {
     width: 30px;
   }
 }
 
 .header__menu {
-  display: flex;
-  align-items: center;
+  flex: 1;
   margin-left: auto;
 }
 
 .header__menu ul {
   display: flex;
-  
-  li {
-    margin-left: 40px;
-  }
+  justify-content: space-between;
 }

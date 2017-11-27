@@ -1,17 +1,19 @@
-@import "components/_reset.scss";
-@import "components/_colors.scss";
-@import "components/_fonts.scss";
-@import "components/_buttons.scss";
-@import "pages/_home.scss";
-@import "pages/_concept.scss";
-@import "partials/_header.scss";
+// Import components 
+@import 'components/_reset.scss';
+@import 'components/_variables.scss';
+@import 'components/_mixins.scss';
+@import 'components/_fonts.scss';
+@import 'components/_buttons.scss';
+@import 'components/_base.scss';
+// Import partials 
+@import 'partials/_header.scss';
+@import 'partials/_athlete.scss';
+@import 'partials/_footer.scss';
 
-html {
-  font-size: 62.5%;
-}
-body {
-  font-size: 1.6rem;
-}
-.clear {
-  clear: both;
-}
+// Import pages stylesheet
+@import 'pages/_home.scss';
+@import 'pages/_concept.scss';
+@import 'pages/_vision.scss';
+@import 'pages/_news.scss';
+@import 'pages/_single-sport.scss';
+@import 'pages/_single-post.scss';

@@ -1,0 +1,32 @@
+ html {
+  font-size: 62.5%;
+}
+
+body  {
+  font-size: 1.6rem;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  @include responsive($lg) {
+    width: 90%;
+  }
+  width: 80%;
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+.page-card {
+  display: inline-block;
+  padding: 1.6rem 2rem;
+  background-color: $deep-blue;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: $light;
+  font-size: 14px;
+  font-weight: bold;
+}
