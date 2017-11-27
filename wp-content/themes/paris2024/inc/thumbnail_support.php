@@ -7,5 +7,5 @@ function thumbnails_theme_support(){
 
 add_action( 'after_setup_theme', 'create_image_format' );
 function create_image_format() {
-  add_image_size( "hub_sport_thumbnail", 225, 170 );
+  add_image_size( "hub_sport_thumbnail", 224, 168 );
 }

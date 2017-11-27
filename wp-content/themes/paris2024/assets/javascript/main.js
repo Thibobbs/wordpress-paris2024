@@ -1,22 +1,53 @@
-if (document.querySelector('body').classList.contains('page-id-5')  || document.querySelector('body').classList.contains('page-id-7')) {
-  const vid = document.querySelector('.video-intro__player video'),
-    fade = document.querySelector('.video-intro__fade-effect'),
-    btn_play = document.querySelector('.video-intro__button')
+if (document.querySelector('body').classList.contains('page-id-5')  || document.querySelector('body').classList.contains('page-id-7'))
+{
+    const vid       = document.querySelector('.video-intro__player video'),
+          vid_fade  = document.querySelector('.video-intro__fade-effect'),
+          btn_play  = document.querySelector('.video-intro__button'),
+          vid_name  = document.querySelector('.video-intro__page-name'),
+          vid_title = document.querySelector('.video-intro__title'),
+          vid_bg    = document.querySelector('.video-intro__bg'),
+          vid_txt   = document.querySelector('.video-intro__paragraph')
 
-  btn_play.addEventListener('click', (e) => {
-    e.preventDefault()
-    vid.style.display = 'block'
-    if (vid.paused) {
-      fade.classList.add('active')
-      vid.play()
-    } else {
-      fade.classList.remove('active')
-      vid.pause()
-    }
-  })
+    btn_play.addEventListener('click', (e) =>
+    {
+        e.preventDefault()
+        if (vid.paused)
+        {
+            vid_fade.classList.add('active')
+            vid_name.style.opacity = 0
+            vid_title.style.opacity = 0
+            vid_txt.style.opacity = 0
+            btn_play.style.opacity = 0
+            vid_bg.style.display = 'none'
+            vid.play()
+        }
+        else 
+        {
+            vid_fade.classList.remove('active')
+            vid.pause()
+        }
+    })
+
+    vid_fade.addEventListener('click', (e) =>
+    {
+        e.preventDefault()
+        if (vid.paused) 
+        {
+        }
+        else 
+        {
+            vid_fade.classList.remove('active')
+            vid.pause()
+            vid_name.style.opacity = 1
+            vid_title.style.opacity = 1
+            vid_txt.style.opacity = 1
+            btn_play.style.opacity = 1
+        }
+    })
 }
 
-if (document.querySelector('body').classList.contains('home')) {
+if (document.querySelector('body').classList.contains('home'))
+{
   let i = 0
   const slider = document.querySelector('.slider')
   const slides_container = slider.querySelector('.slider__slides')
