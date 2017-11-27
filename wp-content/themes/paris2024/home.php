@@ -10,6 +10,8 @@ get_header(); ?>
        
        <?php
 
+          $button_txt = get_field('home_slider_button_text');
+
           $args = array(
             'posts_per_page' => '3'
           );
@@ -27,7 +29,7 @@ get_header(); ?>
           <div class="slide__info">
             <h3 class="slide__category"><?php the_category(', '); ?></h3>
             <h2 class="slide__title"><?php the_title(); ?></h2>
-            <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_slider_button_text'); ?></a>
+            <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white"><?= $button_txt; ?></a>
           </div>
         </div>
 
@@ -59,9 +61,9 @@ get_header(); ?>
 
         </div>
         <div class="discover__container">
-            <h1 class="discover__title">Venez partager notre vision des Jeux</h1>
-            <p class="discover__text">Depuis des centaines d'années, Paris accueuille tous les peuples de la Terre, y compris les pères fondateurs du Mouvement olympique, dans un esprit de collaboration et d'inspiration mutuelle, pour générer des idées et façonner l'avenir</p>
-            <a href="#" class="discover__link">Découvrir</a>
+            <h1 class="discover__title"><?php the_field('home_vision_title'); ?></h1>
+            <p class="discover__text"><?php the_field('home_vision_text'); ?></p>
+            <a href="#" class="discover__link"><?php the_field('home_vision_button'); ?></a>
         </div>
     </div>
 
@@ -77,9 +79,9 @@ get_header(); ?>
 
     <div class="athlete">
       <div class="athlete__txt">
-        <h3 class="athlete__name">Teddy Rinner</h3>
-        <p class="athlete__caption">La jeunessa va se préparer à accueillir les jeux.</p>
-        <a href="" class="athlete__button btn__main btn__main--white btn__text btn__text--blue">Le judo</a>
+        <h3 class="athlete__name"><?php the_field('home_athlete'); ?></h3>
+        <p class="athlete__caption"><?php the_field('home_athlete_caption'); ?></p>
+        <a href="" class="athlete__button btn__main btn__main--white btn__text btn__text--blue"><?php the_field('home_athlete_button'); ?></a>
       </div>
     </div>
     
@@ -88,9 +90,9 @@ get_header(); ?>
 
         </div>
         <div class="discover__container">
-            <h1 class="discover__title">Venez partager notre vision des Jeux</h1>
-            <p class="discover__text">Depuis des centaines d'années, Paris accueuille tous les peuples de la Terre, y compris les pères fondateurs du Mouvement olympique, dans un esprit de collaboration et d'inspiration mutuelle, pour générer des idées et façonner l'avenir</p>
-            <a href="#" class="discover__link">Découvrir</a>
+            <h1 class="discover__title"><?php the_field('home_concept_title'); ?></h1>
+            <p class="discover__text"><?php the_field('home_concept_text'); ?></p>
+            <a href="#" class="discover__link"><?php the_field('home_concept_button'); ?></a>
         </div>
     </div>
 
