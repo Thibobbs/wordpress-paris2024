@@ -1,5 +1,8 @@
-<?php get_header(); ?>
-
+<?php
+/**
+  *Template Name: Home
+*/
+get_header(); ?>
 <div id="content">
 
     <div class="slider">
@@ -24,7 +27,7 @@
           <div class="slide__info">
             <h3 class="slide__category"><?php the_category(', '); ?></h3>
             <h2 class="slide__title"><?php the_title(); ?></h2>
-            <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white">Voir l'article</a>
+            <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_slider_button_text'); ?></a>
           </div>
         </div>
 
