@@ -1,50 +1,78 @@
+body {
+    overflow-x: hidden;
+}
+
 /** concept page */ 
 
 .video-intro {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80rem;
+    background-color: transparent;
 }
 
 .video-intro__page-name {
-  margin-top: 115px;
-  padding: 1.6rem 2rem;
-  background-color: $deep-blue;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: $light;
-  font-size: 14px;
-  font-weight: bold;
+    margin-top: 11.5rem;
+    padding: 1.6rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    color: $light;
+    background-color: $deep-blue;
+    opacity: 1;
+    will-change: opacity;
 }
 
 .video-intro__title {
-  margin-top: 40px;
-  line-height: 1.25;
-  color: $light;
-  font-size: 48px;
-  font-weight: 500;
+    margin-top: 4rem;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: $light;
+    opacity: 1;
+    will-change: opacity;
+    text-align: center;
+
+    @media (min-width: $xs) {
+        font-size: 48px;
+    }
 }
 
 .video-intro__paragraph {
-  width: 700px;
-  height: 68px;
-  margin-top: 80px;
-  text-align: center;
-  line-height: 1.63;
-  color: $light;
-  font-size: 16px;
+    margin-top: 8rem;
+    text-align: center;
+    width: 95%;
+    font-size: 14px;
+    line-height: 1.63;
+    color: $light;
+    opacity: 1;
+    will-change: opacity;
+
+    @media (min-width: $sm) {
+        width: 70rem;
+        height: 6.8rem;
+    }   
 }
 
 .video-intro__button {
-  position: relative;
-  width: 72px;
-  height: 72px;
-  margin-top: 80px;
-  border-radius: 100%;
-  background-color: $deep-blue;
+    position: relative;
+    margin-top: 8rem;
+    width: 7.2rem;
+    height: 7.2rem;
+    border-radius: 100%;
+    background-color: $deep-blue;
+    opacity: 1;
+    will-change: opacity;
+}
+
+.video-intro__page-name, .video-intro__title, .video-intro__paragraph, .video-intro__button {
+    -webkit-transition: opacity 0.15s ease-in-out;
+    -o-transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
 }
 
 .video-intro__button:hover {
@@ -59,47 +87,58 @@
   transform: translate(-50%, -50%);
 }
 
-.video-intro__player {
-  position: absolute;
-  z-index: -100;
-  width: auto;
-  min-width: 100%;
-  height: auto;
-  min-height: 100%;
-  background: url('../img/concept-bkg.jpg') no-repeat;
-  background-size: cover;
+.video-intro__player video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 1s opacity;
 }
 
-.video-intro__player video {
-  display: none;
+.video-intro__bg {
+    position: fixed;
+    z-index: -99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80rem;
+    background: url('../img/concept-bkg.jpg') no-repeat;
+    background-size: cover;
 }
 
 .video-intro__fade-effect {
-  position: absolute;
-  opacity: 0.6;
-  z-index: -99;
-  width: 100%;
-  height: 100%;
-          transition: opacity 0.15s ease-in-out;
-  background-color: $dark;
-
-  -webkit-transition: opacity 0.15s ease-in-out;
-       -o-transition: opacity 0.15s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 80rem;
+    background-color: $dark;
+    opacity: 0.6;
+    z-index: -1;
+    -webkit-transition: opacity 0.15s ease-in-out;
+    -o-transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
 } 
 
 .video-intro__fade-effect.active {
-  opacity: 0.2;
-} 
+    cursor: pointer;
+    opacity: 0.2;
+    z-index: 10;
+}
 
 /** description-project */
 
 .description-project {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 500px;
-  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 14rem 0 14rem 0;
+    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 
 .description-project__txt {
@@ -108,16 +147,20 @@
 }
 
 .description-project__paragraph {
-  margin-top: 60px;
-  line-height: 2;
-  color: $light;
-  font-size: 30px;
-  font-weight: 500;
+    margin-top: 6rem;    
+    font-size: 20px;
+    font-weight: normal;
+    color: $light;
+
+    @media (min-width: $xs) {
+        font-size: 30px;
+        line-height: 2;
+    }   
 }
 
 .description-project__title {
   text-align: left;
-  line-height: 4.29;
+  line-height: 2;
   letter-spacing: 1.4px;
   color: $jordy-blue;
   font-size: 14px;
@@ -127,40 +170,112 @@
 /** List sports */
 
 .list-sports {
-  display: flex;
-      align-items: center;
-          flex-flow: row wrap;
-  justify-content: center;
-  width: 100%;
-  height: 145rem;
-  background-color: $palegrey;
-
-  -webkit-flex-flow: row wrap;
-     -moz-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-       -o-flex-flow: row wrap;
-  -ms-align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 8rem 0 11rem 0;
+    background-color: $palegrey;
 }
 
+.list-sports__title {
+    font-family: Circular;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 4.29;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #8c8c8c;
+}
 
+.list-sports__text {
+    font-family: Circular;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: #000000;
+}
+
+.list-sports__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    margin-top: 10rem;
+    justify-content: center;
+}
+
+.list-sports__item {
+    position: relative;
+    margin: 0 0.5rem 1rem 0.5rem;
+    cursor: pointer;
+}
+
+.list-sports__item img {
+    width: 22.4rem;
+    height: 16.8rem;
+    max-width: 22.4rem;
+    max-height: 16.8rem;
+    object-fit: cover;
+}
+
+.list-sports__item:hover .list-sports__fade {
+    opacity: 0.1;
+}
+
+.item__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    text-align: center;
+    color: $light;
+}
+
+.list-sports__item:hover .item__fade {
+    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+.item__fade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: -0.3rem;
+    width: 22.4rem;
+    height: 16.8rem;
+    background-color: $dark;   
+    opacity: 0.5;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+/** sites section */
+
+.sites {
+    width: 100%;
+    height: auto;
+    padding: 8rem 0 12rem 0;
+    background-color: $light2;
+}
+
+.sites__title {
+    height: 10px;
+    font-family: Circular;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: $deep-blue;
+}
+
+/** Slider section */
 
 .slider-concept {
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   overflow: hidden;
-  background: $light2;
   position: relative;
-  
-  .slider__name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-    color: $deep-blue;
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%);
-  }
 
   .slider__controllers {
     .controllers__tiles {

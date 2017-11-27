@@ -1,22 +1,71 @@
-if (document.querySelector('body').classList.contains('page-id-5')  || document.querySelector('body').classList.contains('page-id-7')) {
-  const vid = document.querySelector('.video-intro__player video'),
-    fade = document.querySelector('.video-intro__fade-effect'),
-    btn_play = document.querySelector('.video-intro__button')
+/** 
 
-  btn_play.addEventListener('click', (e) => {
-    e.preventDefault()
-    vid.style.display = 'block'
-    if (vid.paused) {
-      fade.classList.add('active')
-      vid.play()
-    } else {
-      fade.classList.remove('active')
-      vid.pause()
-    }
-  })
+    VIDEO CONCEPT & VISION
+
+*/
+
+if (document.querySelector('body').classList.contains('page-id-5')  || document.querySelector('body').classList.contains('page-id-7'))
+{
+    const vid       = document.querySelector('.video-intro__player video'),
+          vid_fade  = document.querySelector('.video-intro__fade-effect'),
+          btn_play  = document.querySelector('.video-intro__button'),
+          vid_name  = document.querySelector('.video-intro__page-name'),
+          vid_title = document.querySelector('.video-intro__title'),
+          vid_bg    = document.querySelector('.video-intro__bg'),
+          vid_txt   = document.querySelector('.video-intro__paragraph')
+
+    btn_play.addEventListener('click', (e) =>
+    {
+        e.preventDefault()
+        if (vid.paused)
+        {
+            vid_fade.classList.add('active')
+            vid_name.style.opacity = 0
+            vid_title.style.opacity = 0
+            vid_txt.style.opacity = 0
+            btn_play.style.opacity = 0
+            vid_bg.style.display = 'none'
+            vid.play()
+        }
+        else 
+        {
+            vid_fade.classList.remove('active')
+            vid.pause()
+        }
+    })
+
+    vid_fade.addEventListener('click', (e) =>
+    {
+        e.preventDefault()
+        if (vid.paused) 
+        {
+        }
+        else 
+        {
+            vid_fade.classList.remove('active')
+            vid.pause()
+            vid_name.style.opacity = 1
+            vid_title.style.opacity = 1
+            vid_txt.style.opacity = 1
+            btn_play.style.opacity = 1
+        }
+    })
 }
 
-if (document.querySelector('body').classList.contains('home')) {
+/** 
+
+    SLIDER CONCEPT
+
+*/
+
+/** 
+
+    SLIDER HOME
+
+*/
+
+if (document.querySelector('body').classList.contains('home'))
+{
   let i = 0
   const slider = document.querySelector('.slider')
   const slides_container = slider.querySelector('.slider__slides')
@@ -30,17 +79,20 @@ if (document.querySelector('body').classList.contains('home')) {
   slides_container.style.width = (slides.length * 100) + '%'
   slides_container.style.transform = 'translate(calc(-100%/' + slides.length + '))'
 
-  prev_button.addEventListener('click', (e) => {
+  prev_button.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     previous()
   })
 
-  next_button.addEventListener('click', (e) => {
+  next_button.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     next()
   })
 
-  tiles_container.addEventListener('click', (e) => {
+  tiles_container.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     if (tiles[tiles.indexOf(e.target)] !== undefined && !tiles[tiles.indexOf(e.target)].classList.contains('tile--active')) {
       tiles_container.querySelector('.tile--active').classList.remove('tile--active')
@@ -169,13 +221,13 @@ if (document.querySelector('body').classList.contains('page-id-5')) {
     tiles[slides[2].getAttribute('index')].className += ' tile--active'
   }
   
-//  let autoSlide = setInterval(next, 5000)
-//  
-//  slider.addEventListener("mouseover", () => {
-//    clearInterval(autoSlide)
-//  })
-//  
-//  slider.addEventListener("mouseout", () => {
-//    autoSlide = setInterval(next, 5000)
-//  })
+  let autoSlide = setInterval(next, 5000)
+  
+  slider.addEventListener("mouseover", () => {
+    clearInterval(autoSlide)
+  })
+  
+  slider.addEventListener("mouseout", () => {
+    autoSlide = setInterval(next, 5000)
+  })
 }
