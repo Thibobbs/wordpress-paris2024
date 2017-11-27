@@ -78,7 +78,7 @@
 </section>
 
 <section class="sites">
-     <h3 class="sites__title"><?php the_field("concept_sites_title") ?></h3>
+    <h3 class="sites__title"><?php the_field("concept_sites_title") ?></h3>
 </section>
 
 <?php get_footer() ?>

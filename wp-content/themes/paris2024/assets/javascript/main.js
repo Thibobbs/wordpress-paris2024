@@ -1,3 +1,9 @@
+/** 
+
+    VIDEO CONCEPT & VISION
+
+*/
+
 if (document.querySelector('body').classList.contains('page-id-5')  || document.querySelector('body').classList.contains('page-id-7'))
 {
     const vid       = document.querySelector('.video-intro__player video'),
@@ -46,6 +52,18 @@ if (document.querySelector('body').classList.contains('page-id-5')  || document
     })
 }
 
+/** 
+
+    SLIDER CONCEPT
+
+*/
+
+/** 
+
+    SLIDER HOME
+
+*/
+
 if (document.querySelector('body').classList.contains('home'))
 {
   let i = 0
@@ -61,17 +79,20 @@ if (document.querySelector('body').classList.contains('home'))
   slides_container.style.width = (slides.length * 100) + '%'
   slides_container.style.transform = 'translate(calc(-100%/' + slides.length + '))'
 
-  prev_button.addEventListener('click', (e) => {
+  prev_button.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     previous()
   })
 
-  next_button.addEventListener('click', (e) => {
+  next_button.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     next()
   })
 
-  tiles_container.addEventListener('click', (e) => {
+  tiles_container.addEventListener('click', (e) =>
+  {
     e.preventDefault()
     if (tiles[tiles.indexOf(e.target)] !== undefined && !tiles[tiles.indexOf(e.target)].classList.contains('tile--active')) {
       tiles_container.querySelector('.tile--active').classList.remove('tile--active')

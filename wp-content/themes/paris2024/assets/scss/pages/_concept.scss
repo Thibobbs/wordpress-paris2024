@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 /** concept page */ 
 
 .video-intro {
@@ -25,24 +29,33 @@
 
 .video-intro__title {
     margin-top: 4rem;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 500;
     line-height: 1.25;
     color: $light;
     opacity: 1;
     will-change: opacity;
+    text-align: center;
+
+    @media (min-width: $xs) {
+        font-size: 48px;
+    }
 }
 
 .video-intro__paragraph {
     margin-top: 8rem;
-    width: 70rem;
-    height: 6.8rem;
     text-align: center;
-    font-size: 16px;
+    width: 95%;
+    font-size: 14px;
     line-height: 1.63;
     color: $light;
     opacity: 1;
     will-change: opacity;
+
+    @media (min-width: $sm) {
+        width: 70rem;
+        height: 6.8rem;
+    }   
 }
 
 .video-intro__button {
@@ -135,15 +148,19 @@
 
 .description-project__paragraph {
     margin-top: 6rem;    
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 2;
+    font-size: 20px;
+    font-weight: normal;
     color: $light;
+
+    @media (min-width: $xs) {
+        font-size: 30px;
+        line-height: 2;
+    }   
 }
 
 .description-project__title {
   text-align: left;
-  line-height: 4.29;
+  line-height: 2;
   letter-spacing: 1.4px;
   color: $jordy-blue;
   font-size: 14px;
@@ -173,7 +190,7 @@
     font-family: Circular;
     font-size: 30px;
     font-weight: 500;
-    line-height: 2.0;
+    line-height: 1.5;
     text-align: center;
     color: #000000;
 }
