@@ -1,397 +1,397 @@
 // News hero
-
 .image-intro {
-    position: relative;
-    height: 48rem;
-    width: 100vw; 
+  position: relative;
+  width: 100vw;
+  height: 48rem;
 }
 
 .image-intro__title {
-    position: absolute;
-    top: 18rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: 600;
-    text-align: center;
-    color: $light2;
-    z-index: 10;
+  position: absolute;
+  top: 18rem;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+  text-align: center;
+  color: $light2;
+  font-weight: 600;
 }
 
 .image-intro__overlay,
 .image-intro__background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .image-intro__background {
-    background-image: url(../img/actualites-bkg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
+  z-index: 0;
+  background-image: url(../img/actualites-bkg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .image-intro__overlay {
-    background: $dark;
-    opacity: 0.65;
-    z-index: 2;
+  opacity: 0.65;
+  z-index: 2;
+  background: $dark;
 }
 
 // Search bar
 .image-intro__search {
-    z-index: 10;
-    position: relative;
-    top: 41.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90vw;
-    height: 13rem;
-    background: $light;
-    font-size: 1.8rem;
+  position: relative;
+  top: 41.5rem;
+  left: 50%;
+  z-index: 10;
+  width: 90vw;
+  height: 13rem;
+  transform: translateX(-50%);
+  background: $light;
+  font-size: 1.8rem;
 }
 
 .image-intro__search .search__input,
 .image-intro__search .search__button {
-    display: inline-block;
-    position: absolute;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .search__input {
-    font-style: italic;
-    height: 100%;
-    width: 60vw;
-    left: 0;
+  left: 0;
+  width: 60vw;
+  height: 100%;
+  font-style: italic;
 }
 
 .search__input input {
-    width: 90%;
-    margin: auto;
-    margin-left: 2.8rem;
+  width: 90%;
+  margin: auto;
+  margin-left: 2.8rem;
 }
 
 .search__button {
-    right: 0;
-    font-weight: 500;
-    width: 30vw;
-    color: $light;
-    height: 100%;
-    background: $deep-blue;
-    justify-content: center;
-    cursor: pointer;
+  right: 0;
+  justify-content: center;
+  width: 30vw;
+  height: 100%;
+  background: $deep-blue;
+  cursor: pointer;
+  color: $light;
+  font-weight: 500;
 }
 
 // News
 .news {
-    padding: 8rem 0;
-    background: $palegrey;
+  padding: 8rem 0;
+  background: $palegrey;
 }
 
 .news__wrapper {
-    width: 90vw;
-    margin: auto;
+  width: 90vw;
+  margin: auto;
 }
 
 // news categories
 
 .news__categories {
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    margin: 6.5rem auto;
-    width: 65vw;
+  display: flex;
+  justify-content: space-between;
+  width: 65vw;
+  margin: 6.5rem auto;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.news__categories .news__category{
-    cursor: pointer;
+.news__categories .news__category {
+  cursor: pointer;
 }
 
-.news__categories .news__category.active{
-    color: $deep-blue;
+.news__categories .news__category.active {
+  color: $deep-blue;
 }
 
 // Loader
 .news__loader {
-    display: none;
-    position: relative;
-    width: 75px;
-    height: 100px;
-    margin: 0 auto 6.5rem;
-    
-    &__bar {
+  position: relative;
+  display: none;
+  width: 75px;
+  height: 100px;
+  margin: 0 auto 6.5rem;
+
+  &__bar {
     position: absolute;
     bottom: 0;
     width: 10px;
     height: 50%;
-    background: $deep-blue;
     transform-origin: center bottom;
-    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    background: $deep-blue;
 
-    @for $i from 1 through 5 { 
-        &:nth-child(#{$i}) {
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
         left: ($i - 1) * 15px;
-        transform: scale(1,$i*.2);
+        transform: scale(1,$i*0.2);
         animation: barUp#{$i} 4s infinite;
-        }
+      }
     }
+  }
 
-}
-    
-    &__ball {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background: $deep-blue;
-        border-radius: 50%;
-        animation: ball 4s infinite;
-    }
+  &__ball {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $deep-blue;
+    animation: ball 4s infinite;
+  }
 }
 
 @keyframes ball {
-    0% {
-        transform: translate(0, 0);
-    }
-    5% {
-        transform: translate(8px, -14px);
-    }
-    10% {
-        transform: translate(15px, -10px)
-    }
-    17% {
-        transform: translate(23px, -24px)
-    }
-    20% {
-        transform: translate(30px, -20px)
-    }
-    27% {
-        transform: translate(38px, -34px)
-    }
-    30% {
-        transform: translate(45px, -30px)
-    }
-    37% {
-        transform: translate(53px, -44px)
-    }
-    40% {
-        transform: translate(60px, -40px)
-    }
-    50% {
-        transform: translate(60px, 0)
-    }
-    57% {
-        transform: translate(53px, -14px)
-    }
-    60% {
-        transform: translate(45px, -10px)
-    }
-    67% {
-        transform: translate(37px, -24px)
-    }
-    70% {
-        transform: translate(30px, -20px)
-    }
-    77% {
-        transform: translate(22px, -34px)
-    }
-    80% {
-        transform: translate(15px, -30px)
-    }
-    87% {
-        transform: translate(7px, -44px)
-    }
-    90% {
-        transform: translate(0, -40px)
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(8px, -14px);
+  }
+  10% {
+    transform: translate(15px, -10px);
+  }
+  17% {
+    transform: translate(23px, -24px);
+  }
+  20% {
+    transform: translate(30px, -20px);
+  }
+  27% {
+    transform: translate(38px, -34px);
+  }
+  30% {
+    transform: translate(45px, -30px);
+  }
+  37% {
+    transform: translate(53px, -44px);
+  }
+  40% {
+    transform: translate(60px, -40px);
+  }
+  50% {
+    transform: translate(60px, 0);
+  }
+  57% {
+    transform: translate(53px, -14px);
+  }
+  60% {
+    transform: translate(45px, -10px);
+  }
+  67% {
+    transform: translate(37px, -24px);
+  }
+  70% {
+    transform: translate(30px, -20px);
+  }
+  77% {
+    transform: translate(22px, -34px);
+  }
+  80% {
+    transform: translate(15px, -30px);
+  }
+  87% {
+    transform: translate(7px, -44px);
+  }
+  90% {
+    transform: translate(0, -40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
-@keyframes barUp1 { 
-    0% {
-        transform: scale(1, .2);
-    }
-    40%{
-        transform: scale(1, .2);
-    }
-    50% {
-        transform: scale(1, 1);
-    }
-    90% {
-        transform: scale(1,1);
-    }
-    100% {
-        transform: scale(1,.2);
-    }
+@keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2);
+  }
+  40% {
+    transform: scale(1, 0.2);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  90% {
+    transform: scale(1,1);
+  }
+  100% {
+    transform: scale(1,0.2);
+  }
 }
-@keyframes barUp2 { 
-    0% {
-        transform: scale(1, .4);
-    }
-    40% {
-        transform: scale(1, .4);
-    }
-    50% {
-        transform: scale(1, .8);
-    }
-    90% {
-        transform: scale(1, .8);
-    }
-    100% {
-        transform: scale(1, .4);
-    }
+@keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4);
+  }
+  40% {
+    transform: scale(1, 0.4);
+  }
+  50% {
+    transform: scale(1, 0.8);
+  }
+  90% {
+    transform: scale(1, 0.8);
+  }
+  100% {
+    transform: scale(1, 0.4);
+  }
 }
-@keyframes barUp3 { 
-    0% {
-        transform: scale(1, .6);
-    }
-    100% {
-        transform: scale(1, .6);
-    }
+@keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6);
+  }
+  100% {
+    transform: scale(1, 0.6);
+  }
 }
-@keyframes barUp4 { 
-    0% {
-        transform: scale(1, .8);
-    }
-    40% {
-        transform: scale(1, .8);
-    }
-    50% {
-        transform: scale(1, .4);
-    }
-    90% {
-        transform: scale(1, .4);
-    }
-    100% {
-        transform: scale(1, .8);
-    }
+@keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8);
+  }
+  40% {
+    transform: scale(1, 0.8);
+  }
+  50% {
+    transform: scale(1, 0.4);
+  }
+  90% {
+    transform: scale(1, 0.4);
+  }
+  100% {
+    transform: scale(1, 0.8);
+  }
 }
-@keyframes barUp5 { 
-    0% {
-        transform: scale(1, 1);
-    }
-    40% {
-        transform: scale(1, 1);
-    }
-    50% {
-        transform: scale(1, .2);
-    }
-    90% {
-        transform: scale(1, .2);
-    }
-    100% {
-        transform: scale(1, 1);
-    }
+@keyframes barUp5 {
+  0% {
+    transform: scale(1, 1);
+  }
+  40% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.2);
+  }
+  90% {
+    transform: scale(1, 0.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 // Articles
 .news__articles {
-    margin-bottom: 5rem;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 // Article
 .articles__article {
-    position: relative;
-    display: inline-block;
-    width: 34.6rem;
-    height: 46.6rem;
-    background: $light2;
-    border-radius: 6px;
-    margin-bottom: 5rem;
+  position: relative;
+  display: inline-block;
+  width: 34.6rem;
+  height: 46.6rem;
+  margin-bottom: 5rem;
+  border-radius: 6px;
+  background: $light2;
 }
 
 .article__thumbnail {
-    height: 17.3rem;
+  position: relative;
+  width: 100%;
+  height: 17.3rem;
+  border-radius: 6px 6px 0 0;
+
+  img {
     width: 100%;
+    height: 100%;
     border-radius: 6px 6px 0 0;
 
-    img {
-        border-radius: 6px 6px 0 0;
-        height: 100%;
-        width: 100%; 
-        object-fit: cover;
-    }
+    object-fit: cover;
+  }
 }
 
 .thumbnail__line {
-    // position: relative;
-    // bottom: 4px;
-    height: 4px;
-    width: 100%;
-    background: $deep-blue;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: $deep-blue;
 }
 
 .article__content,
 .article__data {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 .article__title {
-    margin: 4rem 0 2rem 0;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-    font-weight: 600;
-    color: $dark;
+  margin: 4rem 0 2rem 0;
+  line-height: 2.4rem;
+  color: $dark;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .article__text {
-    color: $warm-grey;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+  line-height: 1.8rem;
+  color: $warm-grey;
+  font-size: 1.2rem;
 }
 
 .article__data-wrapper {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .article__line {
-    width: 100%;
-    height: 2px;
-    background: #dedede;
+  width: 100%;
+  height: 2px;
+  background: #dedede;
 }
 
 .article__data {
-    color: $warm-grey;
-    font-size: 1.4rem;
-    line-height: 3.2rem;
-    padding: 2.8rem 0;
+  padding: 2.8rem 0;
+  line-height: 3.2rem;
+  color: $warm-grey;
+  font-size: 1.4rem;
 
-    div {
-        display: inline-block;
-    }
+  div {
+    display: inline-block;
+  }
 }
 
 .article__data-hastag {
-    float: right;
+  float: right;
 }
 
 // See more button
 .news__button {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.4rem;
-    text-align: center;
-    margin: 3rem auto 0 auto;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
 
 
-    .news__see-more {
-        padding: 1.5rem 3rem;
-        color: $warm-grey;
-        border: 2px solid $pinkish-grey;
-        letter-spacing: 1.4px;
-    }
+  .news__see-more {
+    padding: 1.5rem 3rem;
+    border: 2px solid $pinkish-grey;
+    letter-spacing: 1.4px;
+    color: $warm-grey;
+  }
 }
