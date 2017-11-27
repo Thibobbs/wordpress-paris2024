@@ -7,7 +7,7 @@
 <?php get_header() ?>
 
 <div class="video-intro">
-  <div class="video-intro__page-name"><?php the_field('vision'); ?></div>
+  <div class="video-intro__page-name"><?php the_field('page_name'); ?></div>
   <h1 class="video-intro__title"><?php the_field('vision_title'); ?></h1>
   <p class="video-intro__paragraph"><?php the_field('vision_text'); ?></p>
   <button class="video-intro__button">
