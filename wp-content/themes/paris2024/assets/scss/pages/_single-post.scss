@@ -1,3 +1,22 @@
+.story__content.container {
+  width: 100%;
+}
+
+.story__content.container h1,
+.story__content.container p,
+.story__content.container small {
+  @include responsive($lg) {
+    width: 90%;
+  }
+  width: 80%;
+  max-width: 144rem;
+  margin: auto;
+}
+
+.story__content.container small {
+  display: block;
+}
+
 .story__hero {
   @include responsive($xs) {
     height: 24rem;
@@ -8,6 +27,13 @@
   width: 100vw;
   height: 48rem;
   background-color: $azure-blue;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
 }
 
 .story__info {
@@ -68,11 +94,18 @@
 }
 
 .story__img {
-  width: 100%;
+  width: 80%;
   height: calc(100vh / 16 * 9);
   max-height: 47rem;
-  margin: 7rem 0 9rem 0;
+  margin: 7rem auto 9rem auto;
   background-color: $cobalt-blue;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
 }
 
 .story__caption {
