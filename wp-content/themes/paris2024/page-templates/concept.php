@@ -71,3 +71,61 @@
     ?>
     
 </div>
+
+
+<div class="slider-concept">
+  <div class="slider__name">SITES</div>
+  <div class="slider__slides">
+
+    <?php
+
+          $button_txt = get_field('home_slider_button_text');
+
+          $args = array(
+            'posts_per_page' => '3'
+          );
+          // The Query
+          $the_query = new WP_Query( $args );
+
+          // The Loop
+          if ( $the_query->have_posts() ) {
+            $i = 0;
+            while ( $the_query->have_posts() ) {
+              $the_query->the_post();
+        ?>
+
+      <div class="slider__slide" index="<?= $i ?>">
+        <div class="slide__info">
+          <h3 class="slide__category">
+            <?php the_category(', '); ?>
+          </h3>
+          <h2 class="slide__title">
+            <?php the_title(); ?>
+          </h2>
+        </div>
+      </div>
+
+      <?php
+              $i = ($i + 1);
+            }
+            wp_reset_postdata();
+          } else {
+            echo '<p>Désolé, le site semble rencontrer un problème ... Merci de revenir ultérieurement.</p>';
+          }
+      ?>
+
+  </div>
+
+  <div class="slider__controllers">
+    <a href="" class="controllers controllers__prev"><img src="<?= IMAGES_URL ?>/arrows/left-arrow.svg" alt=""></a>
+    <a href="" class="controllers controllers__next"><img src="<?= IMAGES_URL ?>/arrows/right-arrow.svg" alt=""></a>
+    <div class="controllers__tiles">
+      <div class="tile"></div>
+      <div class="tile tile--active"></div>
+      <div class="tile"></div>
+    </div>
+  </div>
+
+</div>
+
+<?php get_footer() ?>
