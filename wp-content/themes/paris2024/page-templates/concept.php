@@ -41,8 +41,10 @@
     <div class="list-sports__items">
         <?php
         $args= array(
-        'post_type' => 'sport',
-        'posts_per_page' => 20
+          'post_type' => 'sport',
+          'posts_per_page' => 34,
+          'orderby'=>'title',
+          'order'=>'ASC'
         );
 
         $the_query = new WP_Query( $args );
@@ -52,19 +54,20 @@
             while ( $the_query->have_posts() ) {
                 $the_query->the_post();
         ?>
-
-        <div class="list-sports__item">
-            <div class="item__fade"></div>
-            <h3 class="item__title"><?php the_title() ?></h3>
-            <div class="thumbnail">
-                <?php
-                  if(has_post_thumbnail())
-                  {
-                    the_post_thumbnail("hub_sport_thumbnail");
-                  }
-                ?>
-            </div>
-        </div>
+        <a href="<?php the_permalink() ?>">
+          <div class="list-sports__item">
+              <div class="item__fade"></div>
+              <h3 class="item__title"><?php the_title() ?></h3>
+              <div class="thumbnail">
+                  <?php
+                    if(has_post_thumbnail())
+                    {
+                      the_post_thumbnail("hub_sport_thumbnail");
+                    }
+                  ?>
+              </div>
+          </div>
+        </a>
 
          <!-- End loop -->
         <?php

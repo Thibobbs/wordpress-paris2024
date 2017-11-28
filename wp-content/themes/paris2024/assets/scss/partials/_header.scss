@@ -11,22 +11,25 @@
   height: 100px;
   margin: 0 auto;
   padding: 0 2.5rem;
+
+  nav{
+    width: 100%;
+  }
 }
 
 .header__logo {
-  flex: 2;
-
+  width: 60px;
+  text-align: center;
   img {
     width: 30px;
   }
 }
-
 .header__menu {
-  flex: 1;
-  margin-left: auto;
-}
-
-.header__menu ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-direction:row; 
+
+  li{
+    margin: 0px 10px;
+  }
 }

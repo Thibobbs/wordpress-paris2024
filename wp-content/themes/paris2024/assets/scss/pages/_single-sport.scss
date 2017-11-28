@@ -72,6 +72,9 @@
   display: grid;
   grid-template-columns: 30% 60%;
   grid-column-gap: 10%;
+  img{
+    width: 100%;
+  }
 }
 .sport__viewGeneral {
   .general__title {

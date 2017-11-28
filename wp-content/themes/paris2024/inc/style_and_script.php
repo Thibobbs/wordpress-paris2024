@@ -1,5 +1,7 @@
 <?php
 function ajout_scripts() {
+    
+
     // main.js
     wp_register_script('main_js', JS_URL.'/script.min.js', array('jquery'),'1.1', true);
     wp_enqueue_script('main_js');
