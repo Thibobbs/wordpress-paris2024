@@ -5,7 +5,8 @@
 ?>
 <?php get_header(); ?>
     <div class="sport__hero">
-        <div class="sport__heroTitle">
+        <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+        <div class="sport__heroTitle" style="background-image: url('<?php echo $thumb['0'];?>');">
             <h2><?php the_title(); ?></h2>
             <div class="container sport__heroInfos">
                 <div class="sport__heroInfos--content">
