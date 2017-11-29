@@ -50,12 +50,24 @@
   </div>
 </div>
 
-<div class="athlete">
-  <div class="athlete__txt">
-    <h3 class="athlete__name"><?php the_field('vision_athlete'); ?></h3>
-    <p class="athlete__caption"><?php the_field('vision_athlete_caption'); ?></p>
-    <a href="" class="athlete__button btn__main btn__main--white btn__text btn__text--blue"><?php the_field('vision_athlete_button'); ?></a>
+<div class="vision-athlete">
+  <div class="vision-athlete__container">
+    <div class="vision-athlete__txt">
+      <h3 class="vision-athlete__name">
+        <?php the_field('vision_athlete'); ?>
+      </h3>
+      <p class="vision-athlete__caption">
+        <?php the_field('vision_athlete_caption'); ?>
+      </p>
+      <a href="" class="vision-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+        <?php the_field('vision_athlete_button'); ?>
+      </a>
+    </div>
+    <div class="container__img">
+      <img src="<?= get_field('vision_athlete_image')['url']; ?>" alt="" class="vision-athlete__img">
+    </div>
   </div>
 </div>
+
 
 <?php get_footer() ?>

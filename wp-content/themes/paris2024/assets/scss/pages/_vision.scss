@@ -57,3 +57,48 @@
     color: $warm-grey;
   }
 }
+
+.vision-athlete {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+
+.vision-athlete__container {
+  display: flex;
+  align-items: center;
+  max-width: 960px;
+  .vision-athlete__txt {
+    flex: 1
+  }
+  .container__img {
+    flex: 1
+  }
+}
+
+.vision-athlete__img {
+  width: 100%;
+}
+
+.vision-athlete__caption {
+  margin-top: 40px;
+  font-size: 3.4rem;
+  line-height: 2;
+  color: $light;
+}
+
+.vision-athlete__name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: $jordy-blue;
+}
+
+.vision-athlete__button{
+  width: 150px;
+  margin-top: 60px;
+  display: block;
+}
