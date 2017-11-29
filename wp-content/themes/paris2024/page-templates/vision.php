@@ -23,7 +23,7 @@
           Your browser does not support the video tag.
         </video>
     </div>
-    <div class="video-intro__bg"></div>
+    <div class="video-intro__bg" style="background: url('<?= get_field('vision_video')['url']; ?>');"></div>
 </section>
 
 <div class="description-vision">

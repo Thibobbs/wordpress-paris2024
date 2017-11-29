@@ -12,7 +12,7 @@
   
   .txt__title {
     font-size: 2.6rem;
-    padding: 5rem 0;
+    padding: 10rem 0 5rem 0;
     font-weight: bold;
     text-align: center;
     color: $dark;
@@ -23,24 +23,40 @@
     line-height: 1.5;
     text-align: center;
     color: $warm-grey;
+    padding: 0 15%;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 2px;
+      background: $deep-blue;
+      left: calc(50% - 10%);
+      bottom: -6.5rem;
+      transform: (-50%, 0);
+    }
   }
 }
 
 .description-vision__cards {
 
-  padding-top: 10rem;
-  padding-bottom: 17rem;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   .cards {
-    margin: 0 2.5rem;
+    min-width: 240px;
+    margin: 2.5rem 2.5rem;
     padding: 5rem;
     border-radius: 6px;
     background-color: $light;
     box-shadow: 0 0 38.3px 6.8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex: 1 1 0;
+    flex: 0 1 0;
     flex-direction: column;
     text-align: center;
   }
@@ -69,11 +85,26 @@
   display: flex;
   align-items: center;
   max-width: 960px;
+  padding: 0 20px;
   .vision-athlete__txt {
-    flex: 1
+    flex: 1;
+    padding-left: 50px;
   }
   .container__img {
-    flex: 1
+    flex: 1;
+    font-size: 0;
+    padding: 20px 20px 0 20px;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .vision-athlete__txt {
+      order: 0;
+      padding: 80px 0;
+    }
+    .container__img {
+      order: 1;
+    }
   }
 }
 
