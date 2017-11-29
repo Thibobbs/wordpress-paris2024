@@ -56,44 +56,71 @@ get_header(); ?>
 
     </div>
 
-    <div class="discover">
-        <div class="discover__image">
-
+    <div class="vision">
+      <div class="vision__container">
+        <div class="container__text">
+          <h2 class="vision__title">
+            <?php the_field('home_vision_title'); ?>
+          </h2>
+          <p class="vision__text">
+            <?php the_field('home_vision_text'); ?>
+          </p>
+          <a href="" class="vision__button">
+            <?php the_field('home_vision_button'); ?>
+          </a>
         </div>
-        <div class="discover__container">
-            <h1 class="discover__title"><?php the_field('home_vision_title'); ?></h1>
-            <p class="discover__text"><?php the_field('home_vision_text'); ?></p>
-            <a href="#" class="discover__link"><?php the_field('home_vision_button'); ?></a>
+        <div class="container__img">
+          <img src="<?= get_field('home_vision_image')['url']; ?>" alt="" class="vision__img">
         </div>
+      </div>
     </div>
 
     <div class="partners">
       <ul>
-        <li class="partner"><img src="" alt=""></li>
-        <li class="partner"><img src="" alt=""></li>
-        <li class="partner"><img src="" alt=""></li>
-        <li class="partner"><img src="" alt=""></li>
-        <li class="partner"><img src="" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
       </ul>
     </div>
 
-    <div class="athlete">
-      <div class="athlete__txt">
-        <h3 class="athlete__name"><?php the_field('home_athlete'); ?></h3>
-        <p class="athlete__caption"><?php the_field('home_athlete_caption'); ?></p>
-        <a href="" class="athlete__button btn__main btn__main--white btn__text btn__text--blue"><?php the_field('home_athlete_button'); ?></a>
+    <div class="home-athlete">
+      <div class="home-athlete__container">
+        <div class="container__img">
+          <img src="<?= get_field('home_athlete_image')['url']; ?>" alt="" class="home-athlete__img">
+        </div>
+        <div class="home-athlete__txt">
+          <h3 class="home-athlete__name">
+            <?php the_field('home_athlete'); ?>
+          </h3>
+          <p class="home-athlete__caption">
+            <?php the_field('home_athlete_caption'); ?>
+          </p>
+          <a href="" class="home-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+            <?php the_field('home_athlete_button'); ?>
+          </a>
+        </div>
       </div>
     </div>
-    
-    <div class="discover">
-        <div class="discover__image">
 
+    <div class="concept">
+      <div class="concept__container">
+        <div class="container__img">
+          <img src="<?= get_field('home_concept_image')['url']; ?>" alt="" class="concept__img">
         </div>
-        <div class="discover__container">
-            <h1 class="discover__title"><?php the_field('home_concept_title'); ?></h1>
-            <p class="discover__text"><?php the_field('home_concept_text'); ?></p>
-            <a href="#" class="discover__link"><?php the_field('home_concept_button'); ?></a>
+        <div class="container__text">
+          <h2 class="concept__title">
+            <?php the_field('home_concept_title'); ?>
+          </h2>
+          <p class="concept__text">
+            <?php the_field('home_concept_text'); ?>
+          </p>
+          <a href="" class="concept__button">
+            <?php the_field('home_concept_button'); ?>
+          </a>
         </div>
+      </div>
     </div>
 
 </div>
