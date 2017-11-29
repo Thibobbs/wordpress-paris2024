@@ -52,6 +52,11 @@
         opacity: 1;
       }
     }
+    @media (max-width: $sm) {
+      left: 50%;
+      bottom: 8%;
+      transform: translate(-50%, 0);
+    }
   }
 }
 
@@ -115,6 +120,14 @@
       }
     }
   }
+  @media (max-width: $sm) {
+    .slider__slide {
+      justify-content: center;
+      .slide__info {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .vision {
@@ -125,15 +138,23 @@
   display: flex;
   align-items: center;
   max-width: 960px;
+  padding-left: 20px;
   margin: 100px 0;
   margin-left: auto;
   .container__text {
     flex: 1;
     padding-right: 100px;
   }
-
   .container__img {
     flex: 1;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .container__text {
+      padding-right: 0;
+      padding-bottom: 50px;
+    }
   }
 }
 
@@ -175,19 +196,23 @@
 
 .partners {
   width: 100%;
-  height: 200px;
   background: $palegrey;
   ul {
     height: 100%;
     max-width: 960px;
+    padding: 0 20px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     li{
       height: 100%;
-      padding: 40px 0;
+      padding: 20px;
+      display: flex;
       img{
-        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
       }
     }
   }
@@ -205,11 +230,26 @@
   display: flex;
   align-items: center;
   max-width: 960px;
+  padding: 0 20px;
   .home-athlete__txt {
-    flex: 1
+    flex: 1;
+    padding-left: 50px;
   }
   .container__img {
-    flex: 1
+    flex: 1;
+    font-size: 0;
+    padding: 20px 20px 0 20px;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .home-athlete__txt {
+      order: 0;
+      padding: 80px 0;
+    }
+    .container__img {
+      order: 1;
+    }
   }
 }
 
@@ -248,14 +288,26 @@
   align-items: center;
   max-width: 960px;
   margin: 100px 0;
+  padding-right: 20px;
   margin-right: auto;
   .container__text {
     flex: 1;
     padding-left: 100px;
   }
-
   .container__img {
     flex: 1;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .container__text {
+      order: 0;
+      padding-left: 0;
+      padding-bottom: 50px;
+    }
+    .container__img {
+      order: 1;
+    }
   }
 }
 
