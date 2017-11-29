@@ -1,6 +1,7 @@
 <?php
 function ajout_scripts() {
     
+    global $wp_query;
 
     // main.js
     wp_register_script('main_js', JS_URL.'/script.min.js', array('jquery'),'1.1', true);

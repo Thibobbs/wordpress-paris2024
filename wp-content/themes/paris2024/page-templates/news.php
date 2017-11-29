@@ -49,12 +49,12 @@
                     'posts_per_page' => 9
                 );
 
-                $the_query = new WP_Query( $args );
+                $wp_query = new WP_Query( $args );
 
                 // Start Loop
-                if ( $the_query->have_posts() ) {
-                    while ( $the_query->have_posts() ) {
-                        $the_query->the_post();
+                if ( $wp_query->have_posts() ) {
+                    while ( $wp_query->have_posts() ) {
+                        $wp_query->the_post();
             ?>
 
             <div class="articles__article">
@@ -91,9 +91,11 @@
             ?>
            
         </div>
-        <div class="news__button">
-            <a class="news__see-more" href="#" title="Voir plus">Voir plus</a>
-        </div>
+        <?php if (  $wp_query->max_num_pages > 1 ){ ?>
+            <div class="news__button" onclick="fetch(this)">
+                <div class="news__see-more">Voir plus</div>
+            </div>
+        <?php } ?>
     </div>
 </div>
 <?php get_footer(); ?>
