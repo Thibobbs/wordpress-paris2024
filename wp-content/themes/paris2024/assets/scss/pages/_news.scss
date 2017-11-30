@@ -43,13 +43,16 @@
 .image-intro__search {
   position: relative;
   top: 41.5rem;
-  left: 50%;
   z-index: 10;
   width: 90vw;
   height: 13rem;
-  transform: translateX(-50%);
   background: $light;
   font-size: 1.8rem;
+  margin-left: 5vw;
+
+  @media (max-width: $sm) {
+    height: 10rem;
+  }
 }
 
 .image-intro__search .search__input,
@@ -65,12 +68,22 @@
   width: 60vw;
   height: 100%;
   font-style: italic;
+  @media (max-width: $sm) {
+    text-align: center;
+    width: 90vw;
+    height: 80%;
+  }
 }
 
 .search__input input {
   width: 90%;
   margin: auto;
   margin-left: 2.8rem;
+  @media (max-width: $sm) {
+    text-align: center;
+    margin-left: 2rem;
+    font-size: 1.4rem;
+  }
 }
 
 .search__button {
@@ -82,6 +95,12 @@
   cursor: pointer;
   color: $light;
   font-weight: 500;
+
+  @media (max-width: $sm) {
+    top: 80%;
+    height: 50%;
+    width: 90vw;
+  }
 }
 
 // News
@@ -100,18 +119,37 @@
 .news__categories {
   display: flex;
   justify-content: space-between;
-  width: 65vw;
+  width: 70vw;
   margin: 6.5rem auto;
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 600;
+  flex-direction: row;
+
+  @media (max-width: $md) {
+    margin: 2.5rem auto;
+    width: 85vw;
+  }
+
+  @media (max-width: $sm) {
+    flex-direction: column;
+  }
 }
 
 .news__categories .news__category {
   cursor: pointer;
+  transition: color 0.15s ease-in-out;
+  
+  @media (max-width: $md) {
+    margin-bottom: 15px;
+  }
 }
 
 .news__categories .news__category.active {
+  color: $deep-blue;
+}
+
+.news__categories .news__category:hover {
   color: $deep-blue;
 }
 
@@ -296,6 +334,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 5rem;
+
+  @media (max-width: $md) {
+    justify-content: center;
+  }
 }
 
 // Article
@@ -305,8 +347,19 @@
   width: 34.6rem;
   height: 46.6rem;
   margin-bottom: 5rem;
+  margin-right: 2.5rem;
   border-radius: 6px;
   background: $light2;
+  opacity: 1;
+  transition: opacity 0.3 ease-in-out;
+
+  @media (max-width: $md) {
+    margin-right: 0;
+  }
+}
+
+.articles__article:hover {
+  opacity: 0.8;
 }
 
 .article__thumbnail {
