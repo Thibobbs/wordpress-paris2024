@@ -332,6 +332,22 @@
   background: $deep-blue;
 }
 
+.articles__article.cio .thumbnail__line {
+  background: #92278f;
+}
+
+.articles__article.hosts-elections .thumbnail__line {
+  background: #00a651;
+}
+
+.articles__article.olympic .thumbnail__line {
+  background: $deep-blue;
+}
+
+.articles__article.paris-2024 .thumbnail__line {
+  background: #fcb131;
+}
+
 .article__content,
 .article__data {
   width: 80%;
