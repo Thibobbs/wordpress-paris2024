@@ -12,6 +12,8 @@
 !wp-content/plugins/**
 !wp-content/themes
 !wp-content/themes/**
+!wp-content/uploads
+!wp-content/uploads/**
 !wp-content/mu-plugins
 !wp-content/mu-plugins/**
 
