@@ -5,9 +5,11 @@ function ajax_fetch() {
 ?>
     <script type="text/javascript">
         var page = 1;
-        var number_of_pages = document.querySelector('.news__button').getAttribute('pages');
-        number_of_pages--;
-        console.log(number_of_pages);
+        if (document.querySelector('body').classList.contains('.page-id-9')) {
+          var number_of_pages = document.querySelector('.news__button').getAttribute('pages');
+          number_of_pages--;
+          console.log(number_of_pages);
+        }
         function fetch(element){
 
             if(element.tagName == 'DIV'){
