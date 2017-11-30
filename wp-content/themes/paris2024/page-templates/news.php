@@ -42,7 +42,7 @@
             <div class="news__loader__ball"></div>
         </div>
 
-        <div class="news__articles">
+        <div class="stories__container">
             <?php
                 $args= array(
                     'post_type' => 'post',
@@ -56,31 +56,31 @@
                     while ( $wp_query->have_posts() ) {
                         $wp_query->the_post();
             ?>
+<a class="stories" href="<?php the_permalink() ?>">
+<div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
+    
+    <div class="stories__link--thumbnail">
+        <?php if(has_post_thumbnail()) { the_post_thumbnail("hub_post_thumbnail"); } ?>
+        <div class="thumbnail__line"></div>
+    </div>
+    
+    <div class="stories__content">
+        <div class="stories__content--text">
+            <h4><?php the_title() ?></h4>
+            <p class="stories__link--excerpt">
+                <?php the_field('article_intro'); ?>
+            </p>
+        </div>
+        <!-- <hr> -->
+        <div class="stories__content--infos">
+            <p><?php the_field('article_date'); ?></p>
+            <p>#Paris2024</p>
+        </div>
+    </div>
+    
+</div>
+</a>
 
-            <div class="articles__article <?= get_the_terms($post->id, 'category')[0]->slug ?>">
-                <a href="<?php the_permalink() ?>">
-                    <div class="article__thumbnail">
-                        <?php
-                        if(has_post_thumbnail())
-                        {
-                            the_post_thumbnail("hub_post_thumbnail");
-                        }
-                        ?>
-                        <div class="thumbnail__line"></div>
-                    </div>
-                    <div class="article__content">
-                        <div class="article__title"><?php the_title() ?></div>
-                        <div class="article__text"><?php the_field('article_intro'); ?></div>
-                    </div>
-                    <div class="article__data-wrapper">
-                        <div class="article__line"></div>
-                        <div class="article__data">
-                            <div class="article__data-date"><?php the_field('article_date'); ?></div>
-                            <div class="article__data-hastag">#Paris2024</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
             <!-- End loop -->
             <?php
