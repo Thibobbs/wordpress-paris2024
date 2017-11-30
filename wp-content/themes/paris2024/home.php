@@ -77,11 +77,11 @@ get_header(); ?>
 
     <div class="partners">
       <ul>
-        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt=""></li>
-        <li class="partner"><img src="<?= get_field('home_partner_logo_2')['url']; ?>" alt=""></li>
-        <li class="partner"><img src="<?= get_field('home_partner_logo_3')['url']; ?>" alt=""></li>
-        <li class="partner"><img src="<?= get_field('home_partner_logo_4')['url']; ?>" alt=""></li>
-        <li class="partner"><img src="<?= get_field('home_partner_logo_5')['url']; ?>" alt=""></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_1')['url']; ?>" alt="logo 1"></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_2')['url']; ?>" alt="logo 2"></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_3')['url']; ?>" alt="logo 3"></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_4')['url']; ?>" alt="logo 4"></li>
+        <li class="partner"><img src="<?= get_field('home_partner_logo_5')['url']; ?>" alt="logo 5"></li>
       </ul>
     </div>
 
