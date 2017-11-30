@@ -57,7 +57,7 @@
                         $wp_query->the_post();
             ?>
 
-            <div class="articles__article">
+            <div class="articles__article <?= get_the_terms($post->id, 'category')[0]->slug ?>">
                 <a href="<?php the_permalink() ?>">
                     <div class="article__thumbnail">
                         <?php
@@ -92,7 +92,7 @@
            
         </div>
         <?php if (  $wp_query->max_num_pages > 1 ){ ?>
-            <div class="news__button" onclick="fetch(this)">
+            <div class="news__button" pages="<?php $wp_query->max_num_pages ?>" onclick="fetch(this)">
                 <div class="news__see-more">Voir plus</div>
             </div>
         <?php } ?>
