@@ -52,11 +52,34 @@
         <div class="sport__site">
             <div class="sport__site--content">
                 <p class="sport__site--title">Le Bourget – Pavillon I</p>
-                <p class="sport__site--note">Le Bourget</p>
+                <p class="sport__site--note"><?php var_dump(get_field('single_sport_place')); ?></p>
             </div>
             <div class="sport__site--img"></div>
         </div>
     </div>
+
+<div class="sport__siteList container">
+  <h4>Les sites</h4>
+  <?php 
+
+  $places = get_field('relationship_field_name');
+
+  if( $places ): ?>
+    <?php foreach( $places as $place): // variable must be called $place (IMPORTANT) ?>
+  <div class="sport__site">
+    <div class="sport__site--content">
+      <p class="sport__site--title"><?php get_field('place_adress'); ?></p>
+      <p class="sport__site--note">
+        <?php the_title() ?>
+      </p>
+    </div>
+    <div class="sport__site--img"></div>
+  </div>
+  <?php setup_postdata($place); ?>
+    <?php endforeach; ?>
+  <?php wp_reset_postdata(); // IMPORTANT - reset the $place object so the rest of the page works correctly ?>
+  <?php endif; ?>
+</div>
 
 
 <?php get_footer(); ?>

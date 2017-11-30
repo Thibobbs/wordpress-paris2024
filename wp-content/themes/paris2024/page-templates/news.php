@@ -15,7 +15,9 @@
             <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword" onkeydown="fetch(this)">     
         </div>
         <div class="search__button">
-            <button><?php the_field('news_search'); ?></button>
+            <button>
+                <span><?php the_field('news_search'); ?></span>
+            </button>
         </div> 
     </div>
 </div>
