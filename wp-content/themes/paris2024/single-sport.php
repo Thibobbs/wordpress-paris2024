@@ -47,39 +47,36 @@
         </div>
     </div>
 
-    <div class="sport__siteList container">
-        <h4>Les sites</h4>
-        <div class="sport__site">
-            <div class="sport__site--content">
-                <p class="sport__site--title">Le Bourget – Pavillon I</p>
-                <p class="sport__site--note"><?php var_dump(get_field('single_sport_place')); ?></p>
-            </div>
-            <div class="sport__site--img"></div>
-        </div>
-    </div>
-
 <div class="sport__siteList container">
   <h4>Les sites</h4>
   <?php 
 
-  $places = get_field('relationship_field_name');
+  $places = get_field('single_sport_place');
 
   if( $places ): ?>
-    <?php foreach( $places as $place): // variable must be called $place (IMPORTANT) ?>
+    <?php foreach( $places as $post): // variable must be called $post (IMPORTANT) ?>
   <div class="sport__site">
     <div class="sport__site--content">
-      <p class="sport__site--title"><?php get_field('place_adress'); ?></p>
+      <p class="sport__site--title"><?php the_title(); ?></p>
       <p class="sport__site--note">
-        <?php the_title() ?>
+        <?php the_field('place_adress'); ?>
       </p>
     </div>
-    <div class="sport__site--img"></div>
+    <div class="sport__site--img"><img src="<?php get_field('place_image')['url']; ?>" alt="image sport"></div>
   </div>
-  <?php setup_postdata($place); ?>
+  <?php setup_postdata($post); ?>
     <?php endforeach; ?>
-  <?php wp_reset_postdata(); // IMPORTANT - reset the $place object so the rest of the page works correctly ?>
+  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
   <?php endif; ?>
 </div>
 
+<footer id="footer" class="footer">
+<div class="footer__container">
+  <div class="container footer__content">
+    <p class="mainTitle"><a href="<?php echo get_page_link( get_page_by_title('concept')->ID ); ?>">Revenir au concept</a></p>
+    <span>Retrouvez toutes les informations relatives à l’organisation des jeux de Paris 2024.</span>
+  </div>
+</div>
+</footer>
 
 <?php get_footer(); ?>
