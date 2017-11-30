@@ -54,13 +54,7 @@ if (document.querySelector('body').classList.contains('page-id-5')  || document
 
 /** 
 
-    SLIDER CONCEPT
-
-*/
-
-/** 
-
-    SLIDER HOME
+    SLIDERS HOME
 
 */
 
@@ -145,7 +139,68 @@ if (document.querySelector('body').classList.contains('home'))
   slider.addEventListener("mouseout", () => {
     autoSlide = setInterval(next, 5000)
   })
+  
+  
+  const slider2 = document.querySelector('.slider2')
+  const slides_container2 = slider2.querySelector('.slider2__slides')
+  let slides2 = [].slice.call(slider2.querySelectorAll('.slider2__slide'))
+  const controllers2 = slider2.querySelector('.slider2__controllers2')
+  const prev_button2 = controllers2.querySelector('.controllers2__prev')
+  const next_button2 = controllers2.querySelector('.controllers2__next')
+
+  slides_container2.style.width = (slides2.length * 100) + '%'
+  slides_container2.style.transform = 'translate(calc(-100%/' + slides2.length + '))'
+
+  prev_button2.addEventListener('click', (e) =>
+  {
+    e.preventDefault()
+    previous2()
+  })
+
+  next_button2.addEventListener('click', (e) =>
+  {
+    e.preventDefault()
+    next2()
+  })
+  
+  function previous2() {
+    slides_container2.style.transform = 'translate(0)'
+    setTimeout(() => {
+      slides_container2.className += ' slider2__slides--return'
+      slides_container2.style.transform = 'translate(calc(-100%/' + slides2.length + '))'
+      slides2[0].before(slides2[slides2.length-1])
+      slides2 = [].slice.call(slider2.querySelectorAll('.slider2__slide'))
+    }, 300)
+    slides_container2.classList.remove('slider2__slides--return')
+  }
+  
+  function next2() {
+    slides_container2.style.transform = 'translate(calc(-200%/' + slides2.length + '))'
+    setTimeout(() => {
+      slides_container2.className += ' slider2__slides--return'
+      slides_container2.style.transform = 'translate(calc(-100%/' + slides2.length + '))'
+      slides2[slides2.length-1].after(slides2[0])
+      slides2 = [].slice.call(slider2.querySelectorAll('.slider2__slide'))
+    }, 300)
+    slides_container2.classList.remove('slider2__slides--return')
+  }
+  
+  let autoSlide2 = setInterval(next2, 5000)
+  
+  slider2.addEventListener("mouseover", () => {
+    clearInterval(autoSlide2)
+  })
+  
+  slider2.addEventListener("mouseout", () => {
+    autoSlide2 = setInterval(next2, 5000)
+  })
 }
+
+/** 
+
+    SLIDER CONCEPT
+
+*/
 
 if (document.querySelector('body').classList.contains('page-id-5')) {
   let i = 0

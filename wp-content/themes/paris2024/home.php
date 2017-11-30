@@ -103,6 +103,83 @@ get_header(); ?>
         </div>
       </div>
     </div>
+    
+    <div class="news">
+     <h3 class="news__title"><?php the_field('home_news_title'); ?></h3>
+     <p class="news__text"><?php the_field('home_news_text'); ?></p>
+      <div class="slider2">
+        <div class="slider2__slides">
+         
+         <?php
+      
+            $args = array(
+              'posts_per_page' => '9'
+            );
+            // The Query
+            $the_query = new WP_Query( $args );
+      
+            // The Loop
+            if ( $the_query->have_posts() ) {
+              $i = 0;
+              while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+                
+                if (($i % 3) === 0) {
+                  echo '<div class="slider2__slide" index="' . $i . '">';
+                }
+          ?>
+              <div class="articles__article">
+                  <a href="<?php the_permalink() ?>">
+                      <div class="article__thumbnail">
+                          <?php
+                          if(has_post_thumbnail())
+                          {
+                              the_post_thumbnail("hub_post_thumbnail");
+                          }
+                          ?>
+                          <div class="thumbnail__line"></div>
+                      </div>
+                      <div class="article__content">
+                          <div class="article__title"><?php the_title() ?></div>
+                          <div class="article__text"><?php the_field('article_intro'); ?></div>
+                      </div>
+                      <div class="article__data-wrapper">
+                          <div class="article__line"></div>
+                          <div class="article__data">
+                              <div class="article__data-date"><?php the_field('article_date'); ?></div>
+                              <div class="article__data-hastag">#Paris2024</div>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+      
+        <?php
+                  if ((($i+1) % 3) === 0) {
+                    echo '</div>';
+                  }
+                $i = ($i + 1);
+              }
+              wp_reset_postdata();
+            } else {
+              echo '<p>Désolé, le site semble rencontrer un problème ... Merci de revenir ultérieurement.</p>';
+            }
+        ?>
+        
+        </div>
+        
+        <div class="slider2__controllers2">
+          <a href="" class="controllers controllers2__prev"><img src="<?= IMAGES_URL ?>/arrows/left-arrow.svg" alt=""></a>
+          <a href="" class="controllers controllers2__next"><img src="<?= IMAGES_URL ?>/arrows/right-arrow.svg" alt=""></a>
+          <div class="controllers__tiles">
+            <div class="tile"></div>
+            <div class="tile tile--active"></div>
+            <div class="tile"></div>
+          </div>
+        </div>
+      
+      </div>
+      <a href="<?= get_post_type_archive_link('posts') ?>" class="news__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_news_button'); ?></a>
+    </div>
 
     <div class="concept">
       <div class="concept__container">
