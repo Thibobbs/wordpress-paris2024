@@ -70,7 +70,7 @@
         <div class="stories__content--text">
             <h4><?php the_title() ?></h4>
             <p class="stories__link--excerpt">
-                <?php the_field('article_intro'); ?>
+                <?php echo custom_field_excerpt(); ?>
             </p>
         </div>
         <!-- <hr> -->
