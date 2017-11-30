@@ -129,28 +129,14 @@
   text-transform: uppercase;
   font-size: 0.8em;
   font-weight: 600;
-
-  @media (max-width: $md) {
-    width: 85vw;
-    margin: 2.5rem auto;
-  }
-
-  @media (max-width: $sm) {
-    flex-direction: column;
-  }
 }
 
 .news__categories .news__category {
-  @include responsive($xs) {
-    padding: 0.5em 0;
-  }
   flex: 1;
+  padding: 0.5em 0;
   transition: color 0.15s ease-in-out;
   cursor: pointer;
-
-  @media (max-width: $md) {
-    margin-bottom: 15px;
-  }
+  text-align: center;
 }
 
 .news__categories .news__category.active {
