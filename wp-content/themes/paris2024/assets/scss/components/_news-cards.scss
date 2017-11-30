@@ -70,6 +70,10 @@
   height: 4rem;
   margin-top: 3rem;
   border-top: 3px solid $palegrey;
+
+  p:last-child {
+    text-transform: uppercase;
+  }
 }
 
 .thumbnail__line {

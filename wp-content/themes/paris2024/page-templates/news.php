@@ -76,7 +76,7 @@
         <!-- <hr> -->
         <div class="stories__content--infos">
             <p><?php the_field('article_date'); ?></p>
-            <p>#Paris2024</p>
+            <p>#<?= get_the_terms($post->id, 'category')[0]->slug ?></p>
         </div>
     </div>
     
