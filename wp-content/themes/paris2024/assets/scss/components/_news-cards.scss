@@ -19,6 +19,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  transform: scale(0.98);
   transition: transform 0.2s ease-in-out;
   box-shadow: $main-shadow;
   background-color: $light;
@@ -26,7 +27,7 @@
   will-change: transform;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.0);
   }
 }
 
