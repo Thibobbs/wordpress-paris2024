@@ -4,6 +4,10 @@ add_action( 'wp_footer', 'ajax_fetch' );
 function ajax_fetch() {
 ?>
     <script type="text/javascript">
+        var page = 1;
+        var number_of_pages = document.querySelector('.news__button').getAttribute('pages');
+        number_of_pages--;
+        console.log(number_of_pages);
         function fetch(element){
 
             if(element.tagName == 'DIV'){
@@ -45,14 +49,18 @@ function ajax_fetch() {
 
                 else{
                     console.log('button');
-                    var page = 2;
+                    page++;
+                    number_of_pages--;
                     jQuery.ajax({
                         url: '<?php echo admin_url('admin-ajax.php'); ?>',
                         type: 'post',
                         data: { action: 'load_more_data_fetch', page: page},
                         success: function(data) {
+                            if(number_of_pages == 0){
+                                jQuery('.news__button').remove();
+                            }
                             jQuery('.news__articles').append( data );
-                            page++;
+                            
                         }
                     });
                 }
@@ -149,7 +157,7 @@ function load_more_data_fetch(){
 
     $paged = $_POST['page'];    
     $args =  array( 
-        'posts_per_page' => 9, 
+        'posts_per_page' => 2, 
         'post_type' => 'post',
         'paged' => $paged,        
     );
@@ -162,30 +170,31 @@ function load_more_data_fetch(){
                 <a href="<?php the_permalink() ?>">
                     <div class="article__thumbnail">
                         <?php
-                        if(has_post_thumbnail())
-                        {
-                            the_post_thumbnail("hub_post_thumbnail");
-                        }
+                            if(has_post_thumbnail())
+                            {
+                                the_post_thumbnail("hub_post_thumbnail");
+                            }
                         ?>
                         <div class="thumbnail__line"></div>
                     </div>
                     <div class="article__content">
                         <div class="article__title"><?php the_title() ?></div>
-                        <div class="article__text">Les athlètes sont au cœur des Jeux Olympiques. Sans eux, les Jeux ne pourraient pas avoir lieu et leur expérience est inestimable pour une...</div>
+                        <div class="article__text"><?php the_field('article_intro'); ?></div>
                     </div>
                     <div class="article__data-wrapper">
                         <div class="article__line"></div>
                         <div class="article__data">
-                            <div class="article__data-date">10 Juil. 2017</div>
+                            <div class="article__data-date"><?php the_field('article_date'); ?></div>
                             <div class="article__data-hastag">#Paris2024</div>
                         </div>
                     </div>
                 </a>
             </div>
 
-        <?php endwhile;
-        wp_reset_postdata();  
+        <?php
+        endwhile;
+        wp_reset_postdata();
     endif;
 
     die();
-}
+} ?>
