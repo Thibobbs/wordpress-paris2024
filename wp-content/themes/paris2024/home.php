@@ -107,7 +107,7 @@ get_header(); ?>
     <div class="news">
      <h3 class="news__title"><?php the_field('home_news_title'); ?></h3>
      <p class="news__text"><?php the_field('home_news_text'); ?></p>
-      <div class="slider2 container">
+      <div class="slider2">
         <div class="slider2__slides">
          
          <?php
@@ -125,7 +125,7 @@ get_header(); ?>
                 $the_query->the_post();
                 
                 if (($i % 3) === 0) {
-                  echo '<div class="slider2__slide stories__container" index="' . $i . '">';
+                  echo '<div class="slider2__slide" index="' . $i . '">';
                 }
           ?>
             <a class="stories" href="<?php the_permalink() ?>">

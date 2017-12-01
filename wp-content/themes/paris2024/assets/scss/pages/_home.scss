@@ -313,6 +313,7 @@
 }
 
 .slider2 {
+  width: 100%;
   overflow: hidden;
   background: $palegrey;
   position: relative;
@@ -340,10 +341,10 @@
     }
   }
   .controllers2__prev {
-    left: 30px;
+    left: 0;
   }
   .controllers2__next {
-    right: 30px;
+    right: 0;
   }
 }
 
@@ -357,8 +358,21 @@
   }
   
   .slider2__slide {
+    @include responsive($xs) {
+      grid-template-columns: 1fr;
+  }
+    @include responsive($md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
     width: 100%;
     height: 46.6rem;
+    .stories {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
 
