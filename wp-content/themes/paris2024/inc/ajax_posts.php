@@ -59,7 +59,7 @@ function ajax_fetch() {
                             if(number_of_pages == 0){
                                 document.querySelector('.news__button').remove();
                             }
-                            document.querySelector('.stories__container').innerHTML = data;
+                            document.querySelector('.stories__container').innerHTML += data;
                             
                         }
                     });
@@ -155,18 +155,16 @@ add_action('wp_ajax_load_more_data_fetch' , 'load_more_data_fetch');
 add_action('wp_ajax_nopriv_load_more_data_fetch','load_more_data_fetch');
 function load_more_data_fetch(){
 
-    $paged = $_POST['page'];    
-    $args =  array( 
-        'posts_per_page' => 9, 
+    $paged = $_POST['page'];
+    $args =  array(
+        'posts_per_page' => 9,
         'post_type' => 'post',
-        'paged' => $paged,        
+        'paged' => $paged
     );
 
     $load_more_query = new WP_Query( $args );
     if( $load_more_query->have_posts() ) :
-        while( $load_more_query->have_posts() ): $load_more_query->the_post(); 
-            $wp_query->the_post();
-            ?>
+        while( $load_more_query->have_posts() ): $load_more_query->the_post(); ?>
             <a class="stories" href="<?php the_permalink() ?>">
                 <div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
 
