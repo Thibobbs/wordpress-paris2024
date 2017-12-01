@@ -6,7 +6,7 @@ define( 'THEME_URL',       get_template_directory_uri() );
 define( 'CSS_URL',         THEME_URL.'/dist/css' );
 define( 'IMAGES_URL',      THEME_URL.'/dist/img' );
 define( 'JS_URL',          THEME_URL.'/dist/js' );
-define( 'UPLOADS',          THEME_URL.'/dist/uploads' );
+define( 'UPLOAD',          THEME_URL.'/dist/uploads' );
 // define( 'FAVICONS_URL',    THEME_URL.'/dist/favicon' );
 // define( 'ADMIN_IMAGES_URL',IMAGES_URL.'/admin' );
 

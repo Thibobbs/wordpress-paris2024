@@ -52,6 +52,11 @@
         opacity: 1;
       }
     }
+    @media (max-width: $sm) {
+      left: 50%;
+      bottom: 8%;
+      transform: translate(-50%, 0);
+    }
   }
 }
 
@@ -115,53 +120,326 @@
       }
     }
   }
-}
-
-.discover {
-  margin: 130px 0;
-  .discover__container {
-    width: 960px;
-    margin: 0 auto;
-    padding-top: 70px;
-    .discover__title {
-      position: relative;
-      width: 420px;
-      height: auto;
-      padding: 0;
-      line-height: 42px;
-      color: $dark;
-      font-family: 'Circular';
-      font-size: 42px;
-      font-weight: 600;
-      &:before {
-        position: absolute;
-        top: 7px;
-        left: -36px;
-        width: 6px;
-        height: 30px;
-        background-color: $deep-blue;
-        content: '';
+  @media (max-width: $sm) {
+    .slider__slide {
+      justify-content: center;
+      .slide__info {
+        margin: 0;
       }
-    }
-    .discover__text {
-      width: 466px;
-      margin-top: 80px;
-      text-align: justify;
-      line-height: 1.5;
-      color: $warm-grey;
-      font-size: 16px;
-    }
-    .discover__link {
-      display: block;
-      margin-top: 56px;
-      color: $warm-grey;
-      font-size: 16px;
-      font-weight: 600;
     }
   }
 }
 
+.vision {
+  display: flex;
+}
+
+.vision__container {
+  display: flex;
+  align-items: center;
+//  max-width: 960px;
+  width: 100%;
+  padding-left: 20px;
+  margin: 100px 0;
+//  margin-left: auto;
+  .container__text {
+//    flex: 1;
+    max-width: 50%;
+    padding-right: 100px;
+    margin-left: auto;
+  }
+  .container__img {
+//    flex: 1;
+    max-width: 40%;
+    margin-left: auto;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .container__text {
+      padding-right: 0;
+      padding-bottom: 50px;
+      max-width: none;
+    }
+    .container__img {
+      max-width: none;
+    }
+  }
+}
+
+.vision__title {
+  padding: 0;
+  color: $dark;
+  font-size: 4.2rem;
+  font-weight: 600;
+  position: relative;
+  &::before {
+    content: "I";
+    display: block;
+    position: absolute;
+    left: -35px;
+    color: #1875f0;
+  }
+}
+
+.vision__text {
+  margin-top: 60px;
+  text-align: justify;
+  line-height: 1.5;
+  color: $warm-grey;
+  font-size: 1.6rem;
+}
+
+.vision__button {
+  display: block;
+  color: $warm-grey;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 45px;
+}
+
+.vision__img {
+  width: 100%;
+}
+
+
 .partners {
-  height: 200px;
+  width: 100%;
   background: $palegrey;
+  ul {
+    height: 100%;
+    max-width: 960px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    li{
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      img{
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+.home-athlete {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+
+.home-athlete__container {
+  display: flex;
+  align-items: center;
+  max-width: 960px;
+  padding: 0 20px;
+  .home-athlete__txt {
+    flex: 1;
+    padding-left: 50px;
+  }
+  .container__img {
+    flex: 1;
+    font-size: 0;
+    padding: 20px 20px 0 20px;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .home-athlete__txt {
+      order: 0;
+      padding: 80px 0;
+    }
+    .container__img {
+      order: 1;
+    }
+  }
+}
+
+.home-athlete__img {
+  width: 100%;
+}
+
+.home-athlete__caption {
+  margin-top: 40px;
+  font-size: 3.4rem;
+  line-height: 2;
+  color: $light;
+}
+
+.home-athlete__name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: $jordy-blue;
+}
+
+.home-athlete__button{
+  width: 150px;
+  margin-top: 60px;
+  display: block;
+}
+
+
+.news {
+  .news__title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    color: $warm-grey;
+    margin-bottom: 30px;
+  }
+  .news__text {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $dark;
+  }
+  .news__button {
+    display: block;
+    width: 220px;
+    margin: 100px auto 30px auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+  }
+}
+
+.slider2 {
+  width: 100%;
+  overflow: hidden;
+  background: $palegrey;
+  position: relative;
+}
+
+.slider2__controllers2 {
+  .controllers {
+    width: 50px;
+    height: 50px;
+    background: $dark;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .3;
+    transform: translate(0, -50%);
+    transition: opacity .2s ease-in-out;
+    img {
+      width: 15px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .controllers2__prev {
+    left: 30px;
+  }
+  .controllers2__next {
+    right: 30px;
+  }
+}
+
+.slider2__slides {
+  display: flex;
+  will-change: transform;
+  transition: transform .3s ease-in-out;
+  
+  &.slider2__slides--return {
+    transition: transform 0s ease-in-out;
+  }
+  
+  .slider2__slide {
+    width: 100%;
+    height: 46.6rem;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    flex-wrap: wrap;
+  }
+}
+
+
+.concept {
+  display: flex;
+}
+
+.concept__container {
+  display: flex;
+  align-items: center;
+//  max-width: 960px;
+  width: 100%;
+  margin: 100px 0;
+  padding-right: 20px;
+//  margin-right: auto;
+  .container__text {
+//    flex: 1;
+    padding-left: 100px;
+    max-width: 50%;
+  }
+  .container__img {
+//    flex: 1;
+    max-width: 50%;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .container__text {
+      order: 0;
+      padding-left: 0;
+      padding-bottom: 50px;
+      max-width: none;
+    }
+    .container__img {
+      order: 1;
+      max-width: none;
+    }
+  }
+}
+
+.concept__title {
+  padding: 0;
+  color: $dark;
+  font-size: 4.2rem;
+  font-weight: 600;
+  position: relative;
+  &::before {
+    content: "I";
+    display: block;
+    position: absolute;
+    left: -35px;
+    color: #1875f0;
+  }
+}
+
+.concept__text {
+  margin-top: 60px;
+  text-align: justify;
+  line-height: 1.5;
+  color: $warm-grey;
+  font-size: 1.6rem;
+}
+
+.concept__button {
+  display: block;
+  color: $warm-grey;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 45px;
+}
+
+.concept__img {
+  width: 100%;
 }

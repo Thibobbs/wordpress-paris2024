@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 /** concept page */ 
 
 .video-intro {
@@ -25,24 +29,50 @@
 
 .video-intro__title {
     margin-top: 4rem;
+<<<<<<< HEAD
     font-size: 48px;
+=======
+    font-size: 40px;
+>>>>>>> dev
     font-weight: 500;
     line-height: 1.25;
     color: $light;
     opacity: 1;
     will-change: opacity;
+<<<<<<< HEAD
+=======
+    text-align: center;
+
+    @media (min-width: $xs) {
+        font-size: 48px;
+    }
+>>>>>>> dev
 }
 
 .video-intro__paragraph {
     margin-top: 8rem;
+<<<<<<< HEAD
     width: 70rem;
     height: 6.8rem;
     text-align: center;
     font-size: 16px;
+=======
+    text-align: center;
+    width: 95%;
+    font-size: 14px;
+>>>>>>> dev
     line-height: 1.63;
     color: $light;
     opacity: 1;
     will-change: opacity;
+<<<<<<< HEAD
+=======
+
+    @media (min-width: $sm) {
+        width: 70rem;
+        height: 6.8rem;
+    }   
+>>>>>>> dev
 }
 
 .video-intro__button {
@@ -71,7 +101,7 @@
   top: 50%;
   left: 50%;
   width: 2.5rem;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .video-intro__player video {
@@ -94,8 +124,13 @@
     left: 0;
     width: 100%;
     height: 80rem;
+<<<<<<< HEAD
     background: url('../img/concept-bkg.jpg') no-repeat;
     background-size: cover;
+=======
+    background-size: cover;
+    background-position: center;
+>>>>>>> dev
 }
 
 .video-intro__fade-effect {
@@ -135,15 +170,26 @@
 
 .description-project__paragraph {
     margin-top: 6rem;    
+<<<<<<< HEAD
     font-size: 30px;
     font-weight: 500;
     line-height: 2;
     color: $light;
+=======
+    font-size: 20px;
+    font-weight: normal;
+    color: $light;
+
+    @media (min-width: $xs) {
+        font-size: 30px;
+        line-height: 2;
+    }   
+>>>>>>> dev
 }
 
 .description-project__title {
   text-align: left;
-  line-height: 4.29;
+  line-height: 2;
   letter-spacing: 1.4px;
   color: $jordy-blue;
   font-size: 14px;
@@ -173,7 +219,11 @@
     font-family: Circular;
     font-size: 30px;
     font-weight: 500;
+<<<<<<< HEAD
     line-height: 2.0;
+=======
+    line-height: 1.5;
+>>>>>>> dev
     text-align: center;
     color: #000000;
 }
@@ -190,6 +240,7 @@
 .list-sports__item {
     position: relative;
     margin: 0 0.5rem 1rem 0.5rem;
+<<<<<<< HEAD
 }
 
 .list-sports__item img {
@@ -204,6 +255,23 @@
     opacity: 0.1;
 }
 
+=======
+    cursor: pointer;
+}
+
+.list-sports__item img {
+    width: 22.4rem;
+    height: 16.8rem;
+    max-width: 22.4rem;
+    max-height: 16.8rem;
+    object-fit: cover;
+}
+
+.list-sports__item:hover .list-sports__fade {
+    opacity: 0.1;
+}
+
+>>>>>>> dev
 .item__title {
     position: absolute;
     top: 50%;
@@ -211,6 +279,7 @@
     transform: translate(-50%,-50%);
     z-index: 2;
     text-align: center;
+<<<<<<< HEAD
 
     color: $light;
 }
@@ -252,4 +321,112 @@
     text-align: center;
     color: #1875f0;
 }
+=======
+    color: $light;
+}
 
+.list-sports__item:hover .item__fade {
+    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+.item__fade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: -0.3rem;
+    width: 22.4rem;
+    height: 16.8rem;
+    background-color: $dark;   
+    opacity: 0.5;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+/** sites section */
+
+.sites {
+    width: 100%;
+    height: auto;
+    padding: 8rem 0 12rem 0;
+    background-color: $light2;
+}
+
+.sites__title {
+    height: 10px;
+    font-family: Circular;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: $deep-blue;
+}
+
+/** Slider section */
+
+.slider-concept {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+
+  .slider__controllers {
+    .controllers__tiles {
+      left: 50%;
+      bottom: 10%;
+      transform: translate(-50%);
+      .tile {
+        background: $warm-grey;
+      }
+    }
+  }
+>>>>>>> dev
+
+  .slider__slide {
+    width: 50%;
+    transform: scale(.8);
+    opacity: .8;
+    transition: all .3s ease-in-out;
+    margin-bottom: 50px;
+    &::before {
+      content: none;
+    }
+    &--active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .slide__info {
+      width: 100%;
+      max-width: inherit;
+      margin: inherit;
+      text-align: center;
+      .slide__category {
+        color: $dark;
+        display: block;
+        &::before {
+          content: none;
+        }
+        a {
+          margin: 0 auto;
+          text-transform: none;
+          font-size: 2.4rem;
+          font-weight: 500;
+        }
+      }
+      .slide__title {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: $warm-grey;
+        margin-bottom: 50px;
+      }
+      .slide__image {
+        height: 150px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

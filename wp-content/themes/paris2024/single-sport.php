@@ -5,21 +5,23 @@
 ?>
 <?php get_header(); ?>
     <div class="sport__hero">
-        <div class="sport__heroTitle">
-            <h2>Badmington</h2>
+        <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+        <div class="sport__heroTitle" style="background-image: url('<?php echo $thumb['0'];?>');">
+            <div class="hero__filter"></div>
+            <h2><?php the_title(); ?></h2>
             <div class="container sport__heroInfos">
                 <div class="sport__heroInfos--content">
                     <div>
-                        <h3>Nombre d'épreuves</h3>
-                        <p>2</p>
+                        <h3><?php the_field('single_sport_intro_title_1'); ?></h3>
+                        <p><?php the_field('single_sport_intro_element_1'); ?></p>
                     </div>
                     <div>
-                        <h3>Première apparition</h3>
-                        <p>1992</p>
+                        <h3><?php the_field('single_sport_intro_title_2'); ?></h3>
+                        <p><?php the_field('single_sport_intro_element_2'); ?></p>
                     </div>
                     <div>
-                        <h3>Type de terrain</h3>
-                        <p>Intérieur</p>
+                        <h3><?php the_field('single_sport_intro_title_3'); ?></h3>
+                        <p><?php the_field('single_sport_intro_element_3'); ?></p>
                     </div>
                 </div>
             </div>
@@ -28,34 +30,54 @@
 
     <div class="sport__view container">
         <div class="sport__viewGeneral">
-            <p class="general__title">Vue d'ensemble</p>
+            <p class="general__title"><?php the_field('single_sport_description_title'); ?></p>
             <div class="general__content">
-                <p>Terrain : longueur 13,4 m; largeur 5,18 m (simple) 6,10 m (double) Hauteur du filet : 1,524 m (5 pieds) au centre. </p> <p>On s'échange un volant à l'aide de raquettes au-dessus d'un filet. Il existe des matchs simples (1 contre 1) et doubles (2 contre 2).</p>
+                <p><?php the_field('single_sport_description_texte'); ?></p>
             </div>
         </div>
         <div class="sport__viewKey">
-            <div class="sport__viewKey--img"></div>
+            <div class="sport__viewKey--img">
+                <img src="<?php the_field('single_sport_image'); ?>" />
+            </div>
             <div class="sport__viewKey--content">
-                <h4 class="key__title">Points clés</h4>
+                <h4 class="key__title"><?php the_field('single_sport_content_title'); ?></h4>
                 <div class="key__content">
-                    <p> Les volants sont en général en plumes d'oie.</p>
-                    <p>Leur vitesse dépasse 400 km/h pour les smashs des meilleurs joueurs mondiaux. Cependant, leur vitesse  diminue à moins de 100 km/h lorsqu'ils arrivent au niveau du joueur qui leur font face. Cette variation de vitesse, spécifique au badminton, est le plus grand attrait de ce sport. Ses points intéressants sont les stratégies et les manœuvres mises en oeuvre lors des échanges. Durant les matches simples, admirer les techniques des joueurs consistant à faire bouger l'adversaire et faire tomber le volant à cet endroit laissé vide. En double, la vitesse des échanges est plus rapide qu'en simple. </p>
-                    <p>Enfin, en double mixte, la stratégie classique et de faire couvrir sa partenaire par le joueur mâle (en général, la femme joue à l'avant tandis que l'homme est à l'arrière).</p>
+                    <p><?php the_field('single_sport_content_texte'); ?></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="sport__siteList container">
-        <h4>Les sites</h4>
-        <div class="sport__site">
-            <div class="sport__site--content">
-                <p class="sport__site--title">Le Bourget – Pavillon I</p>
-                <p class="sport__site--note">Le Bourget</p>
-            </div>
-            <div class="sport__site--img"></div>
-        </div>
-    </div>
+<div class="sport__siteList container">
+  <h4>Les sites</h4>
+  <?php 
 
+  $places = get_field('single_sport_place');
+
+  if( $places ): ?>
+    <?php foreach( $places as $post): // variable must be called $post (IMPORTANT) ?>
+  <div class="sport__site">
+    <div class="sport__site--content">
+      <p class="sport__site--title"><?php the_title(); ?></p>
+      <p class="sport__site--note">
+        <?php the_field('place_adress'); ?>
+      </p>
+    </div>
+    <div class="sport__site--img"><img src="<?= get_field('place_image')['url']; ?>" alt="image sport"></div>
+  </div>
+  <?php setup_postdata($post); ?>
+    <?php endforeach; ?>
+  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+  <?php endif; ?>
+</div>
+
+<footer id="footer" class="footer">
+<div class="footer__container">
+  <div class="container footer__content">
+    <p class="mainTitle"><a href="<?php echo get_page_link( get_page_by_title('concept')->ID ); ?>">Revenir au concept</a></p>
+    <span>Retrouvez toutes les informations relatives à l’organisation des jeux de Paris 2024.</span>
+  </div>
+</div>
+</footer>
 
 <?php get_footer(); ?>

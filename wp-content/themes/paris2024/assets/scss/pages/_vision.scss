@@ -12,7 +12,7 @@
   
   .txt__title {
     font-size: 2.6rem;
-    padding: 5rem 0;
+    padding: 10rem 0 5rem 0;
     font-weight: bold;
     text-align: center;
     color: $dark;
@@ -23,24 +23,40 @@
     line-height: 1.5;
     text-align: center;
     color: $warm-grey;
+    padding: 0 15%;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 2px;
+      background: $deep-blue;
+      left: calc(50% - 10%);
+      bottom: -6.5rem;
+      transform: (-50%, 0);
+    }
   }
 }
 
 .description-vision__cards {
 
-  padding-top: 10rem;
-  padding-bottom: 17rem;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   .cards {
-    margin: 0 2.5rem;
+    min-width: 240px;
+    margin: 2.5rem 2.5rem;
     padding: 5rem;
     border-radius: 6px;
     background-color: $light;
     box-shadow: 0 0 38.3px 6.8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex: 1 1 0;
+    flex: 0 1 0;
     flex-direction: column;
     text-align: center;
   }
@@ -56,4 +72,64 @@
     font-size: 1.4rem;
     color: $warm-grey;
   }
+}
+
+.vision-athlete {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+}
+
+.vision-athlete__container {
+  display: flex;
+  align-items: center;
+  max-width: 960px;
+  padding: 0 20px;
+  .vision-athlete__txt {
+    flex: 1;
+    padding-left: 50px;
+  }
+  .container__img {
+    flex: 1;
+    font-size: 0;
+    padding: 20px 20px 0 20px;
+  }
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .vision-athlete__txt {
+      order: 0;
+      padding: 80px 0;
+    }
+    .container__img {
+      order: 1;
+    }
+  }
+}
+
+.vision-athlete__img {
+  width: 100%;
+}
+
+.vision-athlete__caption {
+  margin-top: 40px;
+  font-size: 3.4rem;
+  line-height: 2;
+  color: $light;
+}
+
+.vision-athlete__name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: $jordy-blue;
+}
+
+.vision-athlete__button{
+  width: 150px;
+  margin-top: 60px;
+  display: block;
 }

@@ -10,14 +10,16 @@
     <div class="image-intro__overlay"></div>
     <div class="image-intro__background"></div>
 
-    <div class="image-intro__search">
+    <form class="image-intro__search" onsubmit="fetch(this);return false;" method="post">
         <div class="search__input">
-            <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword" onkeydown="fetch(this)">     
+            <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword">     
         </div>
         <div class="search__button">
-            <button><?php the_field('news_search'); ?></button>
+            <button type="submit">
+                <span><?php the_field('news_search'); ?></span>
+            </button>
         </div> 
-    </div>
+    </form>
 </div>
 <div class="news">
     <div class="news__wrapper">
@@ -42,48 +44,45 @@
             <div class="news__loader__ball"></div>
         </div>
 
-        <div class="news__articles">
+        <div class="stories__container">
             <?php
                 $args= array(
                     'post_type' => 'post',
                     'posts_per_page' => 9
                 );
 
-                $the_query = new WP_Query( $args );
+                $wp_query = new WP_Query( $args );
 
                 // Start Loop
-                if ( $the_query->have_posts() ) {
-                    while ( $the_query->have_posts() ) {
-                        $the_query->the_post();
+                if ( $wp_query->have_posts() ) {
+                    while ( $wp_query->have_posts() ) {
+                        $wp_query->the_post();
             ?>
-
-            <div class="articles__article">
-                <a href="<?php the_permalink() ?>">
-                    <div class="article__thumbnail">
-                        <?php
-                        if(has_post_thumbnail())
-                        {
-                            the_post_thumbnail("hub_post_thumbnail");
-                        }
-                        ?>
-                        <div class="thumbnail__line"></div>
-                    </div>
-                    <div class="article__content">
-                        <div class="article__title"><?php the_title() ?></div>
-                        <div class="article__text"><?php the_field('article_intro'); ?></div>
-                    </div>
-                    <div class="article__data-wrapper">
-                        <div class="article__line"></div>
-                        <div class="article__data">
-                            <div class="article__data-date"><?php the_field('article_date'); ?></div>
-                            <div class="article__data-hastag">#Paris2024</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- End loop -->
-            <?php
+                        <a class="stories" href="<?php the_permalink() ?>">
+                            <div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
+    
+                                <div class="stories__link--thumbnail">
+                                    <?php if(has_post_thumbnail()) { the_post_thumbnail("hub_post_thumbnail"); } ?>
+                                    <div class="thumbnail__line"></div>
+                                </div>
+    
+                                <div class="stories__content">
+                                    <div class="stories__content--text">
+                                        <h4><?php the_title() ?></h4>
+                                        <p class="stories__link--excerpt">
+                                            <?php echo custom_field_excerpt(); ?>
+                                        </p>
+                                    </div>
+                                    <div class="stories__content--infos">
+                                        <p><?php the_field('article_date'); ?></p>
+                                        <p>#<?= get_the_terms($post->id, 'category')[0]->slug ?></p>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </a>
+                    <!-- End loop -->
+                    <?php
                     }
                 /* Restore original Post Data */
                 wp_reset_postdata();
@@ -91,9 +90,11 @@
             ?>
            
         </div>
-        <div class="news__button">
-            <a class="news__see-more" href="#" title="Voir plus">Voir plus</a>
-        </div>
+        <?php if (  $wp_query->max_num_pages > 1 ){ ?>
+            <div class="news__button" pages="<?= $wp_query->max_num_pages ?>" onclick="fetch(this)">
+                <div class="news__see-more">Voir plus</div>
+            </div>
+        <?php } ?>
     </div>
 </div>
 <?php get_footer(); ?>
