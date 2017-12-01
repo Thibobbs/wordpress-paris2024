@@ -27,7 +27,7 @@ get_header(); ?>
        
         <div class="slider__slide" index="<?= $i ?>" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
           <div class="slide__info">
-            <h3 class="slide__category"><?php the_category(', '); ?></h3>
+            <h3 class="slide__category"><p><?= get_the_terms($post->id, 'category')[0]->slug ?></p></h3>
             <h2 class="slide__title"><?php the_title(); ?></h2>
             <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white"><?= $button_txt; ?></a>
           </div>
