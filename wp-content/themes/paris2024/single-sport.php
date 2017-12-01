@@ -7,6 +7,7 @@
     <div class="sport__hero">
         <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
         <div class="sport__heroTitle" style="background-image: url('<?php echo $thumb['0'];?>');">
+            <div class="hero__filter"></div>
             <h2><?php the_title(); ?></h2>
             <div class="container sport__heroInfos">
                 <div class="sport__heroInfos--content">
@@ -62,7 +63,7 @@
         <?php the_field('place_adress'); ?>
       </p>
     </div>
-    <div class="sport__site--img"><img src="<?php get_field('place_image')['url']; ?>" alt="image sport"></div>
+    <div class="sport__site--img"><img src="<?= get_field('place_image')['url']; ?>" alt="image sport"></div>
   </div>
   <?php setup_postdata($post); ?>
     <?php endforeach; ?>
