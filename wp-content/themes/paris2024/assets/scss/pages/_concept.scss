@@ -290,6 +290,9 @@ body {
       .tile {
         background: $warm-grey;
       }
+      @media (max-width: $xs) {
+        display: none;
+      }
     }
   }
 
@@ -338,6 +341,9 @@ body {
           object-fit: cover;
         }
       }
+    }
+    @media (max-width: $xs) {
+      margin-bottom: 0;
     }
   }
 }
