@@ -5,10 +5,10 @@
 .story__content.container h1,
 .story__content.container p,
 .story__content.container small {
-  @include responsive($lg) {
-    width: 90%;
+  @include responsive($sm) {
+    width: 80%;
   }
-  width: 80%;
+  width: 90%;
   max-width: 144rem;
   margin: auto;
 }
@@ -94,10 +94,13 @@
 }
 
 .story__img {
-  width: 80%;
+  @include responsive($sm) {
+    width: 80%;
+  }
+  width: 90%;
   height: calc(100vh / 16 * 9);
   max-height: 47rem;
-  margin: 7rem auto 9rem auto;
+  margin: 3rem auto;
   background-color: $cobalt-blue;
 
   img {
