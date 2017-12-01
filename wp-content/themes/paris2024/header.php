@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
   <?php wp_head(); ?>
+  <title>Paris 2024<?php wp_title('|'); ?></title>
 </head>
 
 <body <?php body_class(); ?>>
   <header class="header">
-    <div class="header__burger"">
+    <div class="header__burger">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
