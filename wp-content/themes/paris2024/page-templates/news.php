@@ -10,16 +10,16 @@
     <div class="image-intro__overlay"></div>
     <div class="image-intro__background"></div>
 
-    <div class="image-intro__search">
+    <form class="image-intro__search" onsubmit="fetch(this);return false;" method="post">
         <div class="search__input">
-            <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword" onkeydown="fetch(this)">     
+            <input type="text" placeholder="<?php the_field('news_search_sentence'); ?>" name="keyword" id="keyword">     
         </div>
         <div class="search__button">
-            <button>
+            <button type="submit">
                 <span><?php the_field('news_search'); ?></span>
             </button>
         </div> 
-    </div>
+    </form>
 </div>
 <div class="news">
     <div class="news__wrapper">
@@ -58,34 +58,31 @@
                     while ( $wp_query->have_posts() ) {
                         $wp_query->the_post();
             ?>
-<a class="stories" href="<?php the_permalink() ?>">
-<div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
+                        <a class="stories" href="<?php the_permalink() ?>">
+                            <div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
     
-    <div class="stories__link--thumbnail">
-        <?php if(has_post_thumbnail()) { the_post_thumbnail("hub_post_thumbnail"); } ?>
-        <div class="thumbnail__line"></div>
-    </div>
+                                <div class="stories__link--thumbnail">
+                                    <?php if(has_post_thumbnail()) { the_post_thumbnail("hub_post_thumbnail"); } ?>
+                                    <div class="thumbnail__line"></div>
+                                </div>
     
-    <div class="stories__content">
-        <div class="stories__content--text">
-            <h4><?php the_title() ?></h4>
-            <p class="stories__link--excerpt">
-                <?php the_field('article_intro'); ?>
-            </p>
-        </div>
-        <!-- <hr> -->
-        <div class="stories__content--infos">
-            <p><?php the_field('article_date'); ?></p>
-            <p>#<?= get_the_terms($post->id, 'category')[0]->slug ?></p>
-        </div>
-    </div>
+                                <div class="stories__content">
+                                    <div class="stories__content--text">
+                                        <h4><?php the_title() ?></h4>
+                                        <p class="stories__link--excerpt">
+                                            <?php echo custom_field_excerpt(); ?>
+                                        </p>
+                                    </div>
+                                    <div class="stories__content--infos">
+                                        <p><?php the_field('article_date'); ?></p>
+                                        <p>#<?= get_the_terms($post->id, 'category')[0]->slug ?></p>
+                                    </div>
+                                </div>
     
-</div>
-</a>
-
-
-            <!-- End loop -->
-            <?php
+                            </div>
+                        </a>
+                    <!-- End loop -->
+                    <?php
                     }
                 /* Restore original Post Data */
                 wp_reset_postdata();

@@ -48,7 +48,6 @@
   height: 13rem;
   margin-left: 5vw;
   background: $light;
-  font-size: 1.8rem;
 
   @media (max-width: $sm) {
     height: 10rem;
@@ -83,7 +82,6 @@
   @media (max-width: $sm) {
     margin-left: 2rem;
     text-align: center;
-    font-size: 1.4rem;
   }
 }
 
@@ -321,126 +319,6 @@
   100% {
     transform: scale(1, 1);
   }
-}
-
-// Articles
-.news__articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 5rem;
-
-  @media (max-width: $md) {
-    justify-content: center;
-  }
-}
-
-// Article
-.articles__article {
-  position: relative;
-  opacity: 1;
-  display: inline-block;
-  width: 34.6rem;
-  height: 46.6rem;
-  margin-right: 2.5rem;
-  margin-bottom: 5rem;
-  transition: opacity 0.3 ease-in-out;
-  border-radius: 6px;
-  background: $light2;
-
-  @media (max-width: $md) {
-    margin-right: 0;
-  }
-}
-
-.articles__article:hover {
-  opacity: 0.8;
-}
-
-.article__thumbnail {
-  position: relative;
-  width: 100%;
-  height: 17.3rem;
-  border-radius: 6px 6px 0 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 6px 6px 0 0;
-
-    object-fit: cover;
-  }
-}
-
-.thumbnail__line {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: $deep-blue;
-}
-
-.articles__article.cio .thumbnail__line {
-  background: #92278f;
-}
-
-.articles__article.hosts-elections .thumbnail__line {
-  background: #00a651;
-}
-
-.articles__article.olympic .thumbnail__line {
-  background: $deep-blue;
-}
-
-.articles__article.paris-2024 .thumbnail__line {
-  background: #fcb131;
-}
-
-.article__content,
-.article__data {
-  width: 80%;
-  margin: auto;
-}
-
-.article__title {
-  margin: 4rem 0 2rem 0;
-  line-height: 2.4rem;
-  color: $dark;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.article__text {
-  line-height: 1.8rem;
-  color: $warm-grey;
-  font-size: 1.2rem;
-}
-
-.article__data-wrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.article__line {
-  width: 100%;
-  height: 2px;
-  background: #dedede;
-}
-
-.article__data {
-  padding: 2.8rem 0;
-  line-height: 3.2rem;
-  color: $warm-grey;
-  font-size: 1.4rem;
-
-  div {
-    display: inline-block;
-  }
-}
-
-.article__data-hastag {
-  float: right;
 }
 
 // See more button
