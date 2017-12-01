@@ -57,6 +57,9 @@
       bottom: 8%;
       transform: translate(-50%, 0);
     }
+    @media (max-width: $xs) {
+      display: none;
+    }
   }
 }
 
@@ -103,7 +106,7 @@
           width: 4px;
           background: $deep-blue;
         }
-        a {
+        p {
           align-self: center;
           margin-left: 20px;
         }
@@ -145,7 +148,7 @@
     padding-right: 100px;
     margin-left: auto;
   }
-  .container__img {
+  .container__image {
     max-width: 40%;
     margin-left: auto;
   }
@@ -157,7 +160,7 @@
       padding-bottom: 50px;
       max-width: none;
     }
-    .container__img {
+    .container__image {
       max-width: none;
     }
   }
@@ -240,7 +243,7 @@
     flex: 1;
     padding-left: 50px;
   }
-  .container__img {
+  .container__image {
     flex: 1;
     font-size: 0;
     padding: 20px 20px 0 20px;
@@ -250,9 +253,9 @@
     padding: 0 15%;
     .home-athlete__txt {
       order: 0;
-      padding: 80px 0;
+      padding: 80px 0 40px 0;
     }
-    .container__img {
+    .container__image {
       order: 1;
     }
   }
@@ -281,7 +284,14 @@
 .home-athlete__button{
   width: 150px;
   margin-top: 60px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: auto;
+    height: 20px;
+    margin-right: 10px;
+  }
 }
 
 
@@ -340,10 +350,10 @@
     }
   }
   .controllers2__prev {
-    left: 30px;
+    left: 0;
   }
   .controllers2__next {
-    right: 30px;
+    right: 0;
   }
 }
 
@@ -357,8 +367,21 @@
   }
   
   .slider2__slide {
+    @include responsive($xs) {
+      grid-template-columns: 1fr;
+  }
+    @include responsive($md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
     width: 100%;
     height: 46.6rem;
+    .stories {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -377,7 +400,7 @@
     padding-left: 100px;
     max-width: 50%;
   }
-  .container__img {
+  .container__image {
     max-width: 50%;
   }
   @media (max-width: $sm) {
@@ -389,7 +412,7 @@
       padding-bottom: 50px;
       max-width: none;
     }
-    .container__img {
+    .container__image {
       order: 1;
       max-width: none;
     }

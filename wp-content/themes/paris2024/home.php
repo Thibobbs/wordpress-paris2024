@@ -27,7 +27,7 @@ get_header(); ?>
        
         <div class="slider__slide" index="<?= $i ?>" style="background-image:url('<?= the_post_thumbnail_url(); ?>')">
           <div class="slide__info">
-            <h3 class="slide__category"><?php the_category(', '); ?></h3>
+            <h3 class="slide__category"><p><?= get_the_terms($post->id, 'category')[0]->slug ?></p></h3>
             <h2 class="slide__title"><?php the_title(); ?></h2>
             <a href="<?php the_permalink(); ?>" class="slide__button btn__main btn__main--blue btn__text btn__text--white"><?= $button_txt; ?></a>
           </div>
@@ -65,11 +65,11 @@ get_header(); ?>
           <p class="vision__text">
             <?php the_field('home_vision_text'); ?>
           </p>
-          <a href="" class="vision__button">
+          <a href="<?= get_page_link( get_page_by_title('vision')->ID ); ?>" class="vision__button">
             <?php the_field('home_vision_button'); ?>
           </a>
         </div>
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_vision_image')['url']; ?>" alt="" class="vision__img">
         </div>
       </div>
@@ -87,7 +87,7 @@ get_header(); ?>
 
     <div class="home-athlete">
       <div class="home-athlete__container">
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_athlete_image')['url']; ?>" alt="" class="home-athlete__img">
         </div>
         <div class="home-athlete__txt">
@@ -97,7 +97,8 @@ get_header(); ?>
           <p class="home-athlete__caption">
             <?php the_field('home_athlete_caption'); ?>
           </p>
-          <a href="" class="home-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+          <a href="<?php the_field('home_athlete_button_link'); ?>" class="home-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+          <img src="<?= get_field('home_athlete_button_img')['url']; ?>" alt="" class="cards__img">
             <?php the_field('home_athlete_button'); ?>
           </a>
         </div>
@@ -178,12 +179,12 @@ get_header(); ?>
         </div>
       
       </div>
-      <a href="<?= get_post_type_archive_link('posts') ?>" class="news__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_news_button'); ?></a>
+      <a href="<?= get_page_link( get_page_by_title('actualites')->ID ); ?>" class="news__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_news_button'); ?></a>
     </div>
 
     <div class="concept">
       <div class="concept__container">
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_concept_image')['url']; ?>" alt="" class="concept__img">
         </div>
         <div class="container__text">
@@ -193,7 +194,7 @@ get_header(); ?>
           <p class="concept__text">
             <?php the_field('home_concept_text'); ?>
           </p>
-          <a href="" class="concept__button">
+          <a href="<?= get_page_link( get_page_by_title('concept')->ID ); ?>" class="concept__button">
             <?php the_field('home_concept_button'); ?>
           </a>
         </div>

@@ -7,72 +7,80 @@
 }
 
 .description-vision__txt {
-  max-width: 960px;
-  margin: 0 auto;
-  
   .txt__title {
-    font-size: 2.6rem;
     padding: 10rem 0 5rem 0;
-    font-weight: bold;
     text-align: center;
     color: $dark;
+    font-size: 2.6rem;
+    font-weight: bold;
   }
 
   .txt__paragraph {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    text-align: center;
-    color: $warm-grey;
-    padding: 0 15%;
     position: relative;
-    
+    padding: 0 15%;
+    text-align: center;
+    line-height: 1.5;
+    color: $warm-grey;
+    font-size: 1.4rem;
+
     &::after {
-      content: '';
-      display: block;
       position: absolute;
+      bottom: -100%;
+      left: calc(50% - 10%);
+      display: block;
       width: 20%;
       height: 2px;
-      background: $deep-blue;
-      left: calc(50% - 10%);
-      bottom: -6.5rem;
       transform: (-50%, 0);
+      background: $deep-blue;
+      content: '';
     }
   }
 }
 
 .description-vision__cards {
-
-  padding-top: 14rem;
-  padding-bottom: 10rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  @include responsive($xs) {
+    grid-template-columns: initial;
+  }
+  @include responsive($sm) {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  padding: 14rem 0;
 
   .cards {
-    min-width: 240px;
-    margin: 2.5rem 2.5rem;
-    padding: 5rem;
-    border-radius: 6px;
-    background-color: $light;
-    box-shadow: 0 0 38.3px 6.8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex: 0 1 0;
     flex-direction: column;
+    justify-content: space-around;
+    padding: 6rem 3rem;
+    border-radius: 6px;
+    box-shadow: 0 0 38.3px 6.8px rgba(0, 0, 0, 0.1);
+    background-color: $light;
     text-align: center;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      margin: 0 auto;
+    }
   }
 
   .cards__number {
-    margin-top: 7rem;
-    margin-bottom: 3rem;
-    font-size: 3.6rem;
+    margin: 4rem 0;
     color: $deep-blue;
+    font-size: 2.4em;
+    font-weight: bold;
   }
 
   .cards__txt {
-    font-size: 1.4rem;
     color: $warm-grey;
+    font-size: 1.4rem;
   }
 }
+
 
 .vision-athlete {
   display: flex;
@@ -87,23 +95,24 @@
   max-width: 960px;
   padding: 0 20px;
   .vision-athlete__txt {
+    order: 0;
     flex: 1;
-    padding-left: 50px;
+    padding-right: 50px;
   }
-  .container__img {
+  .container__image {
+    order: 1;
     flex: 1;
     font-size: 0;
+    width: 70%;
     padding: 20px 20px 0 20px;
   }
   @media (max-width: $sm) {
     flex-direction: column;
     padding: 0 15%;
     .vision-athlete__txt {
-      order: 0;
-      padding: 80px 0;
+      padding: 80px 0 40px 0;
     }
-    .container__img {
-      order: 1;
+    .container__image {
     }
   }
 }
@@ -131,5 +140,12 @@
 .vision-athlete__button{
   width: 150px;
   margin-top: 60px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: auto;
+    height: 20px;
+    margin-right: 10px;
+  }
 }

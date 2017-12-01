@@ -234,6 +234,34 @@ if (document.querySelector('body').classList.contains('home'))
   slider2.addEventListener("mouseout", () => {
     autoSlide2 = setInterval(next2, 5000)
   })
+  
+
+  let height = 0; // the height of the highest element (after the function runs)
+  document.querySelectorAll('.stories').forEach((el) => {
+    if (el.offsetHeight > height) {
+      height = el.offsetHeight
+    }
+  })
+  slides2.forEach((el) => {
+    el.style.height = height + 'px'
+  })
+  document.querySelectorAll('.stories').forEach((el) => {
+    el.style.height = height + 'px'
+  })
+  window.addEventListener("resize", () => {
+    let height = 0; // the height of the highest element (after the function runs)
+    document.querySelectorAll('.stories').forEach((el) => {
+      if (el.offsetHeight > height) {
+        height = el.offsetHeight
+      }
+    })
+    slides2.forEach((el) => {
+      el.style.height = height + 'px'
+    })
+    document.querySelectorAll('.stories').forEach((el) => {
+      el.style.height = height + 'px'
+    })
+  })
 }
 
 /** 

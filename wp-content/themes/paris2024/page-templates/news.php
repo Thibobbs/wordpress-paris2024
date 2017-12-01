@@ -17,6 +17,7 @@
         <div class="search__button">
             <button type="submit">
                 <span><?php the_field('news_search'); ?></span>
+                <span><img src="<?= IMAGES_URL ?>/arrows/right-arrow-white.svg" alt="Rechercher"></span>
             </button>
         </div> 
     </form>
@@ -81,10 +82,12 @@
     
                             </div>
                         </a>
-                    <!-- End loop -->
                     <?php
                     }
+                    // End loop
+                    
                 /* Restore original Post Data */
+                
                 wp_reset_postdata();
                 }
             ?>
