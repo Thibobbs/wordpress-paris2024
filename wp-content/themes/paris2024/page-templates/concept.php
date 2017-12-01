@@ -19,11 +19,11 @@
     <div class="video-intro__fade-effect"></div>
     <div class="video-intro__player">
         <video>
-          <source src="<?= UPLOADS.'/concept.mp4' ?>" type="video/mp4">
+          <source src="<?= UPLOAD.'/concept.mp4' ?>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
     </div>
-    <div class="video-intro__bg" style="background: url('<?= get_field('concept_video')['url']; ?>');"></div>
+    <div class="video-intro__bg" style="background-image: url('<?= get_field('concept_video')['url']; ?>'); background-size: cover;"></div>
 </section>
 
 <section class="description-project">
@@ -34,48 +34,49 @@
 </section>
 
 <section class="list-sports">
+    <div class="container">
+        <h3 class="list-sports__title"><?php the_field("concept_sports_title") ?></h3>
+        <p class="list-sports__text"><?php the_field("concept_sports_text") ?></p>
+        
+        <div class="list-sports__items">
+            <?php
+            $args= array(
+              'post_type' => 'sport',
+              'posts_per_page' => 34,
+              'orderby'=>'title',
+              'order'=>'ASC'
+            );
 
-    <h3 class="list-sports__title"><?php the_field("concept_sports_title") ?></h3>
-    <p class="list-sports__text"><?php the_field("concept_sports_text") ?></p>
-    
-    <div class="list-sports__items">
-        <?php
-        $args= array(
-          'post_type' => 'sport',
-          'posts_per_page' => 34,
-          'orderby'=>'title',
-          'order'=>'ASC'
-        );
+            $the_query = new WP_Query( $args );
 
-        $the_query = new WP_Query( $args );
-
-        // Start Loop
-        if ( $the_query->have_posts() ) {
-            while ( $the_query->have_posts() ) {
-                $the_query->the_post();
-        ?>
-        <a href="<?php the_permalink() ?>">
-          <div class="list-sports__item">
-              <div class="item__fade"></div>
-              <h3 class="item__title"><?php the_title() ?></h3>
-              <div class="thumbnail">
-                  <?php
-                    if(has_post_thumbnail())
-                    {
-                      the_post_thumbnail("hub_sport_thumbnail");
-                    }
-                  ?>
+            // Start Loop
+            if ( $the_query->have_posts() ) {
+                while ( $the_query->have_posts() ) {
+                    $the_query->the_post();
+            ?>
+            <a href="<?php the_permalink() ?>">
+              <div class="list-sports__item">
+                  <div class="item__fade"></div>
+                  <h3 class="item__title"><?php the_title() ?></h3>
+                  <div class="thumbnail">
+                      <?php
+                        if(has_post_thumbnail())
+                        {
+                          the_post_thumbnail("hub_sport_thumbnail");
+                        }
+                      ?>
+                  </div>
               </div>
-          </div>
-        </a>
+            </a>
 
-         <!-- End loop -->
-        <?php
-        }
-           /* Restore original Post Data */
-           wp_reset_postdata();
-        }
-        ?>
+             <!-- End loop -->
+            <?php
+            }
+               /* Restore original Post Data */
+               wp_reset_postdata();
+            }
+            ?>
+        </div>
     </div>
 </section>
 
