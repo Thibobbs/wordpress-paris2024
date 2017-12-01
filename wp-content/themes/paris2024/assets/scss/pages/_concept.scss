@@ -1,95 +1,64 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /** concept page */ 
 
 .video-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 80rem;
-    background-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80rem;
+  background-color: transparent;
 }
 
 .video-intro__page-name {
-    margin-top: 11.5rem;
-    padding: 1.6rem 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-    color: $light;
-    background-color: $deep-blue;
-    opacity: 1;
-    will-change: opacity;
+  opacity: 1;
+  margin-top: 11.5rem;
+  padding: 1.6rem 2rem;
+  background-color: $deep-blue;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: $light;
+  font-size: 14px;
+  font-weight: bold;
+
+  will-change: opacity;
 }
 
 .video-intro__title {
-    margin-top: 4rem;
-<<<<<<< HEAD
-    font-size: 48px;
-=======
-    font-size: 40px;
->>>>>>> dev
-    font-weight: 500;
-    line-height: 1.25;
-    color: $light;
-    opacity: 1;
-    will-change: opacity;
-<<<<<<< HEAD
-=======
-    text-align: center;
+  opacity: 1;
+  margin-top: 4rem;
+  text-align: center;
+  line-height: 1.25;
+  color: $light;
+  font-size: 40px;
+  font-weight: 500;
 
-    @media (min-width: $xs) {
-        font-size: 48px;
-    }
->>>>>>> dev
+  will-change: opacity;
+
+  @media (min-width: $xs) {
+    font-size: 48px;
+  }
 }
 
 .video-intro__paragraph {
-    margin-top: 8rem;
-<<<<<<< HEAD
-    width: 70rem;
-    height: 6.8rem;
-    text-align: center;
-    font-size: 16px;
-=======
-    text-align: center;
-    width: 95%;
-    font-size: 14px;
->>>>>>> dev
-    line-height: 1.63;
-    color: $light;
-    opacity: 1;
-    will-change: opacity;
-<<<<<<< HEAD
-=======
+  height: 6.8rem;
+  margin-top: 8rem;
 
-    @media (min-width: $sm) {
-        width: 70rem;
-        height: 6.8rem;
-    }   
->>>>>>> dev
+  will-change: opacity;
 }
 
+.video-intro__page-name,
+.video-intro__title,
+.video-intro__paragraph,
 .video-intro__button {
-    position: relative;
-    margin-top: 8rem;
-    width: 7.2rem;
-    height: 7.2rem;
-    border-radius: 100%;
-    background-color: $deep-blue;
-    opacity: 1;
-    will-change: opacity;
-}
+          transition: opacity 0.15s ease-in-out;
 
-.video-intro__page-name, .video-intro__title, .video-intro__paragraph, .video-intro__button {
-    -webkit-transition: opacity 0.15s ease-in-out;
-    -o-transition: opacity 0.15s ease-in-out;
-    transition: opacity 0.15s ease-in-out;
+  -webkit-transition: opacity 0.15s ease-in-out;
+       -o-transition: opacity 0.15s ease-in-out;
 }
 
 .video-intro__button:hover {
@@ -105,62 +74,58 @@ body {
 }
 
 .video-intro__player video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    transition: 1s opacity;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: -100;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
 }
 
 .video-intro__bg {
-    position: fixed;
-    z-index: -99;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80rem;
-<<<<<<< HEAD
-    background: url('../img/concept-bkg.jpg') no-repeat;
-    background-size: cover;
-=======
-    background-size: cover;
-    background-position: center;
->>>>>>> dev
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -99;
+  width: 100%;
+  height: 80rem;
+  background-position: center;
+  background-size: cover;
 }
 
 .video-intro__fade-effect {
-    position: absolute;
-    width: 100%;
-    height: 80rem;
-    background-color: $dark;
-    opacity: 0.6;
-    z-index: -1;
-    -webkit-transition: opacity 0.15s ease-in-out;
-    -o-transition: opacity 0.15s ease-in-out;
-    transition: opacity 0.15s ease-in-out;
+  position: absolute;
+  opacity: 0.6;
+  z-index: -1;
+  width: 100%;
+  height: 80rem;
+          transition: opacity 0.15s ease-in-out;
+  background-color: $dark;
+
+  -webkit-transition: opacity 0.15s ease-in-out;
+       -o-transition: opacity 0.15s ease-in-out;
 } 
 
 .video-intro__fade-effect.active {
-    cursor: pointer;
-    opacity: 0.2;
-    z-index: 10;
+  opacity: 0.2;
+  z-index: 10;
+  cursor: pointer;
 }
 
 /** description-project */
 
 .description-project {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    padding: 14rem 0 14rem 0;
-    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 14rem 0 14rem 0;
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 
 .description-project__txt {
@@ -169,22 +134,15 @@ body {
 }
 
 .description-project__paragraph {
-    margin-top: 6rem;    
-<<<<<<< HEAD
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 2;
-    color: $light;
-=======
-    font-size: 20px;
-    font-weight: normal;
-    color: $light;
+  margin-top: 6rem;
+  color: $light;
+  font-size: 20px;
+  font-weight: normal;
 
-    @media (min-width: $xs) {
-        font-size: 30px;
-        line-height: 2;
-    }   
->>>>>>> dev
+  @media (min-width: $xs) {
+    line-height: 2;
+    font-size: 30px;
+  }
 }
 
 .description-project__title {
@@ -199,201 +157,138 @@ body {
 /** List sports */
 
 .list-sports {
-    width: 100%;
-    height: auto;
-    padding: 8rem 0 11rem 0;
-    background-color: $palegrey;
+  width: 100%;
+  height: auto;
+  padding: 8rem 0 11rem 0;
+  background-color: $palegrey;
 }
 
 .list-sports__title {
-    font-family: Circular;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 4.29;
-    letter-spacing: 1.4px;
-    text-align: center;
-    color: #8c8c8c;
+  text-align: center;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  color: #8c8c8c;
+  font-family: Circular;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .list-sports__text {
-    font-family: Circular;
-    font-size: 30px;
-    font-weight: 500;
-<<<<<<< HEAD
-    line-height: 2.0;
-=======
-    line-height: 1.5;
->>>>>>> dev
-    text-align: center;
-    color: #000000;
+  text-align: center;
+  line-height: 1.5;
+  color: #000000;
+  font-family: Circular;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .list-sports__items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0 10%;
-    margin-top: 10rem;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10rem;
+  padding: 0 10%;
 }
 
 .list-sports__item {
-    position: relative;
-    margin: 0 0.5rem 1rem 0.5rem;
-<<<<<<< HEAD
+  position: relative;
+  margin: 0 0.5rem 1rem 0.5rem;
+  cursor: pointer;
 }
 
 .list-sports__item img {
-    width: 22.4rem;
-    height: 16.8rem;
-    max-width: 22.4rem;
-    max-height: 16.8rem;
-    object-fit: cover;
+  width: 22.4rem;
+  max-width: 22.4rem;
+  height: 16.8rem;
+  max-height: 16.8rem;
+
+  object-fit: cover;
 }
 
 .list-sports__item:hover .list-sports__fade {
-    opacity: 0.1;
+  opacity: 0.1;
 }
 
-=======
-    cursor: pointer;
-}
-
-.list-sports__item img {
-    width: 22.4rem;
-    height: 16.8rem;
-    max-width: 22.4rem;
-    max-height: 16.8rem;
-    object-fit: cover;
-}
-
-.list-sports__item:hover .list-sports__fade {
-    opacity: 0.1;
-}
-
->>>>>>> dev
 .item__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
-    text-align: center;
-<<<<<<< HEAD
-
-    color: $light;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: $light;
 }
 
 .list-sports__item:hover .item__fade {
-    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
+  background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 .item__fade {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin-top: -0.3rem;
-    width: 22.4rem;
-    height: 16.8rem;
-    background-color: $dark;   
-    opacity: 0.5;
-    -webkit-transition: all 0.15s ease-in-out;
-    -o-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-    cursor: pointer;   
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.5;
+  width: 22.4rem;
+  height: 16.8rem;
+  margin-top: -0.3rem;
+  transform: translate(-50%,-50%);
+          transition: all 0.15s ease-in-out;
+  background-color: $dark;
+
+  -webkit-transition: all 0.15s ease-in-out;
+       -o-transition: all 0.15s ease-in-out;
 }
 
 /** sites section */
 
 .sites {
-    width: 100%;
-    height: auto;
-    padding: 8rem 0 12rem 0;
-    background-color: #fefefe;
+  width: 100%;
+  height: auto;
+  padding: 8rem 0 12rem 0;
+  background-color: $light2;
 }
 
 .sites__title {
-    height: 10px;
-    font-family: Circular;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-    text-align: center;
-    color: #1875f0;
-}
-=======
-    color: $light;
-}
-
-.list-sports__item:hover .item__fade {
-    background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
-}
-.item__fade {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin-top: -0.3rem;
-    width: 22.4rem;
-    height: 16.8rem;
-    background-color: $dark;   
-    opacity: 0.5;
-    -webkit-transition: all 0.15s ease-in-out;
-    -o-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-}
-
-/** sites section */
-
-.sites {
-    width: 100%;
-    height: auto;
-    padding: 8rem 0 12rem 0;
-    background-color: $light2;
-}
-
-.sites__title {
-    height: 10px;
-    font-family: Circular;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-    text-align: center;
-    color: $deep-blue;
+  height: 10px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  color: $deep-blue;
+  font-family: Circular;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /** Slider section */
 
 .slider-concept {
+  position: relative;
   width: 100%;
   height: 80vh;
   overflow: hidden;
-  position: relative;
 
   .slider__controllers {
     .controllers__tiles {
-      left: 50%;
       bottom: 10%;
+      left: 50%;
       transform: translate(-50%);
       .tile {
         background: $warm-grey;
       }
     }
   }
->>>>>>> dev
 
   .slider__slide {
+    opacity: 0.8;
     width: 50%;
-    transform: scale(.8);
-    opacity: .8;
-    transition: all .3s ease-in-out;
     margin-bottom: 50px;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
     &::before {
       content: none;
     }
     &--active {
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
     }
     .slide__info {
       width: 100%;
@@ -401,8 +296,8 @@ body {
       margin: inherit;
       text-align: center;
       .slide__category {
-        color: $dark;
         display: block;
+        color: $dark;
         &::before {
           content: none;
         }
@@ -414,16 +309,17 @@ body {
         }
       }
       .slide__title {
-        font-size: 1.4rem;
+        margin-bottom: 50px;
         line-height: 1.5;
         color: $warm-grey;
-        margin-bottom: 50px;
+        font-size: 1.4rem;
       }
       .slide__image {
         height: 150px;
         img {
           width: 100%;
           height: 100%;
+
           object-fit: cover;
         }
       }
