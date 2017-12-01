@@ -259,7 +259,7 @@ body {
 .sites {
     width: 100%;
     height: auto;
-    padding: 8rem 0 12rem 0;
+    padding: 8rem 0 10rem 0;
     background-color: $light2;
 }
 
@@ -284,7 +284,7 @@ body {
   .slider__controllers {
     .controllers__tiles {
       left: 50%;
-      bottom: 10%;
+      bottom: 5%;
       transform: translate(-50%);
       .tile {
         background: $warm-grey;
@@ -330,7 +330,7 @@ body {
         margin-bottom: 50px;
       }
       .slide__image {
-        height: 150px;
+        height: 250px;
         img {
           width: 100%;
           height: 100%;
