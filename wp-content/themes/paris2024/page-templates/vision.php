@@ -29,7 +29,7 @@
       <source src="<?= UPLOAD.'/concept.mp4' ?>" type="video/mp4"> Your browser does not support the video tag.
     </video>
   </div>
-  <div class="video-intro__bg" style="background: url('<?= get_field('vision_video')['url']; ?>');"></div>
+  <div class="video-intro__bg" style="background-image: url('<?= get_field('vision_video')['url']; ?>');"></div>
 </section>
 
   <div class="description-vision">
