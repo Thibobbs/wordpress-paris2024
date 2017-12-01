@@ -82,10 +82,12 @@
     
                             </div>
                         </a>
-                    <!-- End loop -->
                     <?php
                     }
+                    // End loop
+                    
                 /* Restore original Post Data */
+                
                 wp_reset_postdata();
                 }
             ?>

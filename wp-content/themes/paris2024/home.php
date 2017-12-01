@@ -65,7 +65,7 @@ get_header(); ?>
           <p class="vision__text">
             <?php the_field('home_vision_text'); ?>
           </p>
-          <a href="<?php echo get_page_link( get_page_by_title('vision')->ID ); ?>" class="vision__button">
+          <a href="<?= get_page_link( get_page_by_title('vision')->ID ); ?>" class="vision__button">
             <?php the_field('home_vision_button'); ?>
           </a>
         </div>
@@ -179,7 +179,7 @@ get_header(); ?>
         </div>
       
       </div>
-      <a href="<?= get_post_type_archive_link('posts') ?>" class="news__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_news_button'); ?></a>
+      <a href="<?= get_page_link( get_page_by_title('actualites')->ID ); ?>" class="news__button btn__main btn__main--blue btn__text btn__text--white"><?php the_field('home_news_button'); ?></a>
     </div>
 
     <div class="concept">
@@ -194,7 +194,7 @@ get_header(); ?>
           <p class="concept__text">
             <?php the_field('home_concept_text'); ?>
           </p>
-          <a href="<?php echo get_page_link( get_page_by_title('concept')->ID ); ?>" class="concept__button">
+          <a href="<?= get_page_link( get_page_by_title('concept')->ID ); ?>" class="concept__button">
             <?php the_field('home_concept_button'); ?>
           </a>
         </div>
