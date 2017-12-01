@@ -10,6 +10,11 @@ define( 'UPLOAD',          THEME_URL.'/dist/uploads' );
 // define( 'FAVICONS_URL',    THEME_URL.'/dist/favicon' );
 // define( 'ADMIN_IMAGES_URL',IMAGES_URL.'/admin' );
 
+function wpc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'wpc_mime_types');
 
 foreach ( glob( THEME_PATH . "/inc/*.php" ) as $file ) {
     include_once $file;

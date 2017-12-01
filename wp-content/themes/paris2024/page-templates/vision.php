@@ -32,17 +32,17 @@
     <p class="txt__paragraph"><?php the_field('vision_stats_text'); ?></p>
     <div class="description-vision__cards">
       <div class="cards card-spectators">
-        <img src="<?= get_field('vision_stats_1_img')['url']; ?>" alt="" class="cards__img">
+        <img src="<?= get_field('vision_stats_1_img')['url']; ?>" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_1_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_1_text'); ?></p>
       </div>
       <div class="cards card-cities">
-        <img src="<?= get_field('vision_stats_2_img')['url']; ?>" alt="" class="cards__img">
+        <img src="<?= get_field('vision_stats_2_img')['url']; ?>" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_2_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_2_text'); ?></p>
       </div>
       <div class="cards card-transports">
-      <img src="<?= get_field('vision_stats_3_img')['url']; ?>" alt="" class="cards__img">
+      <img src="<?= get_field('vision_stats_3_img')['url']; ?>" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_3_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_3_text'); ?></p>
       </div>
@@ -60,6 +60,7 @@
         <?php the_field('vision_athlete_caption'); ?>
       </p>
       <a href="" class="vision-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+        <img src="<?= get_field('vision_athlete_button_img')['url']; ?>" alt="" class="cards__img">
         <?php the_field('vision_athlete_button'); ?>
       </a>
     </div>

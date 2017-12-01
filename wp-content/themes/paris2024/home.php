@@ -107,7 +107,7 @@ get_header(); ?>
     <div class="news">
      <h3 class="news__title"><?php the_field('home_news_title'); ?></h3>
      <p class="news__text"><?php the_field('home_news_text'); ?></p>
-      <div class="slider2">
+      <div class="slider2 container">
         <div class="slider2__slides">
          
          <?php
@@ -125,34 +125,34 @@ get_header(); ?>
                 $the_query->the_post();
                 
                 if (($i % 3) === 0) {
-                  echo '<div class="slider2__slide" index="' . $i . '">';
+                  echo '<div class="slider2__slide stories__container" index="' . $i . '">';
                 }
           ?>
-              <div class="articles__article">
-                  <a href="<?php the_permalink() ?>">
-                      <div class="article__thumbnail">
-                          <?php
-                          if(has_post_thumbnail())
-                          {
-                              the_post_thumbnail("hub_post_thumbnail");
-                          }
-                          ?>
-                          <div class="thumbnail__line"></div>
-                      </div>
-                      <div class="article__content">
-                          <div class="article__title"><?php the_title() ?></div>
-                          <div class="article__text"><?php the_field('article_intro'); ?></div>
-                      </div>
-                      <div class="article__data-wrapper">
-                          <div class="article__line"></div>
-                          <div class="article__data">
-                              <div class="article__data-date"><?php the_field('article_date'); ?></div>
-                              <div class="article__data-hastag">#Paris2024</div>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-      
+            <a class="stories" href="<?php the_permalink() ?>">
+            <div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
+
+                <div class="stories__link--thumbnail">
+                    <?php if(has_post_thumbnail()) { the_post_thumbnail("hub_post_thumbnail"); } ?>
+                    <div class="thumbnail__line"></div>
+                </div>
+
+                <div class="stories__content">
+                    <div class="stories__content--text">
+                        <h4><?php the_title() ?></h4>
+                        <p class="stories__link--excerpt">
+                            <?php echo custom_field_excerpt(); ?>
+                        </p>
+                    </div>
+                    <!-- <hr> -->
+                    <div class="stories__content--infos">
+                        <p><?php the_field('article_date'); ?></p>
+                        <p>#<?= get_the_terms($post->id, 'category')[0]->slug ?></p>
+                    </div>
+                </div>
+
+            </div>
+            </a>
+
         <?php
                   if ((($i+1) % 3) === 0) {
                     echo '</div>';
