@@ -69,7 +69,7 @@ get_header(); ?>
             <?php the_field('home_vision_button'); ?>
           </a>
         </div>
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_vision_image')['url']; ?>" alt="" class="vision__img">
         </div>
       </div>
@@ -87,7 +87,7 @@ get_header(); ?>
 
     <div class="home-athlete">
       <div class="home-athlete__container">
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_athlete_image')['url']; ?>" alt="" class="home-athlete__img">
         </div>
         <div class="home-athlete__txt">
@@ -183,7 +183,7 @@ get_header(); ?>
 
     <div class="concept">
       <div class="concept__container">
-        <div class="container__img">
+        <div class="container__image">
           <img src="<?= get_field('home_concept_image')['url']; ?>" alt="" class="concept__img">
         </div>
         <div class="container__text">
