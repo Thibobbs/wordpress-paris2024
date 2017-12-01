@@ -88,9 +88,8 @@
 
       <?php
 
-            $button_txt = get_field('home_slider_button_text');
-
             $args = array(
+              'post_type' => 'lieu',
               'posts_per_page' => '3'
             );
             // The Query
@@ -106,11 +105,14 @@
         <div class="slider__slide" index="<?= $i ?>">
           <div class="slide__info">
             <h3 class="slide__category">
-              <?php the_category(', '); ?>
+              <?php the_title(); ?>
             </h3>
             <h2 class="slide__title">
-              <?php the_title(); ?>
-            </h2>
+              <?php the_content(); ?>
+            </h2>  
+            <div class="slide__image">
+              <img src="<?= get_field('place_image')['url']; ?>" alt="">
+            </div>
           </div>
         </div>
 
