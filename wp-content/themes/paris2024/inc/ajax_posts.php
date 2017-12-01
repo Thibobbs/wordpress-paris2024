@@ -5,9 +5,9 @@ function ajax_fetch() {
 ?>
     <script type="text/javascript">
         var page = 1;
-        if (document.querySelector('body').classList.contains('.page-id-9')) {
-          var number_of_pages = document.querySelector('.news__button').getAttribute('pages');
-          number_of_pages--;
+        if (document.querySelector('body').classList.contains('page-id-9')) {
+            var number_of_pages = document.querySelector('.news__button').getAttribute('pages');
+            number_of_pages--;
         }
         function fetch(element){
             if(element.tagName == 'DIV'){
@@ -59,8 +59,8 @@ function ajax_fetch() {
                             if(number_of_pages == 0){
                                 document.querySelector('.news__button').remove();
                             }
-
                             document.querySelector('.stories__container').innerHTML += data;
+                            
                         }
                     });
                 }
@@ -164,9 +164,7 @@ function load_more_data_fetch(){
 
     $load_more_query = new WP_Query( $args );
     if( $load_more_query->have_posts() ) :
-
         while( $load_more_query->have_posts() ): $load_more_query->the_post(); ?>
-
             <a class="stories" href="<?php the_permalink() ?>">
                 <div class="stories__link <?= get_the_terms($post->id, 'category')[0]->slug ?>">
 

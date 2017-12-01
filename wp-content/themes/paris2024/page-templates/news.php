@@ -91,7 +91,7 @@
            
         </div>
         <?php if (  $wp_query->max_num_pages > 1 ){ ?>
-            <div class="news__button" pages="<?php $wp_query->max_num_pages ?>" onclick="fetch(this)">
+            <div class="news__button" pages="<?= $wp_query->max_num_pages ?>" onclick="fetch(this)">
                 <div class="news__see-more">Voir plus</div>
             </div>
         <?php } ?>
