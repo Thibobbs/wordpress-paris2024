@@ -4,7 +4,7 @@
 <div class="story__hero"><?php the_post_thumbnail(); ?></div>
 <div class="story__container">
   <div class="story__info container">
-    <div class="story__category"><?php the_terms($post->ID, 'category'); ?></div>
+    <div class="story__category"><?= get_the_terms($post->id, 'category')[0]->name ?></div>
     <div class="story__date">Publié le <?php the_field('article_date'); ?></div>
   </div>
   <div class="story__main container">

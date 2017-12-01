@@ -55,14 +55,28 @@ body {
 .video-intro__title,
 .video-intro__paragraph,
 .video-intro__button {
-          transition: opacity 0.15s ease-in-out;
+    position: relative;
+    margin-top: 8rem;
+    width: 7.2rem;
+    height: 7.2rem;
+    border-radius: 100%;
+    background-color: $deep-blue;
+    opacity: 1;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    will-change: opacity, background-color;
+}
 
-  -webkit-transition: opacity 0.15s ease-in-out;
-       -o-transition: opacity 0.15s ease-in-out;
+.video-intro__page-name, .video-intro__title, .video-intro__paragraph {
+    -webkit-transition: opacity 0.15s ease-in-out;
+    -o-transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
 }
 
 .video-intro__button:hover {
   cursor: pointer;
+  background-color: darken($deep-blue, 10%);
 }
 
 .video-intro__button svg {
@@ -164,22 +178,22 @@ body {
 }
 
 .list-sports__title {
-  text-align: center;
-  line-height: 4.29;
-  letter-spacing: 1.4px;
-  color: #8c8c8c;
-  font-family: Circular;
-  font-size: 14px;
-  font-weight: 500;
+    font-family: Circular;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 4.29;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: $warm-grey;
 }
 
 .list-sports__text {
-  text-align: center;
-  line-height: 1.5;
-  color: #000000;
-  font-family: Circular;
-  font-size: 30px;
-  font-weight: 500;
+    font-family: Circular;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: $dark;
 }
 
 .list-sports__items {
@@ -244,7 +258,7 @@ body {
 .sites {
   width: 100%;
   height: auto;
-  padding: 8rem 0 12rem 0;
+  padding: 8rem 0 10rem 0;
   background-color: $light2;
 }
 
@@ -268,8 +282,8 @@ body {
 
   .slider__controllers {
     .controllers__tiles {
-      bottom: 10%;
       left: 50%;
+      bottom: 5%;
       transform: translate(-50%);
       .tile {
         background: $warm-grey;
@@ -315,7 +329,7 @@ body {
         font-size: 1.4rem;
       }
       .slide__image {
-        height: 150px;
+        height: 250px;
         img {
           width: 100%;
           height: 100%;
