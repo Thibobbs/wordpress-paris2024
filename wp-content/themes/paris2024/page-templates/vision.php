@@ -23,7 +23,7 @@
           Your browser does not support the video tag.
         </video>
     </div>
-    <div class="video-intro__bg" style="background-image: url('<?= get_field('vision_video')['url']; ?>');"></div>
+    <div class="video-intro__bg" style="background: url('<?= get_field('vision_video')['url']; ?>');"></div>
 </section>
 
 <div class="description-vision">
@@ -32,17 +32,17 @@
     <p class="txt__paragraph"><?php the_field('vision_stats_text'); ?></p>
     <div class="description-vision__cards">
       <div class="cards card-spectators">
-        <img src="" alt="" class="cards__img">
+        <img src="<?= get_field('vision_stats_1_img')['url']; ?>" alt="" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_1_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_1_text'); ?></p>
       </div>
       <div class="cards card-cities">
-        <img src="" alt="" class="cards__img">
+        <img src="<?= get_field('vision_stats_2_img')['url']; ?>" alt="" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_2_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_2_text'); ?></p>
       </div>
       <div class="cards card-transports">
-        <img src="" alt="" class="cards__img">
+      <img src="<?= get_field('vision_stats_3_img')['url']; ?>" alt="" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_3_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_3_text'); ?></p>
       </div>
