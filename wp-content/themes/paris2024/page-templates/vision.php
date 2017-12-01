@@ -19,7 +19,7 @@
     <div class="video-intro__fade-effect"></div>
     <div class="video-intro__player">
         <video>
-          <source src="<?= UPLOADS.'/concept.mp4' ?>" type="video/mp4">
+          <source src="<?= UPLOAD.'/concept.mp4' ?>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
     </div>
