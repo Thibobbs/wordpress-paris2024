@@ -14,10 +14,10 @@ body  {
 }
 
 .container {
-  @include responsive($lg) {
-    width: 90%;
+  @include responsive($sm) {
+    width: 80%;
   }
-  width: 80%;
+  width: 90%;
   max-width: 144rem;
   margin: 0 auto;
 }
