@@ -235,7 +235,6 @@ if (document.querySelector('body').classList.contains('home'))
         height = el.offsetHeight
       }
     })
-    console.log(height)
     slides2.forEach((el) => {
       el.style.height = height + 'px'
     })
