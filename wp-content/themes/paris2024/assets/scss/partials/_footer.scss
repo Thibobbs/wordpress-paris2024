@@ -14,4 +14,12 @@
   left: 50%;
   transform: translate(-50%);
   text-align: center;
+
+  .mainTitle {
+    transition: all 0.4s ease-out;
+
+    &:hover {
+      transform: translateY(-0.9rem);
+    }
+  }
 }
