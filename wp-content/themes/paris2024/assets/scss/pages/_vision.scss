@@ -83,60 +83,63 @@
 
 
 .vision-athlete {
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50rem;
   background-image: linear-gradient(to left, $azure-blue, $deep-blue 50%, $cobalt-blue);
 }
 
-.container__img {
-  @include responsive($xs) {
-    display: none;
+.vision-athlete__container {
+  display: flex;
+  align-items: center;
+  max-width: 960px;
+  padding: 0 20px;
+  .vision-athlete__txt {
+    order: 0;
+    flex: 1;
+    padding-right: 50px;
   }
-  @include responsive($md) {
-    display: block;
+  .container__image {
+    order: 1;
+    flex: 1;
+    font-size: 0;
+    padding: 50px 20px 0 20px;
   }
-  position: absolute;
-  right: 10%;
-  bottom: 0;
-  display: none;
-
-  img {
-    width: auto;
-    height: 450px;
+  @media (max-width: $sm) {
+    flex-direction: column;
+    padding: 0 15%;
+    .vision-athlete__txt {
+      padding: 80px 0 40px 0;
+    }
+    .container__image {
+    }
   }
 }
 
 .vision-athlete__img {
-  width: auto;
-  height: 45rem;
+  width: 100%;
 }
 
 .vision-athlete__caption {
   margin-top: 40px;
+  font-size: 3.4rem;
   line-height: 2;
   color: $light;
-  font-size: 3.4rem;
 }
 
 .vision-athlete__name {
-  text-align: left;
-  line-height: 4.29;
-  letter-spacing: 1.4px;
-  color: $jordy-blue;
   font-size: 1.4rem;
   font-weight: bold;
+  line-height: 4.29;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: $jordy-blue;
 }
 
-.vision-athlete__button {
-  display: flex;
-  align-items: center;
+.vision-athlete__button{
   width: 150px;
   margin-top: 60px;
-
+  display: block;
   img {
     width: auto;
     height: 20px;
