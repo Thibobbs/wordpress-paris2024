@@ -1,5 +1,25 @@
 /** 
 
+    MENU BURGER
+
+*/
+
+const burger    = document.querySelector('.header__burger'),
+      burgerBar = document.querySelectorAll('.header__burger div'),
+      content   = document.querySelector('.header__burger-content')
+
+burger.addEventListener('click', (e) =>
+{
+    e.preventDefault()
+    for (let i = 0; i < burgerBar.length; i++)
+    {
+        burgerBar[i].classList.toggle("change")
+    }
+    content.classList.toggle("is-active")
+})
+
+/** 
+
     VIDEO CONCEPT & VISION
 
 */
