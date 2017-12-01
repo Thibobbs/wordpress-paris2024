@@ -281,7 +281,9 @@
 .home-athlete__button{
   width: 150px;
   margin-top: 60px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     width: auto;
     height: 20px;
