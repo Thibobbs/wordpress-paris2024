@@ -98,6 +98,7 @@ get_header(); ?>
             <?php the_field('home_athlete_caption'); ?>
           </p>
           <a href="" class="home-athlete__button btn__main btn__main--white btn__text btn__text--blue">
+          <img src="<?= get_field('home_athlete_button_img')['url']; ?>" alt="" class="cards__img">
             <?php the_field('home_athlete_button'); ?>
           </a>
         </div>
