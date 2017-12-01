@@ -10,6 +10,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+ <div id="wptime-plugin-preloader"></div>
   <header class="header">
     <div class="header__burger">
         <div class="bar1"></div>
