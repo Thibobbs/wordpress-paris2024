@@ -37,12 +37,12 @@
         <p class="cards__txt"><?php the_field('vision_stats_1_text'); ?></p>
       </div>
       <div class="cards card-cities">
-        <img src="" alt="" class="cards__img">
+        <img src="<?= get_field('vision_stats_2_img')['url']; ?>" alt="" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_2_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_2_text'); ?></p>
       </div>
       <div class="cards card-transports">
-        <img src="" alt="" class="cards__img">
+      <img src="<?= get_field('vision_stats_3_img')['url']; ?>" alt="" class="cards__img">
         <p class="cards__number"><?php the_field('vision_stats_3_number'); ?></p>
         <p class="cards__txt"><?php the_field('vision_stats_3_text'); ?></p>
       </div>
